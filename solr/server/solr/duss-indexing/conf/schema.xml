@@ -110,6 +110,48 @@
      tokens
    -->   
    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" /> 
+   
+   <!-- 
+   Fields for Digital US South Indexing Project
+   -->
+   
+   <!-- Required Fields -->
+   <!-- Archive -->
+   <field name="archive" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+   
+   <!-- URL -->
+   <field name="url" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+   
+   <!-- Title -->
+   <field name="title" type="text_en_splitting" indexed="true" stored="true" required="true" multiValued="false" />
+   
+   <!-- Description -->
+   <field name="description" type="text_en" indexed="true" stored="true" required="true" multiValued="false" />
+   
+   <!-- Type of Content -->
+   <field name="type_content" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+   
+   <!-- Type of Digital artifact -->
+   <field name="type_digital" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+   
+   <!-- Roles copyfield??-->
+   <dynamicField name="role_*" type="string" indexed="true" stored="true" required="true"multiValued="true"/>
+   
+   <!--TODO: Date of original artifact -->
+   
+   <!--TODO: Date of digital surrogate -->
+   
+   <!-- Geographic Location - Human -->
+   <field name="geolocation_human" type="text_general" indexed="true" stored="true" required="true" multiValued="false" />
+   
+   <!-- File Format -->
+   <field name="file_format" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+   
+   
+   <!-- Optional Fields -->
+   
+   
+   
 
    <!-- Dynamic field definitions allow using convention over configuration
        for fields via the specification of patterns to match field names. 
