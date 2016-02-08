@@ -1,0 +1,48 @@
+WARNING: System properties and/or JVM args set.  Consider using --dry-run or --exec
+0    INFO  (main) [   ] o.e.j.u.log Logging initialized @2611ms
+1233 INFO  (main) [   ] o.e.j.s.Server jetty-9.2.13.v20150730
+1313 WARN  (main) [   ] o.e.j.s.h.RequestLogHandler !RequestLog
+1329 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:/Users/adrian/Documents/duss-indexing/solr/server/contexts/] at interval 0
+3305 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+3385 WARN  (main) [   ] o.e.j.s.SecurityHandler ServletContext@o.e.j.w.WebAppContext@3a01a271{/solr,file:/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp/,STARTING}{/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp} has uncovered http methods for path: /
+3475 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init(): WebAppClassLoader=1225266866@490816b2
+3681 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
+3681 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /Users/adrian/Documents/duss-indexing/solr/server/solr
+3688 INFO  (main) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: '/Users/adrian/Documents/duss-indexing/solr/server/solr'
+3689 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
+3689 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /Users/adrian/Documents/duss-indexing/solr/server/solr
+3719 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from /Users/adrian/Documents/duss-indexing/solr/server/solr/solr.xml
+4368 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Config-defined core root directory: /Users/adrian/Documents/duss-indexing/solr/server/solr
+4661 INFO  (main) [   ] o.a.s.c.CoreContainer New CoreContainer 299297987
+4662 INFO  (main) [   ] o.a.s.c.CoreContainer Loading cores into CoreContainer [instanceDir=/Users/adrian/Documents/duss-indexing/solr/server/solr]
+4662 WARN  (main) [   ] o.a.s.c.CoreContainer Couldn't add files from /Users/adrian/Documents/duss-indexing/solr/server/solr/lib to classpath: /Users/adrian/Documents/duss-indexing/solr/server/solr/lib
+4811 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory created with socketTimeout : 600000,connTimeout : 60000,maxConnectionsPerHost : 20,maxConnections : 10000,corePoolSize : 0,maximumPoolSize : 2147483647,maxThreadIdleTime : 5,sizeOfQueue : -1,fairnessPolicy : false,useRetries : false,
+5740 INFO  (main) [   ] o.a.s.u.UpdateShardHandler Creating UpdateShardHandler HTTP client with params: socketTimeout=600000&connTimeout=60000&retry=true
+5753 INFO  (main) [   ] o.a.s.l.LogWatcher SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+5755 INFO  (main) [   ] o.a.s.l.LogWatcher Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+5759 INFO  (main) [   ] o.a.s.c.CoreContainer Security conf doesn't exist. Skipping setup for authorization module.
+5759 INFO  (main) [   ] o.a.s.c.CoreContainer No authentication plugin used.
+6364 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Looking for core definitions underneath /Users/adrian/Documents/duss-indexing/solr/server/solr
+6400 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 0 core definitions
+6433 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter user.dir=/Users/adrian/Documents/duss-indexing/solr/server
+6434 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init() done
+6493 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@3a01a271{/solr,file:/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp/,AVAILABLE}{/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp}
+6618 INFO  (main) [   ] o.e.j.s.ServerConnector Started ServerConnector@2d16083{HTTP/1.1}{0.0.0.0:8983}
+6628 INFO  (main) [   ] o.e.j.s.Server Started @9243ms
+33674 INFO  (qtp1171220500-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1454944544158&wt=json} status=0 QTime=301 
+34121 INFO  (qtp1171220500-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={_=1454944544632&wt=json} status=0 QTime=267 
+66486 INFO  (qtp1171220500-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={_=1454944577272&since=0&wt=json} status=0 QTime=1 
+74066 INFO  (qtp1171220500-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={_=1454944584831&wt=json} status=0 QTime=4 
+75873 INFO  (qtp1171220500-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={_=1454944586640&wt=json} status=0 QTime=0 
+78486 INFO  (qtp1171220500-13) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/properties params={_=1454944589264&wt=json} status=0 QTime=0 
+80470 INFO  (qtp1171220500-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/threads params={_=1454944591163&wt=json} status=0 QTime=90 
+83822 INFO  (qtp1171220500-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={_=1454944594589&wt=json} status=0 QTime=0 
+94544 INFO  (qtp1171220500-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={_=1454944605332&since=0&wt=json} status=0 QTime=0 
+104572 INFO  (qtp1171220500-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={_=1454944615349&since=0&wt=json} status=0 QTime=0 
+114583 INFO  (qtp1171220500-13) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={_=1454944625372&since=0&wt=json} status=0 QTime=0 
+124596 INFO  (qtp1171220500-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={_=1454944635383&since=0&wt=json} status=0 QTime=2 
+134608 INFO  (qtp1171220500-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={_=1454944645397&since=0&wt=json} status=0 QTime=0 
+144619 INFO  (qtp1171220500-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={_=1454944655407&since=0&wt=json} status=0 QTime=0 
+150836 INFO  (ShutdownMonitor) [   ] o.e.j.s.ServerConnector Stopped ServerConnector@2d16083{HTTP/1.1}{0.0.0.0:8983}
+150837 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=299297987
+150875 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@3a01a271{/solr,file:/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp/,UNAVAILABLE}{/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp}
