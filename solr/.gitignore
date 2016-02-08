@@ -1,2 +1,4 @@
 docs
 example
+server/logs
+server/solr/duss-indexing/data
