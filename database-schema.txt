@@ -1,0 +1,131 @@
+/****************************************/
+Database schema for
+Digital US South Indexing Project
+/****************************************/
+
+
+CREATE TABLE objects (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  archive_id int(11),
+  contributing_institution_id int(11),
+  uri text DEFAULT NULL,
+  title text DEFAULT NULL,
+  thumbnail_url text DEFAULT NULL,
+  description text DEFAULT NULL,
+  full_text text DEFAULT NULL,
+  type_content varchar(255) DEFAULT NULL,
+  type_physical_artifact varchar(255) DEFAULT NULL,
+  type_digital_artifact varchar(255) DEFAULT NULL,
+  shelfmark text DEFAULT NULL,
+  extent varchar(255) DEFAULT NULL,
+  copyright text DEFAULT NULL,
+  file_format varchar(255) DEFAULT NULL,
+  notes text DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+
+CREATE TABLE archives (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(255) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+
+CREATE TABLE contributing_institutions (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(255) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE documents (
+  uri text,
+  html_doc_url,
+  rdf_doc_url
+);
+
+CREATE TABLE alternative_titles(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  object_id int(11),
+  alternative_title text,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE roles (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  object_id int(11),
+  role varchar(255) DEFAULT NULL,
+  value text DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE dates (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  object_id int(11),
+  type varchar(255) DEFAULT NULL,
+  machine_date varchar(255) DEFAULT NULL,
+  human_date text DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE subject_headings (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  object_id int(11),
+  subject_heading varchar(255),
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE languages(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  object_id int(11),
+  language varchar(255),
+  PRIMARY KEY (id)
+);
+
+/********************************/
+This locations schema is probably
+going to change significantly as
+we develop the final RDF schema
+/********************************/
+CREATE TABLE locations (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  object_id int(11),
+  latitude double DEFAULT NULL,
+  longitude double DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+
+/********************************/
+Initial database schema
+before data cleanup/indexing.
+Final database tables/index will
+be generated from the content of
+this table
+/********************************/
+
+CREATE TABLE objects (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  archive varchar(255) DEFAULT NULL,
+  contributing_institution varchar(255) DEFAULT NULL,
+  url text DEFAULT NULL,
+  title text DEFAULT NULL,
+  alternative_titles text DEFAULT NULL;
+  thumbnail_url text DEFAULT NULL,
+  description text DEFAULT NULL,
+  full_text text DEFAULT NULL,
+  type_content varchar(255) DEFAULT NULL,
+  type_physical_artifact varchar(255) DEFAULT NULL,
+  type_digital_artifact varchar(255) DEFAULT NULL,
+  roles text DEFAULT NULL,
+  dates_original text DEFAULT NULL,
+  dates_digital text DEFAULT NULL,
+  geographic_location text DEFAULT NULL,
+  shelfmark text DEFAULT NULL,
+  extent varchar(255) DEFAULT NULL,
+  copyright text DEFAULT NULL,
+  languages text DEFAULT NULL,
+  file_format varchar(255) DEFAULT NULL,
+  notes text DEFAULT NULL,
+  PRIMARY KEY (id)
+);
