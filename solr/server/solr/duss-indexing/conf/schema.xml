@@ -142,13 +142,73 @@
    <!--TODO: Date of digital surrogate -->
    
    <!-- Geographic Location - Human -->
-   <field name="geolocation_human" type="text_general" indexed="true" stored="true" required="true" multiValued="false" />
+   <field name="geolocation_human" type="text_general" indexed="true" stored="true" required="true" multiValued="true" />
    
    <!-- File Format -->
    <field name="file_format" type="string" indexed="true" stored="true" required="true" multiValued="false" />
    
    
    <!-- Optional Fields -->
+   <!-- Contributing Institution -->   
+   <field name="contributing_institution" type="text_general" indexed="true" stored="true" required="false" multiValued="false" />
+   
+   <!-- Alternative Title(s) -->
+   <!-- TODO: finalize text field type decisions -->
+   <field name="alternative_title" type="text_en" indexed="true" stored="true" required="false" multiValued="true" />
+   
+   <!-- Thumbnail URL -->
+   <field name="thumbnail_url" type="string" indexed="true" stored="true" required="false" multiValued="false" />
+   
+   <!-- Full Text -->
+   <field name="full_text" type="text_en" indexed="true" stored="false" required="false" multiValued="false" />
+   
+   <!-- Type of Physical Artifact -->
+   <field name="type_physical" type="string" indexed="true" stored="true" required="false" multiValued="false" />
+   
+   <!-- Date of Original Artifact - Human readable
+   TODO: decide on tokenizer
+   -->
+   <field name="date_original" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
+   
+   <!-- Date of Digital Surrogate - Human readable
+   TODO: decide on tokenizer
+   -->
+   <field name="thumbnail_url" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
+   
+   <!-- Geographic Location - Machine -->
+   <field name="geolocation_machine" type="location" indexed="true" stored="true" required="false" multiValued="true" />
+   
+   <!-- Thumbnail URL -->
+   <field name="thumbnail_url" type="string" indexed="true" stored="true" required="false" multiValued="false" />
+   
+   <!-- Source/Shelfmark -->
+   <field name="shelfmark" type="string" indexed="true" stored="true" required="false" multiValued="false" />
+   
+   <!-- LC Subject Headings
+   TODO: figure out format for these
+   -->
+   <field name="subject_heading" type="string" indexed="true" stored="true" required="false" multiValued="true" />
+   
+   <!-- Extend/Size/Duration
+   TODO:
+   choose a final name for this field
+   decide on tokenizer
+   -->
+   <field name="extent" type="string" indexed="true" stored="true" required="false" multiValued="false" />
+   
+   <!-- Copyright/Use Rights
+   TODO: choose a final name for this field
+   -->
+   <field name="copyright" type="string" indexed="true" stored="true" required="false" multiValued="false" />
+   
+   <!-- Language -->
+   <field name="language" type="string" indexed="true" stored="true" required="false" multiValued="true" />
+   
+   <!-- Notes 
+   TODO: choose tokenizer
+   -->
+   <field name="notes" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
+   
    
    
    
