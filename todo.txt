@@ -1,5 +1,8 @@
 TODO:
 
+Search Website
+ - add support for different response writers in buildSolrQuery() - in functions.php
+
 SOLR
  - adjust mergeFactor to improve performance
  - set up autoCommit and autoSoftCommit
@@ -7,3 +10,5 @@ SOLR
 
 Linked Data
  - choose base url for all DUSS URIs + RDF Schema
+
+
