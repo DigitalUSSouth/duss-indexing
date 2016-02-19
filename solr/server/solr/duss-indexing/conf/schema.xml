@@ -29,7 +29,7 @@
  http://wiki.apache.org/solr/SchemaXml
 -->
 
-<schema name="example" version="1.5">
+<schema name="DigitalUSSouth" version="1.5">
   <!-- attribute "name" is the name of this schema and is only used for display purposes.
        version="x.y" is Solr's version number for the schema syntax and 
        semantics.  It should not normally be changed by applications.
@@ -135,7 +135,7 @@
    <field name="type_digital" type="string" indexed="true" stored="true" required="true" multiValued="false" />
    
    <!-- Roles copyfield??-->
-   <dynamicField name="role_*" type="string" indexed="true" stored="true" required="true"multiValued="true"/>
+   <!--<dynamicField name="role_*" type="string" indexed="true" stored="true" required="true"multiValued="true"/>-->
    
    <!--TODO: Date of original artifact -->
    
@@ -173,13 +173,10 @@
    <!-- Date of Digital Surrogate - Human readable
    TODO: decide on tokenizer
    -->
-   <field name="thumbnail_url" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
+   <field name="date_digital" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
    
    <!-- Geographic Location - Machine -->
    <field name="geolocation_machine" type="location" indexed="true" stored="true" required="false" multiValued="true" />
-   
-   <!-- Thumbnail URL -->
-   <field name="thumbnail_url" type="string" indexed="true" stored="true" required="false" multiValued="false" />
    
    <!-- Source/Shelfmark -->
    <field name="shelfmark" type="string" indexed="true" stored="true" required="false" multiValued="false" />
