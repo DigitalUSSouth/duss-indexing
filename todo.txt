@@ -1,5 +1,10 @@
 TODO:
 
+Search Results Page
+ - debug javascript for adding multiple boolean search terms
+
+
+
 Search Website
  - add support for different response writers in buildSolrQuery() - in functions.php
 
