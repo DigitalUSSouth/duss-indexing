@@ -53,6 +53,7 @@ $carousel = array(
 );
 
 $advancedSearchFields = array (
+	"all" => "Search all fields",
 	"title" => "Title (title and alternative title fields)",
 	"description" => "Description",
 	"notes" => "Notes",
@@ -62,8 +63,7 @@ $advancedSearchFields = array (
 );
 
 ?>
-
-<div class="container-fluid" id="about">
+<div class="container-fluid">
 	<div class="row">
 
 		<div class="col-xs-4 center-block" id="carousel">
@@ -79,78 +79,67 @@ $advancedSearchFields = array (
 		</div>
 
 	</div>
-
-	<div class="row text-center">
-		<div class="col-md-10 center-block">
-			<p>Digital US South Initiative - Advanced Search</p>
-		</div>
-	</div>
-	<div class="row text-center">
-		<div class="col-md-6 center-block">
-			<form class="form-horizontal" id="home-search" name="home-search" method="GET" action="search">
-			
-			<div class="row form-group" id="searchRow">
-				<div class="col-xs-1 nopadding">
-					<select class="form-control" id="boolean" name="boolean_operator[]">
-						<option value="AND" selected="">AND</option>
-						<option value="OR">OR</option>
-						<option value="NOT">NOT</option>
-					</select>
-				</div>
-				<div class="col-xs-6 nopadding">
-					<input type="text" name="query[]" id="query" class="form-control" placeholder="Search our projects">
-				</div>
-				<div class="col-xs-4 nopadding">
-					<select class="form-control" id="advanced_field" name="search_field[]">
-						<?php foreach ($advancedSearchFields as $key => $value):?>
-						<option value="<?php print $key;?>"><?php print $value;?></option>
-						<?php endforeach;?>
-					</select>
-				</div>
-				<div class="col-xs-1 nopadding">
-					<button type="button" class="form-control close pull-left">x</button>
-				</div>
-				<div class="col-xs-12"><hr></div>
-			</div>
-			
-			<div class="row form-group">
-					<button type="button" class="btn btn-default" id="addRow">Add another search term</button>
-			</div>
-			
-			<div class="row">
-				<div class="col-xs-6">
-					<input type="checkbox" value="false" name="full-text-search" id="full-text-search">
-					<label for="full-text-search" class="control-label">Search full text</label><br>
-					
-				</div>
-				<div class="col-xs-6">
-					<input type="submit" class="btn btn-primary" value="Advanced Search">
-				</div>
-				
-			</div>
-			</form>
-		</div>
-	</div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
+
+if (isset($_GET['form_submitted'])):
+//form submitted, display advanced search page with populated search fields
+//and also display search results
+
+
+//check that $_GET query is valid
+if (!isset($_GET['f']) || !isset($_GET['q']) || !isset($_GET['op']) || sizeof($_GET['f']) != sizeof($_GET['q']) || sizeof($_GET['f']) != sizeof($_GET['op'])):
+	$qArray = NULL;
+	require 'advanced-search-box.php';
+
+print '<div class="row text-center"><h1 class="text-danger">Invalid search query</h1></div>';
+else:
+/* convert search results into query array
+ $queryArray = array($field,$boolean,$query)
+*/
+
+$queryArray = array();
+$counter=0;
+
+foreach ($_GET['q'] as $query){
+	$queryArray[] = array($_GET['f'][$counter],$_GET['op'][$counter],$query);
+	$counter++;
+}
+
+
+
+require 'advanced-search-box.php';
+//debug
+/*print '<pre>';
+print_r($queryArray);
+print '</pre>';*/
+//end debug
+
+//is the search full-text?
+$searchQuery['isFullText'] = (isset($_GET['full-text-search'])) ? $_GET['full-text-search'] : false;
+
+$searchQuery['queryArray'] = $queryArray;
+
+require 'search-results.php';
+
+
+
+
+
+endif;//check $_GET query
+
+?>
+
+<?php 
+else: //form not submitted - display advanced search page only
+$queryArray = NULL;
+require 'advanced-search-box.php';
+
+
+endif; //if (isset($_GET['form_submitted'])):
+
+?></div> <!-- container-fluid -->
+<?php 
+
 require "layout/footer.php";
 
 require "layout/scripts.php";

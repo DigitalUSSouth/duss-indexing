@@ -1,7 +1,8 @@
 TODO:
 
 Search Results Page
- - debug javascript for adding multiple boolean search terms
+ - populate search fields in search results view
+ - enable ajax for searching instead of reloading page
 
 
 
