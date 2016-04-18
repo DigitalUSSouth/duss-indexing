@@ -111,6 +111,7 @@
    -->   
    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" /> 
    
+   
    <!-- 
    Fields for Digital US South Indexing Project
    -->
@@ -143,6 +144,9 @@
    full list at http://www.loc.gov/marc/relators/relaterm.html
    -->
    <dynamicField name="role_*" type="string" indexed="true" stored="true" multiValued="true"/>
+   <!-- The following field is used for querying all role fields -->
+   <field name="role_ALL"  type="string" indexed="true"  stored="true" multiValued="true"/>
+   <copyField source="role_*"    dest="role_ALL"/>
    
    <!-- Date of original artifact 
    These fields are used for date searching.
@@ -183,7 +187,7 @@
    <!-- Thumbnail URL -->
    <field name="thumbnail_url" type="string" indexed="true" stored="true" required="false" multiValued="false" />
    
-      <!-- Description -->
+   <!-- Description -->
    <field name="description" type="text_en_splitting" indexed="true" stored="true" required="true" multiValued="false" />
    
    <!-- Full Text -->
@@ -207,7 +211,7 @@
    <!-- LC Subject Headings -->
    <field name="subject_heading" type="text_en_splitting" indexed="true" stored="true" required="false" multiValued="true" />
    
-   <!-- Extend/Size/Duration -->
+   <!-- Extent/Size/Duration -->
    <field name="extent" type="string" indexed="true" stored="true" required="false" multiValued="false" />
    
    <!-- Copyright holder -->
