@@ -14,7 +14,7 @@ require "layout/nav-search.php";
 
 //require "layout/contact.php";
 
-
+require_once 'solr.php';
 
 
 $carousel = array(
@@ -119,6 +119,31 @@ $searchQuery['isFullText'] = (isset($_GET['full-text-search'])) ? $_GET['full-te
 
 $searchQuery['queryArray'] = $queryArray;
 
+$searchQuery['start'] = (isset($_GET['start'])) ? $_GET['start'] : 0;
+
+$searchQuery['rows'] = 5;
+
+$searchResponse = getResultsFromSolr($searchQuery);
+
+var_dump($searchResponse);
+?>
+<h3>Showing results <?php print ($searchResponse['start']+1)?> to <?php print ($searchResponse['numFound']<=$searchResponse['start']+$searchQuery['rows'] ) ?($searchResponse['numFound']):($searchResponse['start']+$searchQuery['rows'] );?> of <?php print ($searchResponse['numFound'])?></h3>
+<?php if ($searchResponse['start']>0):?>
+	<a href="<?php 
+	$oldQuery = $_GET;
+	$oldQuery['start'] = $oldQuery['start']-$searchQuery['rows'];
+	$newQuery = http_build_query($oldQuery);
+	print $_SERVER['PHP_SELF'].'?'.$newQuery?>" class="btn btn-default">Previous</a>
+<?php endif;?>
+<?php if ($searchResponse['numFound']>($searchResponse['start']+$searchQuery['rows'])):?>
+	<a href="<?php 
+	$oldQuery = $_GET;
+	$oldQuery['start'] = $oldQuery['start']+$searchQuery['rows'];
+	$newQuery = http_build_query($oldQuery);
+	print $_SERVER['PHP_SELF'].'?'.$newQuery?>" class="btn btn-default">Next</a>
+<?php endif;?>
+
+<?php 
 require 'search-results.php';
 
 

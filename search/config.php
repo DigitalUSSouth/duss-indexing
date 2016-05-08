@@ -1,7 +1,7 @@
 <?php
 
 /*
-config file for global values
+ config file for global values
 */
 
 global $solrCoreName;

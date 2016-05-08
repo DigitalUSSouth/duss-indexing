@@ -146,7 +146,7 @@
    <dynamicField name="role_*" type="string" indexed="true" stored="true" multiValued="true"/>
    <!-- The following field is used for querying all role fields -->
    <field name="role_ALL"  type="string" indexed="true"  stored="true" multiValued="true"/>
-   <copyField source="role_*"    dest="role_ALL"/>
+   
    
    <!-- Date of original artifact 
    These fields are used for date searching.
@@ -206,7 +206,7 @@
    <field name="geolocation_machine" type="location" indexed="true" stored="true" required="false" multiValued="true" />
    
    <!-- Source/Shelfmark -->
-   <field name="shelfmark" type="string" indexed="true" stored="true" required="false" multiValued="false" />
+   <field name="shelfmark" type="text_general" indexed="true" stored="true" required="false" multiValued="false" />
    
    <!-- LC Subject Headings -->
    <field name="subject_heading" type="text_en_splitting" indexed="true" stored="true" required="false" multiValued="true" />
@@ -226,6 +226,29 @@
    <!-- Notes -->
    <field name="notes" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
    
+   
+   <field name="all_fields"  type="text_general" indexed="true"  stored="true" multiValued="true"/>
+   
+   <!--<copyField source="role_*"    dest="role_ALL"/>-->
+   <copyfield source="*" dest="all_fields" />
+   <copyfield source="contributing_institution" dest="all_fields" />
+   <copyfield source="url" dest="all_fields" />
+   <copyfield source="title" dest="all_fields" />
+   <copyfield source="type_content" dest="all_fields" />
+   <copyfield source="type_digital" dest="all_fields" />
+   <copyfield source="role_ALL"  dest="all_fields" />
+   <copyfield source="geolocation_human" dest="all_fields" />
+   <copyfield source="alternative_title" dest="all_fields" />
+   <copyfield source="description" dest="all_fields" />
+   <copyfield source="full_text" dest="all_fields" />
+   <copyfield source="type_physical" dest="all_fields" />
+   <copyfield source="shelfmark" dest="all_fields" />
+   <copyfield source="subject_heading" dest="all_fields"/>
+   <copyfield source="extent" dest="all_fields" />
+   <copyfield source="copyright_holder" dest="all_fields"/>
+   <copyfield source="use_permissions" dest="all_fields" />
+   <copyfield source="language" dest="all_fields" />
+   <copyfield source="notes" dest="all_fields" />
    
    
    

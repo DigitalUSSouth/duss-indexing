@@ -68,13 +68,14 @@
 			
 			<div class="row">
 				<div class="col-xs-6">
-					<input type="checkbox" value="false" name="full-text-search" id="full-text-search">
+					<input type="checkbox" value="<?php print isset($_GET['full-text-search']) ? $_GET['full-text-search']: 'false' ;?>" name="full-text-search" id="full-text-search">
 					<label for="full-text-search" class="control-label">Search full text</label><br>
 					
 				</div>
 				<div class="col-xs-6">
 					<input type="submit" class="btn btn-primary" value="Advanced Search">
 					<input type="hidden" name="form_submitted">
+					<input type="hidden" name="start" value="<?php print isset($_GET['start']) ? $_GET['start'] : '0' ;?>">
 				</div>
 				
 			</div>
