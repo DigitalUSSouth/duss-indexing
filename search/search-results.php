@@ -7,7 +7,7 @@ $searchResults = $searchResponse['docs'];
 
 <div class="row">
 	<div class="col-xs-3">
-		<div class="col-xs-12"><h4>Facets:</h4>
+		<div class="col-xs-12"><h4>Facets (under development):</h4>
 			<div class="panel-group" id="accordion">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -26,7 +26,7 @@ $searchResults = $searchResponse['docs'];
       			continue;
       	}
       	?>
-      	<a href="#"><?php print $facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a>
+      	<a href="#">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -48,7 +48,7 @@ $searchResults = $searchResponse['docs'];
       			continue;
       	}
       	?>
-      	<a href="#"><?php print $archiveFacets[$i];?> (<small><strong><?php print $archiveFacets[$i+1]; $i++;?></strong></small>)</a>
+      	<a href="#">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $archiveFacets[$i+1]; $i++;?></strong></small>)</a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -70,7 +70,7 @@ $searchResults = $searchResponse['docs'];
       			continue;
       	}
       	?>
-      	<a href="#"><?php print $facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a>
+      	<a href="#">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -103,7 +103,7 @@ $searchResults = $searchResponse['docs'];
       			continue;
       	}
       	?>
-      	<a href="#"><?php print $facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a>
+      	<a href="#">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -125,7 +125,7 @@ $searchResults = $searchResponse['docs'];
       			continue;
       	}
       	?>
-      	<a href="#"><?php print $facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a>
+      	<a href="#">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -161,8 +161,8 @@ foreach ($searchResults as $result){
 	$displayResult['format'] = isset($highlightArray['format']) ? $highlightArray['format'][0] : $result['format'];
 	//description
 	$displayResult['description'] = isset($highlightArray['description']) ? $highlightArray['description'][0] : $result['description'];
-	//digital collection
-	$displayResult['digital_collection'] = isset($highlightArray['digital_collection']) ? $highlightArray['digital_collection'][0] : $result['digital_collection'];
+	//digital collection/archive
+	$displayResult['archive'] = isset($highlightArray['archive']) ? $highlightArray['archive'][0] : $result['archive'];
 	//shelfmark
 	$displayResult['shelfmark'] = isset($highlightArray['shelfmark']) ? $highlightArray['shelfmark'][0] : $result['shelfmark'];
 	global $solrFieldNames;
@@ -172,6 +172,7 @@ foreach ($searchResults as $result){
 		if (!isset($solrFieldNames[$key])) continue;
 		$displayResult[$key] = $value[0];
 	}
+	$displayResult['url'] = $url;
 	$displaySearchResults[] = $displayResult;
 }
 ?>
@@ -184,7 +185,7 @@ $counter=1;
 foreach($displaySearchResults as $result):?>
 <div class="col-xs-12">
 	<div class="col-xs-12">
-		<h3><a target="_blank" href="<?php print $result['url'];?>"><?php print $result['title']?></a></h3>
+		<p class="h3"><a target="_blank" href="<?php print $result['url'];?>"><?php print $result['title']?></a></p>
 	</div>
 	<div class="col-xs-6">
 		<p><strong>Type:</strong> <?php print $result['type_content'];?></p>
@@ -208,7 +209,7 @@ foreach($displaySearchResults as $result):?>
 		</p>
 	</div>
 	<div class="col-xs-6">
-		<p><strong>Digital Collection:</strong> <?php print $result['Digital Collection'];?>
+		<p><strong>Digital Collection:</strong> <?php print $result['archive'];?>
 		</p>
 	</div>
 	<div class="col-xs-12">

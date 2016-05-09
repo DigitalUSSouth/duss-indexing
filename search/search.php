@@ -121,7 +121,7 @@ $searchQuery['queryArray'] = $queryArray;
 
 $searchQuery['start'] = (isset($_GET['start'])) ? $_GET['start'] : 0;
 
-$searchQuery['rows'] = 5;
+$searchQuery['rows'] = 20;
 
 $solrResponse = getResultsFromSolr($searchQuery);
 $searchResponse = $solrResponse['response'];

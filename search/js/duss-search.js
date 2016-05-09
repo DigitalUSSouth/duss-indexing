@@ -52,7 +52,7 @@ $("#addRow").click(function (e) {
 
 
 $("#home-search").on("click", ".close", function (e) {
-	alert("close");
+	//alert("close");
 	$(this).parent().parent().remove();
 	
 	if ($(".close").length == 1){

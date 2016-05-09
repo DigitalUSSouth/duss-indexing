@@ -19,3 +19,8 @@ hr {
 .form-control.close {
 	display: none;
 }
+
+
+mark {
+	padding-top:0px;
+}

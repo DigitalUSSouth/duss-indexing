@@ -11,7 +11,8 @@ require_once 'solr.php';
 <div class="container-fluid">
 <pre>
 <?php 
-importTabFile();
+importTabFileGCook();
+importTabFileSCCivilWar();
 ?>
 </pre>
 </div>

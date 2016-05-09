@@ -8,15 +8,112 @@
 
 require_once('config.php');
 
-
-/*Indexing*/
- 
-function importTabFile(){
+function importTabFileSCCivilWar(){
 	//global $mysqli;
 	$file = NULL;
 
 	try {
-		$file = new SplFileObject("uploads/upload.txt");
+		$file = new SplFileObject("uploads/upload-sc-civil-war.txt");
+	}
+	catch (Exception $error){
+		echo '<div class="jumbotron"><h1 class="text-danger">Unable to open uploaded file. Please try again.</h1><p>'.$error->getMessage().'</p></div>';
+		return;
+	}
+
+	$counter=0;
+
+	//delete everything
+	//$statement = $mysqli->prepare("DELETE FROM works2");
+	//$statement->execute();
+	//$statement->store_result();
+
+	while ($line = $file->fgets()) {
+		if ($counter++ == 0) continue; //discard first line because it only contains headers
+		//echo $line;
+		//$line2 =  preg_replace('/\\t"/',"\t",$line);
+		//echo $line2;
+		//$line3 =  preg_replace('/"\\t/',"\t",$line2);
+		//echo $line3;
+		//$line4 =  preg_replace('/""/','"',$line3);
+		//echo $line4;
+
+		$fields = explode("\t",$line);
+
+		$document = array(
+				'title' => $fields[0],
+				'role_creator' => $fields[1],
+				//'date' => parse_date($fields[2]),
+				//'shelfmark' => $fields[3],
+			    'description' => $fields[9].' - '.$fields[4],
+				//'description' => $fields[5],
+				//'archive' => $fields[6],
+				'shelfmark' => $fields[7],
+				//'contributing_institution' => $fields[8],
+				//'rights' => $fields[9],
+				'extent' => $fields[10],
+				//'file_format' => $fields[11],
+				'notes' => $fields[12].' - '.$fields[18],
+				'language' => $fields[13],
+				'archive' => $fields[14],
+				//'geolocation_human' => $fields[15],
+				'contributing_institution' => $fields[16],
+				//'date_digital' => parse_date($fields[17]),
+				//'none' => $fields[18],
+				//'type_content' => $fields[19],
+				'type_content' => $fields[20],
+				'file_format' => $fields[21],
+				'type_digital' => $fields[22],
+				//'id' => $fields[23],
+				//'id' => $fields[24],
+				//'id' => $fields[25],
+				'geolocation_human' => $fields[26].' - '.$fields[27],
+				//'id' => $fields[27],
+				//'id' => $fields[28],
+				//'id' => $fields[29],
+				'full_text' => $fields[30],
+				//'id' => $fields[31],
+				//'id' => $fields[32],
+				//'id' => $fields[33],
+				//'id' => $fields[34],
+				//'id' => $fields[35],
+				//'id' => $fields[36],
+				'url' => $fields[37],
+				'id' => $fields[37]
+		);
+
+		indexDocument($document);
+
+		//$date_parsed = parse_date($date);
+		//$date_digital_parsed = parse_date($date_digital);
+
+
+
+
+
+		//if ($type=="") continue; //skip insert into db if empty
+		//echo $line4;
+
+
+
+		//$statement = $mysqli->prepare("INSERT INTO works2 (id,type,parent_id,volume,title,year,month,day,first_performance,recordings,genre,text,instrumentation,duration,list_movements,notes,materials_included) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		//$statement->bind_param("sssssssssssssssss", $id,$type,$parent_id,$volume,$title,$year,$month,$day,$first_performance,$recordings,$genre,$text,$instrumentation,$duration,$list_movements,$notes,$materials_included);
+		//$statement->execute();
+		//$statement->store_result();
+
+	}
+}
+
+
+
+
+/*Indexing*/
+ 
+function importTabFileGCook(){
+	//global $mysqli;
+	$file = NULL;
+
+	try {
+		$file = new SplFileObject("uploads/upload-g-cook.txt");
 	}
 	catch (Exception $error){
 		echo '<div class="jumbotron"><h1 class="text-danger">Unable to open uploaded file. Please try again.</h1><p>'.$error->getMessage().'</p></div>';
