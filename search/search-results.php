@@ -2,97 +2,279 @@
 
 $jsonResponse;
 
-$searchResults = array (
-array(
-"title" => "Charleston - Residence - John Steinmeyer House, 108 Beaufain St.",
-"digital_collection" => "George LaGrange Cook Photograph Collection",
-"contributing_institution" => "University of South Carolina. South Caroliniana Library",
-"alt_title" => "",
-"role" => array(
-		"Creator" => "Cook, George LaGrange"
-),
-"description" => "4 contact sheets, 4 prints; 20.5 x 12.5; Same as #70 but from further away.",
-"subject" => "Charleston (S.C.); Dwellings--South Carolina--Charleston--Photographs",
-"type_physical" => "Still Image",
-"date_original" => "1880-1895",
-"date_digital" => "2010-09-20",
-"geolocation" => "Charleston County (S.C.)",
-"extent" => "",
-"format" => "image/jpeg",
-"shelfmark" => "Box 4; Temporary num. 71",
-"notes" => ""
-),
-array(
-		"title" => "Charleston - Business - Roper Hospital (right section) Queen and Mazyck Sts. Facing Queen St.",
-		"digital_collection" => "George LaGrange Cook Photograph Collection",
-		"contributing_institution" => "University of South Carolina. South Caroliniana Library",
-		"alt_title" => "",
-		"role" => array(
-				"Creator" => "Cook, George LaGrange"
-		),
-		"description" => "2 contact sheets, 1 print; 20.5 x 12.5; Partially destroyed tower (two-story with wooden eaves) is on far left. On right side at corner of building is a four-story tower. Each piazza arch frames a door or window.",
-		"subject" => "Business enterprises--South Carolina--Charleston--Photographs; Charleston (S.C.); Hospitals--South Carolina--Charleston",
-		"type_physical" => "Still Image",
-		"date_original" => "1880-1895",
-		"date_digital" => "2010-09-20",
-		"geolocation" => "Charleston County (S.C.)",
-		"extent" => "",
-		"format" => "image/jpeg",
-		"shelfmark" => "Box 1; Temporary num. 13",
-		"notes" => ""
-		
-)
-);
+$searchResults = $searchResponse['docs'];
 ?>
 
 <div class="row">
-	<div class="col-xs-7 center-block" id="search-results-column">
+	<div class="col-xs-3">
+		<div class="col-xs-12"><h4>Facets:</h4>
+			<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1">
+        Digital Collection</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+      	<?php 
+      	$facets = $searchFacetCounts['facet_fields']['archive_facet'];
+      	for($i=0; $i<sizeof($facets); $i++):
+      		if ($facets[$i+1]==0){
+      			$i++;
+      			continue;
+      	}
+      	?>
+      	<a href="#"><?php print $facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a>
+      	<?php endfor;?>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse2">
+        Contributing Institution</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse in">
+      <div class="panel-body">
+      <?php 
+      	$archiveFacets = $searchFacetCounts['facet_fields']['contributing_institution_facet'];
+      	for($i=0; $i<sizeof($archiveFacets); $i++):
+      		if ($archiveFacets[$i+1]==0){
+      			$i++;
+      			continue;
+      	}
+      	?>
+      	<a href="#"><?php print $archiveFacets[$i];?> (<small><strong><?php print $archiveFacets[$i+1]; $i++;?></strong></small>)</a>
+      	<?php endfor;?>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse3">
+        Type of Content</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse in">
+      <div class="panel-body">
+      <?php 
+      	$facets = $searchFacetCounts['facet_fields']['type_content'];
+      	for($i=0; $i<sizeof($facets); $i++):
+      		if ($facets[$i+1]==0){
+      			$i++;
+      			continue;
+      	}
+      	?>
+      	<a href="#"><?php print $facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a>
+      	<?php endfor;?>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse4">
+        LC Subject Headings</a>
+      </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse in">
+      <div class="panel-body"></div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse5">
+        File Format</a>
+      </h4>
+    </div>
+    <div id="collapse5" class="panel-collapse collapse in">
+      <div class="panel-body">
+      <?php 
+      	$facets = $searchFacetCounts['facet_fields']['file_format'];
+      	for($i=0; $i<sizeof($facets); $i++):
+      		if ($facets[$i+1]==0){
+      			$i++;
+      			continue;
+      	}
+      	?>
+      	<a href="#"><?php print $facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a>
+      	<?php endfor;?>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse6">
+        Language</a>
+      </h4>
+    </div>
+    <div id="collapse6" class="panel-collapse collapse in">
+      <div class="panel-body">
+      <?php 
+      	$facets = $searchFacetCounts['facet_fields']['language'];
+      	for($i=0; $i<sizeof($facets); $i++):
+      		if ($facets[$i+1]==0){
+      			$i++;
+      			continue;
+      	}
+      	?>
+      	<a href="#"><?php print $facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a>
+      	<?php endfor;?>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse7">
+        Date</a>
+      </h4>
+    </div>
+    <div id="collapse7" class="panel-collapse collapse in">
+      <div class="panel-body"></div>
+    </div>
+  </div>
+        
+</div>
+		</div>
+	</div>
+	<div class="col-xs-9" id="search-results-column">
 <?php
+$displaySearchResults = array();
 
-foreach ($searchResults as $result):
+foreach ($searchResults as $result){
+	$url = $result['url'];
+	$highlightArray = $searchHighlighting[$url];
+	
+	//title
+	$displayResult['title'] = isset($highlightArray['title']) ? $highlightArray['title'][0] : $result['title'];
+	//type
+	$displayResult['type_content'] = isset($highlightArray['type_content']) ? $highlightArray['type_content'][0] : $result['type_content'];
+	//format
+	$displayResult['format'] = isset($highlightArray['format']) ? $highlightArray['format'][0] : $result['format'];
+	//description
+	$displayResult['description'] = isset($highlightArray['description']) ? $highlightArray['description'][0] : $result['description'];
+	//digital collection
+	$displayResult['digital_collection'] = isset($highlightArray['digital_collection']) ? $highlightArray['digital_collection'][0] : $result['digital_collection'];
+	//shelfmark
+	$displayResult['shelfmark'] = isset($highlightArray['shelfmark']) ? $highlightArray['shelfmark'][0] : $result['shelfmark'];
+	global $solrFieldNames;
+	
+	foreach ($highlightArray as $key => $value){
+		if ($key == 'title' || $key == 'type_content' || $key == 'format' || $key == 'description' || $key == 'digital_collection' || $key == 'shelfmark') continue;
+		if (!isset($solrFieldNames[$key])) continue;
+		$displayResult[$key] = $value[0];
+	}
+	$displaySearchResults[] = $displayResult;
+}
 ?>
-<?php //print_r($result);?>
+<div id="resultsCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 
-<div class="row">
+<div class="carousel-inner" role="listbox">
+	<div class="item active">
+<?php 
+$counter=1;
+foreach($displaySearchResults as $result):?>
+<div class="col-xs-12">
 	<div class="col-xs-12">
-		<h3><a><?php print $result['title']?></a></h3>
+		<h3><a target="_blank" href="<?php print $result['url'];?>"><?php print $result['title']?></a></h3>
 	</div>
-	<div class="col-xs-12">
-		<?php foreach ($result['role'] as $role => $value):?>
-			<p><strong><?php print $role;?>:</strong> <?php print $value;?></p>
-		<?php endforeach;?>
+	<div class="col-xs-6">
+		<p><strong>Type:</strong> <?php print $result['type_content'];?></p>
 	</div>
-	<div class="col-xs-4">
-		<p><strong>Type:</strong> <?php print $result['type_physical'];?></p>
-	</div>
-	<div class="col-xs-4">
-		<p><strong>Date:</strong> <?php print $result['date_original'];?></p>
-	</div>
-
-	<div class="col-xs-4">
-		<p><strong>Format:</strong> <?php print $result['format'];?></p>
+	<div class="col-xs-6">
+		<p><strong>Format:</strong> <?php print $result['file_format'];?></p>
 	</div>
 	<div class="col-xs-12">
 		<p><strong>Description:</strong> <?php print $result['description'];?></p>
 	</div>
+	<?php foreach($result as $key => $value):
+	if ($key == 'title' || $key == 'type_content' || $key == 'format' || $key == 'description' || $key == 'digital_collection' || $key == 'shelfmark') continue;
+	if (!isset($solrFieldNames[$key])) continue;
+	?>
 	<div class="col-xs-12">
-		<p><strong>LC Subject Headings:</strong> <?php print $result['subject'];?>
+		<p><strong><?php print $solrFieldNames[$key];?>:</strong> <?php print $value;?></p>
+	</div>
+	<?php endforeach;?>
+	<div class="col-xs-6">
+		<p><strong>Shelfmark:</strong> <?php print $result['shelfmark'];?>
+		</p>
+	</div>
+	<div class="col-xs-6">
+		<p><strong>Digital Collection:</strong> <?php print $result['Digital Collection'];?>
+		</p>
+	</div>
+	<div class="col-xs-12">
+		<a data-target="#resultsCarousel" data-slide-to="<?php print $counter++;?>" class="btn btn-default">More --&gt;</a>
+	</div>
+	
+	<div class="col-xs-12"><hr></div>	
+	
+
+</div>
+<?php endforeach;?>
+</div>
+<?php 
+foreach ($searchResults as $result):
+?>
+<?php //print_r($result);?>
+<div class="item">
+<div class="col-xs-12">
+	<div class="col-xs-12">
+		<a data-target="#resultsCarousel" data-slide-to="0" class="btn btn-default">&lt;-- Back to search results</a>
+	</div>
+	<div class="col-xs-12">
+		<h3><a target="_blank" href="<?php print $result['url'];?>"><?php print $result['title']?></a></h3>
+	</div>
+	<div class="col-xs-12">
+		<?php //foreach ($result['role'] as $role => $value):?>
+			<p><strong><?php //print $role;?>:</strong> <?php// print $value;?></p>
+		<?php //endforeach;?>
+	</div>
+	<div class="col-xs-4">
+		<p><strong>Type:</strong> <?php print $result['type_content'];?></p>
+	</div>
+	<div class="col-xs-4">
+		<p><strong>Date:</strong> <?php //print $result['date_original'];?></p>
+	</div>
+
+	<div class="col-xs-4">
+		<p><strong>Format:</strong> <?php print $result['file_format'];?></p>
+	</div>
+	<div class="col-xs-12">
+		<p><strong>Description:</strong> <?php print $result['description'];?></p>
+	</div>
+	<div class="col-xs-6">
+		<p><strong>LC Subject Headings:</strong> <?php //print $result['subject'];?>
+		</p>
+	</div>
+	<div class="col-xs-6">
+		<p><strong>Shelfmark:</strong> <?php print $result['shelfmark'];?>
+		</p>
+	</div>
+	<div class="col-xs-12">
+		<p><strong>Digital Collection:</strong> <?php print $result['archive'];?>
 		</p>
 	</div>
 	
 	
 	
+<div class="col-xs-12"><hr></div>	
 </div>
-<hr>
 
-
-
-
-
-
+</div> <!-- class="item" -->
 <?php 
 endforeach; //foreach ($searchResults as $result):
 
 ?>
+</div> <!-- carousel inner -->
+</div> <!-- carousel -->
 	</div> <!-- search-results-column -->
 </div>

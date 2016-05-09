@@ -123,11 +123,17 @@ $searchQuery['start'] = (isset($_GET['start'])) ? $_GET['start'] : 0;
 
 $searchQuery['rows'] = 5;
 
-$searchResponse = getResultsFromSolr($searchQuery);
+$solrResponse = getResultsFromSolr($searchQuery);
+$searchResponse = $solrResponse['response'];
 
-var_dump($searchResponse);
+$searchFacetCounts = $solrResponse['facet_counts'];
+$searchHighlighting = $solrResponse['highlighting'];
+
+//debug
+//var_dump($searchResponse);
 ?>
-<h3>Showing results <?php print ($searchResponse['start']+1)?> to <?php print ($searchResponse['numFound']<=$searchResponse['start']+$searchQuery['rows'] ) ?($searchResponse['numFound']):($searchResponse['start']+$searchQuery['rows'] );?> of <?php print ($searchResponse['numFound'])?></h3>
+<h3 class="text-right">Showing results <?php print ($searchResponse['start']+1)?> to <?php print ($searchResponse['numFound']<=$searchResponse['start']+$searchQuery['rows'] ) ?($searchResponse['numFound']):($searchResponse['start']+$searchQuery['rows'] );?> of <?php print ($searchResponse['numFound'])?></h3>
+<p class="text-right">
 <?php if ($searchResponse['start']>0):?>
 	<a href="<?php 
 	$oldQuery = $_GET;
@@ -142,7 +148,7 @@ var_dump($searchResponse);
 	$newQuery = http_build_query($oldQuery);
 	print $_SERVER['PHP_SELF'].'?'.$newQuery?>" class="btn btn-default">Next</a>
 <?php endif;?>
-
+</p>
 <?php 
 require 'search-results.php';
 

@@ -75,7 +75,7 @@
 				<div class="col-xs-6">
 					<input type="submit" class="btn btn-primary" value="Advanced Search">
 					<input type="hidden" name="form_submitted">
-					<input type="hidden" name="start" value="<?php print isset($_GET['start']) ? $_GET['start'] : '0' ;?>">
+					<input type="hidden" name="start" value="0">
 				</div>
 				
 			</div>

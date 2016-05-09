@@ -201,12 +201,14 @@ function getResultsFromSolr($query){
 	$queryString = buildSolrQuery($query);
 
 	$jsonResponse = file_get_contents($queryString);
+	
+	print $queryString;
 
 	if ($jsonResponse === false) return false;
 
 	$responseArray = json_decode($jsonResponse,true);
 
-	$searchResults = $responseArray["response"];
+	$searchResults = $responseArray/*["response"]*/;
 
 
 	return $searchResults;
@@ -229,15 +231,68 @@ function buildSolrQuery($query){
 
 	$counter=0;
 	foreach ($queryArray as $queryPartial){ //$queryPartial = array($_GET['f'][$counter],$_GET['op'][$counter],$query);
+		if ($queryPartial[2]=='') continue; //check it's not empty
 		if($counter++ !=0){
 			$queryString = $queryString.$queryPartial[1]/*op*/.'+';
 		}
-		//TODO: add search all
-		$queryString = $queryString.$queryPartial[0]/*field*/.':'.urlencode($queryPartial[2]).'%0A';
+		if ($queryPartial[0]=='all'){
+			$queryString = $queryString.buildQueryForAllFields($queryPartial[2]);
+		}
+		else {
+			$queryString = $queryString.$queryPartial[0]/*field*/.':('.urlencode($queryPartial[2]).')%0A';
+		}
+		
+		
 	}
 	global $solrCoreName;
+	global $solrResultsHighlightTag;
 
-	$queryString = 'http://localhost:8983/solr/'.$solrCoreName.'/select?'.$queryString.'&start='.$query['start'].'&rows='.$query['rows'].'&wt=json&indent=true';
+	$queryString = 'http://localhost:8983/solr/'.$solrCoreName
+		.'/select?'.$queryString.'&start='.$query['start'].'&rows='.$query['rows']
+		.'&wt=json&hl=true&hl.simple.pre='.urlencode('<'.$solrResultsHighlightTag.'>')
+		.'&hl.simple.post='.urlencode('</'.$solrResultsHighlightTag.'>')
+		.'&hl.fl=*&facet=true&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format'
+		.'&facet.field=language&indent=true';
+	
+		/*
+		 * Archive (Digital collection)
+Contributing Institution
+Type of content
+LC Subject Headings
+File Format
+Language
+Copyright (Use Rights)
+Date (slider to select range)
+		 * */
 
+	return $queryString;
+}
+
+
+function buildQueryForAllFields($query){
+	$queryString = '';
+	$searchFields = array(
+			"contributing_institution",
+			"url",
+			"title",
+			"type_content",
+			"type_digital",
+			"role_ALL" ,
+			"geolocation_human",
+			"alternative_title",
+			"description",
+			"full_text",
+			"type_physical",
+			"shelfmark",
+			"subject_heading",
+			"extent",
+			"copyright_holder",
+			"use_permissions",
+			"language",
+			"notes",
+	);
+	foreach ($searchFields as $field){
+		$queryString = $queryString.$field.':('.urlencode($query).')%0A';
+	}
 	return $queryString;
 }
