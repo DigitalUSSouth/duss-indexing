@@ -8,8 +8,14 @@
 
 require_once('config.php');
 
+/*
+ * The following functions are used to index specific projects.
+ * Each function implements the appropriate crosswalk for its
+ * respective project.
+ * */
+
+//SC Civil War
 function importTabFileSCCivilWar(){
-	//global $mysqli;
 	$file = NULL;
 
 	try {
@@ -22,20 +28,9 @@ function importTabFileSCCivilWar(){
 
 	$counter=0;
 
-	//delete everything
-	//$statement = $mysqli->prepare("DELETE FROM works2");
-	//$statement->execute();
-	//$statement->store_result();
-
 	while ($line = $file->fgets()) {
 		if ($counter++ == 0) continue; //discard first line because it only contains headers
-		//echo $line;
-		//$line2 =  preg_replace('/\\t"/',"\t",$line);
-		//echo $line2;
-		//$line3 =  preg_replace('/"\\t/',"\t",$line2);
-		//echo $line3;
-		//$line4 =  preg_replace('/""/','"',$line3);
-		//echo $line4;
+
 
 		$fields = explode("\t",$line);
 
@@ -85,29 +80,10 @@ function importTabFileSCCivilWar(){
 
 		//$date_parsed = parse_date($date);
 		//$date_digital_parsed = parse_date($date_digital);
-
-
-
-
-
-		//if ($type=="") continue; //skip insert into db if empty
-		//echo $line4;
-
-
-
-		//$statement = $mysqli->prepare("INSERT INTO works2 (id,type,parent_id,volume,title,year,month,day,first_performance,recordings,genre,text,instrumentation,duration,list_movements,notes,materials_included) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-		//$statement->bind_param("sssssssssssssssss", $id,$type,$parent_id,$volume,$title,$year,$month,$day,$first_performance,$recordings,$genre,$text,$instrumentation,$duration,$list_movements,$notes,$materials_included);
-		//$statement->execute();
-		//$statement->store_result();
-
 	}
 }
 
-
-
-
-/*Indexing*/
- 
+//George Lagrange Cook Photograph Collection
 function importTabFileGCook(){
 	//global $mysqli;
 	$file = NULL;
@@ -122,22 +98,8 @@ function importTabFileGCook(){
 
 	$counter=0;
 
-	//delete everything
-	//$statement = $mysqli->prepare("DELETE FROM works2");
-	//$statement->execute();
-	//$statement->store_result();
-
-
-
 	while ($line = $file->fgets()) {
 		if ($counter++ == 0) continue; //discard first line because it only contains headers
-		//echo $line;
-		//$line2 =  preg_replace('/\\t"/',"\t",$line);
-		//echo $line2;
-		//$line3 =  preg_replace('/"\\t/',"\t",$line2);
-		//echo $line3;
-		//$line4 =  preg_replace('/""/','"',$line3);
-		//echo $line4;
 
 		$fields = explode("\t",$line);
 		
@@ -171,21 +133,6 @@ function importTabFileGCook(){
 
 		//$date_parsed = parse_date($date);
 		//$date_digital_parsed = parse_date($date_digital);
-		
-		
-		
-		
-		
-		//if ($type=="") continue; //skip insert into db if empty
-		//echo $line4;
-		
-		
-
-		//$statement = $mysqli->prepare("INSERT INTO works2 (id,type,parent_id,volume,title,year,month,day,first_performance,recordings,genre,text,instrumentation,duration,list_movements,notes,materials_included) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-		//$statement->bind_param("sssssssssssssssss", $id,$type,$parent_id,$volume,$title,$year,$month,$day,$first_performance,$recordings,$genre,$text,$instrumentation,$duration,$list_movements,$notes,$materials_included);
-		//$statement->execute();
-		//$statement->store_result();
-		
 	}
 }
 
@@ -200,23 +147,46 @@ function indexDocument($doc){
 			),
 			'commit' => new stdClass()
 	);
-$data_string = json_encode($data);                                                                                   
+	$data_string = json_encode($data);                                                                                   
                                                                                                                      
-$ch = curl_init($url);                                                                      
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
-    'Content-Type: application/json',                                                                                
-    'Content-Length: ' . strlen($data_string))                                                                       
-);                                                                                                                   
+	$ch = curl_init($url);                                                                      
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+    	'Content-Type: application/json',                                                                                
+    	'Content-Length: ' . strlen($data_string))                                                                       
+	);                                                                                                                   
                                                                                                                      
-$result = curl_exec($ch);
-var_dump($data_string);
- var_dump($result);	
+	$result = curl_exec($ch);
+	print_r($data_string);
+	print_r($result);	
 	
 }
 
+/* function parse_date($date_string);
+ * 
+ * @param {string} $date_string: 
+ *     string in the following format:
+ *       "date - date" //for a date range
+ *     or:
+ *       "date" // for a single date
+ *     (date) format:
+ *       "yyyy-mm-dd"
+ *     or:
+ *       "yyyy-mm"
+ *     or:
+ *       "yyyy"
+ * @return $parsed_date = array(
+			'year_begin' => (int,default 0),
+			'month_begin' => (int,default 0),
+			'day_begin' => (int,default 0),
+			'year_end' => (int,default 0),
+			'month_end' => (int,default 0),
+			'day_end' => (int,default 0)
+	);
+ * 
+ * */
 function parse_date($date_string){
 	$parts = explode(' - ',$date_string);
 	$parsed_date = array(
@@ -289,8 +259,13 @@ function parse_date($date_string){
 
 /*
  * function getResultsFromSolr
- * performs search on solr and returns ids of mathing documents
- * @param {array} $query: associative array of search parameters eg: "title" => "query title"
+ * performs search on solr and returns mathing documents
+ * @param {array} $query: associative array of search parameters
+ *  $query['isFullText'] = (bool)
+    $query['queryArray'] = array();
+    $query['start'] = (int,0);
+    $query['rows'] = (int,20); 
+ *
  * @return {array} or {FALSE} if an error ocurred
  */
 function getResultsFromSolr($query){
@@ -315,8 +290,8 @@ function getResultsFromSolr($query){
 
 /*
  * function buildSolrQuery
- * builds json query for solr based on parameters
- * @param {array} $query: associative array of search parameters eg: "title" => "query title"
+ * builds url query for json results from solr based on parameters
+ * @param {array} $query: associative array of search parameters
  * @return {string} url-formatted solr query for json-formatted results
 
  */
@@ -341,6 +316,14 @@ function buildSolrQuery($query){
 		
 		
 	}
+	
+	//filter queries
+	$counter=0;
+	foreach ($query['fq'] as $fq){
+		$queryString = $queryString.'&fq='.urlencode($query['fq_field'][$counter++]).':'.urlencode($fq);
+	}
+	
+	
 	global $solrCoreName;
 	global $solrResultsHighlightTag;
 
@@ -392,4 +375,10 @@ function buildQueryForAllFields($query){
 		$queryString = $queryString.$field.':('.urlencode($query).')%0A';
 	}
 	return $queryString;
+}
+
+
+function buildFacetFilterQuery($facet,$query){
+	$newQuery = http_build_query($_GET);
+	return $_SERVER['PHP_SELF'].'?'.$newQuery.'&fq[]='.urlencode(($query=='')? '*':('"'.$query).'"').'&fq_field[]='.$facet;
 }

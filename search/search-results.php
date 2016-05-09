@@ -26,7 +26,7 @@ $searchResults = $searchResponse['docs'];
       			continue;
       	}
       	?>
-      	<a href="#">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
+      	<a href="<?php print buildFacetFilterQuery('archive_facet', $facets[$i]);?>">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -41,14 +41,16 @@ $searchResults = $searchResponse['docs'];
     <div id="collapse2" class="panel-collapse collapse in">
       <div class="panel-body">
       <?php 
-      	$archiveFacets = $searchFacetCounts['facet_fields']['contributing_institution_facet'];
-      	for($i=0; $i<sizeof($archiveFacets); $i++):
-      		if ($archiveFacets[$i+1]==0){
+      	$facets = $searchFacetCounts['facet_fields']['contributing_institution_facet'];
+      	//debug:
+      	//print_r($facets);
+      	for($i=0; $i<sizeof($facets); $i++):
+      		if ($facets[$i+1]==0){
       			$i++;
       			continue;
       	}
       	?>
-      	<a href="#">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $archiveFacets[$i+1]; $i++;?></strong></small>)</a><br>
+      	<a href="<?php print buildFacetFilterQuery('contributing_institution_facet', $facets[$i]);?>">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -70,7 +72,7 @@ $searchResults = $searchResponse['docs'];
       			continue;
       	}
       	?>
-      	<a href="#">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
+      	<a href="<?php print buildFacetFilterQuery('type_content', $facets[$i]);?>">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -103,7 +105,7 @@ $searchResults = $searchResponse['docs'];
       			continue;
       	}
       	?>
-      	<a href="#">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
+      	<a href="<?php print buildFacetFilterQuery('file_format', $facets[$i]);?>">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -125,7 +127,7 @@ $searchResults = $searchResponse['docs'];
       			continue;
       	}
       	?>
-      	<a href="#">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
+      	<a href="<?php print buildFacetFilterQuery('language', $facets[$i]);?>">-<?php print ($facets[$i]=='')? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
       	<?php endfor;?>
       </div>
     </div>

@@ -123,6 +123,9 @@ $searchQuery['start'] = (isset($_GET['start'])) ? $_GET['start'] : 0;
 
 $searchQuery['rows'] = 20;
 
+$searchQuery['fq'] = (isset($_GET['fq'])) ? $_GET['fq']: array();
+$searchQuery['fq_field'] = (isset($_GET['fq_field'])) ? $_GET['fq_field']: array();
+
 $solrResponse = getResultsFromSolr($searchQuery);
 $searchResponse = $solrResponse['response'];
 

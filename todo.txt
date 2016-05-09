@@ -1,17 +1,20 @@
 TODO:
 
 Search Results Page
- - populate search fields in search results view
  - enable ajax for searching instead of reloading page
 
 
 
 Search Website
- - add support for different response writers in buildSolrQuery() - in functions.php
+ - add separate commit function, to speed up indexing
+ - fix facet filter queries for "other" facets
+ - enable visual feedback/display for selected facets
+ - master search box - search by field
 
 SOLR
  - test tokenizers, make sure indexing works
- - test dynamic field for "role"
+ - dynamic field for "role"
+ - add support for dates and alternative titles
   
 
 Linked Data
