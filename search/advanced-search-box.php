@@ -62,14 +62,14 @@
 			<?php endif;?>
 			
 			
-			<div class="row form-group">
+			<!--<div class="row form-group">
 					<button type="button" class="btn btn-default" id="addRow">Add another search term</button>
-			</div>
+			</div>-->
 			
 			<div class="row">
 				<div class="col-xs-6">
-					<input type="checkbox" value="<?php print isset($_GET['full-text-search']) ? $_GET['full-text-search']: 'false' ;?>" name="full-text-search" id="full-text-search">
-					<label for="full-text-search" class="control-label">Search full text</label><br>
+					<!--<input type="checkbox" value="<?php //print isset($_GET['full-text-search']) ? $_GET['full-text-search']: 'false' ;?>" name="full-text-search" id="full-text-search">
+					<label for="full-text-search" class="control-label">Search full text</label><br>-->
 					
 				</div>
 				<div class="col-xs-6">

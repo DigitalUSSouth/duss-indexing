@@ -215,7 +215,7 @@ foreach($displaySearchResults as $result):?>
 		</p>
 	</div>
 	<div class="col-xs-12">
-		<a data-target="#resultsCarousel" data-slide-to="<?php print $counter++;?>" class="btn btn-default">More --&gt;</a>
+		<a data-target="#resultsCarousel" data-slide-to="<?php print $counter++;?>" class="btn btn-default btn-results-more">More --&gt;</a>
 	</div>
 	
 	<div class="col-xs-12"><hr></div>	

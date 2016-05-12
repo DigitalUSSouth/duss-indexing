@@ -76,5 +76,8 @@ $(document).ready(function () {
 	
 });
 
-
+$(".btn-results-more").click(function (e){
+	//alert (window.location +'&view');
+	window.history.pushState("view", "View Result", (window.location +'&view'));
+});
 

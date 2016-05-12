@@ -8,7 +8,7 @@ global $solrCoreName;
 $solrCoreName = "duss-indexing";
 
 global $solrResultsHighlightTag;
-$solrResultsHighlightTag = "mark";//bootstrap highlight
+$solrResultsHighlightTag = "mark";//bootstrap highlight <mark></mark>
 
 
 global $solrFieldNames;
