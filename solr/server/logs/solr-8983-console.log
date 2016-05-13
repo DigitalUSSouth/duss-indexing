@@ -1,530 +1,116 @@
 WARNING: System properties and/or JVM args set.  Consider using --dry-run or --exec
-0    INFO  (main) [   ] o.e.j.u.log Logging initialized @29702ms
-9421 INFO  (main) [   ] o.e.j.s.Server jetty-9.2.13.v20150730
-9598 WARN  (main) [   ] o.e.j.s.h.RequestLogHandler !RequestLog
-9602 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:/Users/adrian/Documents/duss-indexing/solr/server/contexts/] at interval 0
-14468 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
-14671 WARN  (main) [   ] o.e.j.s.SecurityHandler ServletContext@o.e.j.w.WebAppContext@6cf49909{/solr,file:/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp/,STARTING}{/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp} has uncovered http methods for path: /
-14827 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init(): WebAppClassLoader=30342460@1cefd3c
-15132 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
-15132 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /Users/adrian/Documents/duss-indexing/solr/server/solr
-15140 INFO  (main) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: '/Users/adrian/Documents/duss-indexing/solr/server/solr'
-15140 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
-15140 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /Users/adrian/Documents/duss-indexing/solr/server/solr
-15182 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from /Users/adrian/Documents/duss-indexing/solr/server/solr/solr.xml
-16155 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Config-defined core root directory: /Users/adrian/Documents/duss-indexing/solr/server/solr
-16470 INFO  (main) [   ] o.a.s.c.CoreContainer New CoreContainer 1441460352
-16470 INFO  (main) [   ] o.a.s.c.CoreContainer Loading cores into CoreContainer [instanceDir=/Users/adrian/Documents/duss-indexing/solr/server/solr]
-16502 WARN  (main) [   ] o.a.s.c.CoreContainer Couldn't add files from /Users/adrian/Documents/duss-indexing/solr/server/solr/lib to classpath: /Users/adrian/Documents/duss-indexing/solr/server/solr/lib
-16674 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory created with socketTimeout : 600000,connTimeout : 60000,maxConnectionsPerHost : 20,maxConnections : 10000,corePoolSize : 0,maximumPoolSize : 2147483647,maxThreadIdleTime : 5,sizeOfQueue : -1,fairnessPolicy : false,useRetries : false,
-18196 INFO  (main) [   ] o.a.s.u.UpdateShardHandler Creating UpdateShardHandler HTTP client with params: socketTimeout=600000&connTimeout=60000&retry=true
-18212 INFO  (main) [   ] o.a.s.l.LogWatcher SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
-18214 INFO  (main) [   ] o.a.s.l.LogWatcher Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
-18218 INFO  (main) [   ] o.a.s.c.CoreContainer Security conf doesn't exist. Skipping setup for authorization module.
-18218 INFO  (main) [   ] o.a.s.c.CoreContainer No authentication plugin used.
-18992 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Looking for core definitions underneath /Users/adrian/Documents/duss-indexing/solr/server/solr
-19101 INFO  (main) [   ] o.a.s.c.CoreDescriptor Created CoreDescriptor: {name=duss-indexing, config=solrconfig.xml, transient=false, schema=schema.xml, loadOnStartup=true, configSetProperties=configsetprops.json, instanceDir=/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing, absoluteInstDir=/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/, dataDir=data}
-19101 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found core duss-indexing in /Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/
-19102 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions
-19156 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter user.dir=/Users/adrian/Documents/duss-indexing/solr/server
-19156 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: '/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing'
-19156 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init() done
-19159 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
-19159 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /Users/adrian/Documents/duss-indexing/solr/server/solr
-19266 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@6cf49909{/solr,file:/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp/,AVAILABLE}{/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp}
-19435 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig current version of requestparams : -1
-19598 INFO  (main) [   ] o.e.j.s.ServerConnector Started ServerConnector@42c18028{HTTP/1.1}{0.0.0.0:8983}
-19598 INFO  (main) [   ] o.e.j.s.Server Started @49305ms
-19704 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.u.SolrIndexConfig IndexWriter infoStream solr logging is enabled
-19739 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 5.4.1
-20422 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig Loaded SolrConfig: solrconfig.xml
-20656 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema [duss-indexing] Schema name=DigitalUSSouth
-22918 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema unique key field: id
-23709 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.FileExchangeRateProvider Reloading exchange rates from file currency.xml
-23721 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.FileExchangeRateProvider Reloading exchange rates from file currency.xml
-23733 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.ConfigSetProperties Did not find ConfigSet properties, assuming default properties: Can't find resource 'configsetprops.json' in classpath or '/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing'
-23734 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.CoreContainer Creating SolrCore 'duss-indexing' using configuration from instancedir /Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing
-24100 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore solr.NRTCachingDirectoryFactory
-24197 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore [[duss-indexing] ] Opening new SolrCore at [/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing], dataDir=[null]
-24221 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.JmxMonitoredMap No JMX servers found, not exposing Solr information with JMX.
-24628 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory return new directory for /Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data
-24637 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore New index directory detected: old=null new=/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/index/
-24690 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory return new directory for /Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/index
-24854 INFO  (OldIndexDirectoryCleanupThreadForCore-duss-indexing) [   x:duss-indexing] o.a.s.c.SolrCore Looking for old index directories to cleanup for core duss-indexing in /Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/
-25294 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore no updateRequestProcessorChain defined as default, creating implicit default
-25439 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
-25442 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
-25443 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
-25444 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
-25468 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.PluginBag requestHandler : '/analysis/field' created with startup=lazy 
-25468 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.PluginBag requestHandler : '/analysis/document' created with startup=lazy 
-25474 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.PluginBag requestHandler : '/terms' created with startup=lazy 
-25475 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.RequestHandlers Registered paths: /admin/logging,/admin/plugins,/admin/system,/admin/segments,/admin/file,/admin/luke,/update,/terms,/admin/threads,/schema,/query,/replication,/analysis/field,/admin/ping,/update/json/docs,/analysis/document,/select,/admin/mbeans,/update/csv,/get,/update/json,/export,/admin/properties,/config,/debug/dump
-25478 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore Using default statsCache cache: org.apache.solr.search.stats.LocalStatsCache
-25527 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-25527 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-25703 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
-25703 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-26290 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrDeletionPolicy SolrDeletionPolicy.onInit: commits: num=1
-	commit{dir=NRTCachingDirectory(MMapDirectory@/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@158c5efb; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_631,generation=7885}
-26291 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrDeletionPolicy newest commit generation = 7885
-27408 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.s.SolrIndexSearcher Opening Searcher@5137cd80[duss-indexing] main
-27465 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf
-27465 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.RestManager Initializing RestManager with initArgs: {storageDir=/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf}
-27483 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResourceStorage Reading _rest_managed.json using file:dir=/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf
-27495 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _rest_managed.json using file:dir=/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf
-27495 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResource Loaded initArgs {} for /rest/managed
-27495 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.RestManager Initializing 0 registered ManagedResources
-27534 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.ReplicationHandler Commits will be reserved for  10000
-27536 INFO  (searcherExecutor-7-thread-1-processing-x:duss-indexing) [   x:duss-indexing] o.a.s.c.SolrCore [duss-indexing] Registered new searcher Searcher@5137cd80[duss-indexing] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_6qi(5.4.1):C5761) Uninverting(_6qj(5.4.1):C1) Uninverting(_6qk(5.4.1):C1) Uninverting(_6ql(5.4.1):C1) Uninverting(_6qm(5.4.1):C1) Uninverting(_6qn(5.4.1):C1) Uninverting(_6qo(5.4.1):C1) Uninverting(_6qp(5.4.1):C1)))}
-27537 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Looking up max value of version field to seed version buckets
-27568 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.VersionInfo Refreshing highest value of _version_ for 65536 version buckets from index
-27681 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.VersionInfo Found MAX value 1533815643647770624 from Terms for _version_ in index
-27688 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Took 121.0ms to seed version buckets with highest version 1533815643647770624
-27689 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.CoreContainer registering core: duss-indexing
-1277657 INFO  (qtp310175167-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1462808260565&wt=json} status=0 QTime=75 
-1277961 INFO  (qtp310175167-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={_=1462808260755&wt=json} status=0 QTime=192 
-1280933 ERROR (qtp310175167-12) [   x:duss-indexing] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.menu-top.html [/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf/admin-extra.menu-top.html]
-1280933 ERROR (qtp310175167-17) [   x:duss-indexing] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.menu-bottom.html [/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf/admin-extra.menu-bottom.html]
-1280936 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/file params={file=admin-extra.menu-bottom.html&_=1462808263895&contentType=text/html;charset%3Dutf-8} status=404 QTime=8 
-1280936 INFO  (qtp310175167-12) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/file params={file=admin-extra.menu-top.html&_=1462808263894&contentType=text/html;charset%3Dutf-8} status=404 QTime=10 
-1280989 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/luke params={numTerms=0&_=1462808263948&show=index&wt=json} status=0 QTime=5 
-1281054 ERROR (qtp310175167-14) [   x:duss-indexing] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.html [/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf/admin-extra.html]
-1281054 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/file params={file=admin-extra.html&_=1462808263961} status=404 QTime=0 
-1281062 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/replication params={command=details&_=1462808263956&wt=json} status=0 QTime=78 
-1281096 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/ping params={action=status&_=1462808263963&wt=json} status=503 QTime=7 
-1281122 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/system params={_=1462808263959&wt=json} status=0 QTime=100 
-1291321 INFO  (qtp310175167-13) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1462808274305&wt=json} status=0 QTime=0 
-1291398 INFO  (qtp310175167-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={_=1462808274355&wt=json} status=0 QTime=28 
-1291645 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/luke params={numTerms=0&_=1462808274428&wt=json} status=0 QTime=174 
-1291659 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/luke params={_=1462808274639&show=schema&wt=json} status=0 QTime=6 
-2764359 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=1453 
-2787066 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=295 
-2842413 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=190 
-3303832 ERROR (qtp310175167-19) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse ':English': Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:217)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse ':English': Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:158)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
-	... 27 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:665)
-	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:547)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:232)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	... 30 more
-
-3303832 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=:English&rows=20} status=400 QTime=6 
-3336771 ERROR (qtp310175167-13) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse ':English': Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:217)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse ':English': Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:158)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
-	... 27 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:665)
-	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:547)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:232)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	... 30 more
-
-3336772 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=:English&rows=20} status=400 QTime=4 
-3377238 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=143 
-3381766 ERROR (qtp310175167-13) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse ':English': Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:217)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse ':English': Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:158)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
-	... 27 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:665)
-	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:547)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:232)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	... 30 more
-
-3381767 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=:English&rows=20} status=400 QTime=4 
-3391254 ERROR (qtp310175167-14) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse ':English': Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:217)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse ':English': Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:158)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
-	... 27 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:665)
-	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:547)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:232)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	... 30 more
-
-3391254 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=:English&rows=20} status=400 QTime=3 
-3470888 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=113 
-3477333 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:English&rows=20} hits=15 status=0 QTime=171 
-3629361 ERROR (qtp310175167-13) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'language:': Encountered "<EOF>" at line 1, column 9.
+0    INFO  (main) [   ] o.e.j.u.log Logging initialized @1477ms
+778  INFO  (main) [   ] o.e.j.s.Server jetty-9.2.13.v20150730
+899  WARN  (main) [   ] o.e.j.s.h.RequestLogHandler !RequestLog
+910  INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:/Users/adrian/Documents/duss-indexing/solr/server/contexts/] at interval 0
+3234 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+3293 WARN  (main) [   ] o.e.j.s.SecurityHandler ServletContext@o.e.j.w.WebAppContext@67c8f3da{/solr,file:/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp/,STARTING}{/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp} has uncovered http methods for path: /
+3494 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init(): WebAppClassLoader=81719957@4def295
+3820 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
+3821 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /Users/adrian/Documents/duss-indexing/solr/server/solr
+3821 INFO  (main) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: '/Users/adrian/Documents/duss-indexing/solr/server/solr'
+3822 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
+3822 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /Users/adrian/Documents/duss-indexing/solr/server/solr
+3870 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from /Users/adrian/Documents/duss-indexing/solr/server/solr/solr.xml
+4308 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Config-defined core root directory: /Users/adrian/Documents/duss-indexing/solr/server/solr
+4687 INFO  (main) [   ] o.a.s.c.CoreContainer New CoreContainer 1634198970
+4687 INFO  (main) [   ] o.a.s.c.CoreContainer Loading cores into CoreContainer [instanceDir=/Users/adrian/Documents/duss-indexing/solr/server/solr]
+4688 WARN  (main) [   ] o.a.s.c.CoreContainer Couldn't add files from /Users/adrian/Documents/duss-indexing/solr/server/solr/lib to classpath: /Users/adrian/Documents/duss-indexing/solr/server/solr/lib
+4846 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory created with socketTimeout : 600000,connTimeout : 60000,maxConnectionsPerHost : 20,maxConnections : 10000,corePoolSize : 0,maximumPoolSize : 2147483647,maxThreadIdleTime : 5,sizeOfQueue : -1,fairnessPolicy : false,useRetries : false,
+5500 INFO  (main) [   ] o.a.s.u.UpdateShardHandler Creating UpdateShardHandler HTTP client with params: socketTimeout=600000&connTimeout=60000&retry=true
+5514 INFO  (main) [   ] o.a.s.l.LogWatcher SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+5538 INFO  (main) [   ] o.a.s.l.LogWatcher Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+5542 INFO  (main) [   ] o.a.s.c.CoreContainer Security conf doesn't exist. Skipping setup for authorization module.
+5543 INFO  (main) [   ] o.a.s.c.CoreContainer No authentication plugin used.
+5901 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Looking for core definitions underneath /Users/adrian/Documents/duss-indexing/solr/server/solr
+5956 INFO  (main) [   ] o.a.s.c.CoreDescriptor Created CoreDescriptor: {name=duss-indexing, config=solrconfig.xml, transient=false, schema=schema.xml, loadOnStartup=true, configSetProperties=configsetprops.json, instanceDir=/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing, absoluteInstDir=/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/, dataDir=data}
+5956 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found core duss-indexing in /Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/
+5957 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions
+6016 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter user.dir=/Users/adrian/Documents/duss-indexing/solr/server
+6017 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init() done
+6021 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: '/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing'
+6022 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
+6022 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /Users/adrian/Documents/duss-indexing/solr/server/solr
+6133 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@67c8f3da{/solr,file:/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp/,AVAILABLE}{/Users/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp}
+6502 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig current version of requestparams : -1
+7105 INFO  (main) [   ] o.e.j.s.ServerConnector Started ServerConnector@376e9c79{HTTP/1.1}{0.0.0.0:8983}
+7119 INFO  (main) [   ] o.e.j.s.Server Started @8601ms
+7284 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.u.SolrIndexConfig IndexWriter infoStream solr logging is enabled
+7337 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 5.4.1
+8578 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig Loaded SolrConfig: solrconfig.xml
+8816 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema [duss-indexing] Schema name=DigitalUSSouth
+10551 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema unique key field: id
+11159 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.FileExchangeRateProvider Reloading exchange rates from file currency.xml
+11173 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.FileExchangeRateProvider Reloading exchange rates from file currency.xml
+11195 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.ConfigSetProperties Did not find ConfigSet properties, assuming default properties: Can't find resource 'configsetprops.json' in classpath or '/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing'
+11196 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.CoreContainer Creating SolrCore 'duss-indexing' using configuration from instancedir /Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing
+11355 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore solr.NRTCachingDirectoryFactory
+11406 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore [[duss-indexing] ] Opening new SolrCore at [/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing], dataDir=[null]
+11431 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.JmxMonitoredMap No JMX servers found, not exposing Solr information with JMX.
+11960 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory return new directory for /Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data
+11969 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore New index directory detected: old=null new=/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/index/
+11970 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory return new directory for /Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/index
+11990 INFO  (OldIndexDirectoryCleanupThreadForCore-duss-indexing) [   x:duss-indexing] o.a.s.c.SolrCore Looking for old index directories to cleanup for core duss-indexing in /Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/
+12385 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore no updateRequestProcessorChain defined as default, creating implicit default
+12583 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+12599 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+12600 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+12606 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+12638 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.PluginBag requestHandler : '/analysis/field' created with startup=lazy 
+12638 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.PluginBag requestHandler : '/analysis/document' created with startup=lazy 
+12642 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.PluginBag requestHandler : '/terms' created with startup=lazy 
+12642 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.RequestHandlers Registered paths: /admin/logging,/admin/plugins,/admin/system,/admin/segments,/admin/file,/admin/luke,/update,/terms,/admin/threads,/schema,/query,/replication,/analysis/field,/admin/ping,/update/json/docs,/analysis/document,/select,/admin/mbeans,/update/csv,/get,/update/json,/export,/admin/properties,/config,/debug/dump
+12645 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore Using default statsCache cache: org.apache.solr.search.stats.LocalStatsCache
+12704 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+12704 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+12847 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+12847 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+13457 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrDeletionPolicy SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(MMapDirectory@/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@7ea17759; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_631,generation=7885}
+13458 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrDeletionPolicy newest commit generation = 7885
+14174 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.s.SolrIndexSearcher Opening Searcher@f11a7de[duss-indexing] main
+14230 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf
+14230 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.RestManager Initializing RestManager with initArgs: {storageDir=/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf}
+14247 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResourceStorage Reading _rest_managed.json using file:dir=/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf
+14260 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _rest_managed.json using file:dir=/Users/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf
+14260 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResource Loaded initArgs {} for /rest/managed
+14260 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.RestManager Initializing 0 registered ManagedResources
+14333 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.ReplicationHandler Commits will be reserved for  10000
+14334 INFO  (searcherExecutor-7-thread-1-processing-x:duss-indexing) [   x:duss-indexing] o.a.s.c.SolrCore [duss-indexing] Registered new searcher Searcher@f11a7de[duss-indexing] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_6qi(5.4.1):C5761) Uninverting(_6qj(5.4.1):C1) Uninverting(_6qk(5.4.1):C1) Uninverting(_6ql(5.4.1):C1) Uninverting(_6qm(5.4.1):C1) Uninverting(_6qn(5.4.1):C1) Uninverting(_6qo(5.4.1):C1) Uninverting(_6qp(5.4.1):C1)))}
+14336 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Looking up max value of version field to seed version buckets
+14337 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.VersionInfo Refreshing highest value of _version_ for 65536 version buckets from index
+14446 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.VersionInfo Found MAX value 1533815643647770624 from Terms for _version_ in index
+14453 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Took 116.0ms to seed version buckets with highest version 1533815643647770624
+14454 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.CoreContainer registering core: duss-indexing
+16060 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=993 
+42412 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=128 
+265527 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=138 
+341793 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=91 
+385294 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=87 
+394686 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=151 
+483851 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=68 
+578154 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=78 
+600851 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=71 
+671804 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=60 
+677890 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=59 
+703621 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=115 
+978835 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=71 
+986689 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=9 status=0 QTime=53 
+994015 INFO  (qtp310175167-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(sherman+convent)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=type_content:"Still+Image"&rows=20} hits=1 status=0 QTime=78 
+1355140 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=44 status=0 QTime=262 
+1364548 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:*&rows=20} hits=44 status=0 QTime=140 
+1403665 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:*&rows=20} hits=44 status=0 QTime=149 
+1512282 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:*&rows=20} hits=44 status=0 QTime=70 
+1800708 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:*&rows=20} hits=44 status=0 QTime=120 
+1869154 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:*&rows=20} hits=44 status=0 QTime=140 
+1983816 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=44 status=0 QTime=45 
+1989037 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:"English"&rows=20} hits=42 status=0 QTime=50 
+2116606 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:"English"&rows=20} hits=42 status=0 QTime=76 
+2142949 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:"English"&rows=20} hits=42 status=0 QTime=69 
+2172082 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:*&rows=20} hits=44 status=0 QTime=40 
+2218139 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:*&rows=20} hits=44 status=0 QTime=39 
+2221152 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=44 status=0 QTime=41 
+2224311 ERROR (qtp310175167-14) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'language:': Encountered "<EOF>" at line 1, column 9.
 Was expecting one of:
     <BAREOPER> ...
     "(" ...
@@ -613,8 +199,8 @@ Was expecting one of:
 	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
 	... 30 more
 
-3629380 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:&rows=20} status=400 QTime=22 
-3645664 ERROR (qtp310175167-18) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'language:': Encountered "<EOF>" at line 1, column 9.
+2224312 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:&rows=20} status=400 QTime=4 
+2236876 ERROR (qtp310175167-19) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'language:': Encountered "<EOF>" at line 1, column 9.
 Was expecting one of:
     <BAREOPER> ...
     "(" ...
@@ -703,180 +289,9 @@ Was expecting one of:
 	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
 	... 30 more
 
-3645665 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:&rows=20} status=400 QTime=3 
-4050052 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=105 
-4059566 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:*&rows=20} hits=17 status=0 QTime=178 
-4315951 INFO  (qtp310175167-12) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:*&rows=20} hits=17 status=0 QTime=65 
-4332896 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=56 
-4448280 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=103 
-4462549 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=file_format:image/jpeg&rows=20} hits=15 status=0 QTime=74 
-4536852 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=73 
-4798449 ERROR (qtp310175167-13) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: undefined field *
-	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1279)
-	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:429)
-	at org.apache.lucene.analysis.DelegatingAnalyzerWrapper$DelegatingReuseStrategy.getReusableComponents(DelegatingAnalyzerWrapper.java:74)
-	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:169)
-	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:205)
-	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:373)
-	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:760)
-	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:548)
-	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:315)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:186)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:160)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-
-4798513 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={indent=true&q=*:episcopal&_=1462811781432&wt=json} status=400 QTime=64 
-4808048 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={indent=true&q=title:episcopal&_=1462811791033&wt=json} hits=14 status=0 QTime=1 
-4921637 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=99 
-4952964 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=49 
-4981007 INFO  (qtp310175167-12) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=42 
-4994763 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=43 
-5013559 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=161 
-5034334 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=40 
-5051446 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=48 
-5069934 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=81 
-5106583 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(episcopal)%0aurl:(episcopal)%0atitle:(episcopal)%0atype_content:(episcopal)%0atype_digital:(episcopal)%0arole_ALL:(episcopal)%0ageolocation_human:(episcopal)%0aalternative_title:(episcopal)%0adescription:(episcopal)%0afull_text:(episcopal)%0atype_physical:(episcopal)%0ashelfmark:(episcopal)%0asubject_heading:(episcopal)%0aextent:(episcopal)%0acopyright_holder:(episcopal)%0ause_permissions:(episcopal)%0alanguage:(episcopal)%0anotes:(episcopal)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=17 status=0 QTime=41 
-5134850 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=257 
-5152813 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=108 
-5177651 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=68 
-5216270 ERROR (qtp310175167-15) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: undefined field text
-	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1279)
-	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:429)
-	at org.apache.lucene.analysis.DelegatingAnalyzerWrapper$DelegatingReuseStrategy.getReusableComponents(DelegatingAnalyzerWrapper.java:74)
-	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:169)
-	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:205)
-	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:373)
-	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:760)
-	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:548)
-	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:315)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:186)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:140)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-
-5216271 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution:University+of+South+Carolina.+Rare+Books+and+Special+Collections&rows=20} status=400 QTime=3 
-5233799 ERROR (qtp310175167-18) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: undefined field text
-	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1279)
-	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:429)
-	at org.apache.lucene.analysis.DelegatingAnalyzerWrapper$DelegatingReuseStrategy.getReusableComponents(DelegatingAnalyzerWrapper.java:74)
-	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:169)
-	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:205)
-	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:373)
-	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:760)
-	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:548)
-	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:315)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:186)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:140)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-
-5233800 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution:University+of+South+Carolina.+Rare+Books+and+Special+Collections&rows=20} status=400 QTime=2 
-5285283 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=65 
-5287471 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution:(University+of+South+Carolina.+Rare+Books+and+Special+Collections)&rows=20} hits=1994 status=0 QTime=167 
-5307499 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=48 
-5329901 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=57 
-5331906 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:(University+of+South+Carolina.+Rare+Books+and+Special+Collections)&rows=20} hits=0 status=0 QTime=20 
-5351998 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:(University+of+South+Carolina.+Irvin+Department+of+Rare+Books+and+Special+Collections)&rows=20} hits=0 status=0 QTime=24 
-5357892 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:(University+of+South+Carolina.+Irvin+Department+of+Rare+Books+and+Special+Collections)&rows=20} hits=0 status=0 QTime=4 
-5385903 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=47 
-5388655 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution:(University+of+South+Carolina.+Irvin+Department+of+Rare+Books+and+Special+Collections)&rows=20} hits=1994 status=0 QTime=129 
-5462593 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=52 
-5465580 ERROR (qtp310175167-15) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse ':(': Encountered " ":" ": "" at line 1, column 0.
+2236877 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:&rows=20} status=400 QTime=2 
+2260828 ERROR (qtp310175167-16) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'language:': Encountered "<EOF>" at line 1, column 9.
 Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
     <BAREOPER> ...
     "(" ...
     "*" ...
@@ -890,8 +305,6 @@ Was expecting one of:
     <LPARAMS> ...
     "filter(" ...
     <NUMBER> ...
-    <TERM> ...
-    "*" ...
     
 	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:217)
 	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
@@ -921,11 +334,8 @@ Was expecting one of:
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse ':(': Encountered " ":" ": "" at line 1, column 0.
+Caused by: org.apache.solr.search.SyntaxError: Cannot parse 'language:': Encountered "<EOF>" at line 1, column 9.
 Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
     <BAREOPER> ...
     "(" ...
     "*" ...
@@ -939,19 +349,14 @@ Was expecting one of:
     <LPARAMS> ...
     "filter(" ...
     <NUMBER> ...
-    <TERM> ...
-    "*" ...
     
 	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:158)
 	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
 	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
 	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
 	... 27 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ":" ": "" at line 1, column 0.
+Caused by: org.apache.solr.parser.ParseException: Encountered "<EOF>" at line 1, column 9.
 Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
     <BAREOPER> ...
     "(" ...
     "*" ...
@@ -965,8 +370,6 @@ Was expecting one of:
     <LPARAMS> ...
     "filter(" ...
     <NUMBER> ...
-    <TERM> ...
-    "*" ...
     
 	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:665)
 	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:547)
@@ -976,331 +379,14 @@ Was expecting one of:
 	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
 	... 30 more
 
-5465580 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=:(&rows=20} status=400 QTime=3 
-5476212 ERROR (qtp310175167-14) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse ':(': Encountered " ":" ": "" at line 1, column 0.
+2260828 INFO  (qtp310175167-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:&rows=20} status=400 QTime=2 
+2267360 ERROR (qtp310175167-20) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'language:': Encountered "<EOF>" at line 1, column 9.
 Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
     <BAREOPER> ...
     "(" ...
     "*" ...
     <QUOTED> ...
     <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:217)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse ':(': Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:158)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
-	... 27 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ":" ": "" at line 1, column 0.
-Was expecting one of:
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    <TERM> ...
-    "*" ...
-    
-	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:665)
-	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:547)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:232)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	... 30 more
-
-5476212 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=:(&rows=20} status=400 QTime=2 
-5641084 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=58 
-5652573 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution:(University+of+South+Carolina.++South+Caroliniana+Library)&rows=20} hits=1994 status=0 QTime=88 
-5668233 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=79 
-5675791 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:(University+of+South+Carolina.++South+Caroliniana+Library)&rows=20} hits=0 status=0 QTime=18 
-5684740 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:(University+of+South+Carolina.++South+Caroliniana+Library)&rows=20} hits=0 status=0 QTime=6 
-5723553 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={indent=true&q=title:south&_=1462812706514&wt=json} hits=120 status=0 QTime=2 
-5728979 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=120 status=0 QTime=38 
-5735719 INFO  (qtp310175167-12) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:(University+of+South+Carolina.++South+Caroliniana+Library)&rows=20} hits=0 status=0 QTime=5 
-5746899 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:(University+of+South+Carolina.++South+Caroliniana+Library)&rows=20} hits=0 status=0 QTime=3 
-5780067 INFO  (qtp310175167-12) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={indent=true&q=title:south&_=1462812763000&wt=json&fq=contributing_institution:(University+of+South+Carolina.++South+Caroliniana+Librar)} hits=116 status=0 QTime=12 
-5802214 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={indent=true&q=title:south&_=1462812785185&wt=json&fq=contributing_institution:(University+of+South+Carolina.++South+Caroliniana+Library)} hits=116 status=0 QTime=3 
-5901156 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={indent=true&q=title:south&_=1462812884122&wt=json&fq=contributing_institution_facet:(University+of+South+Carolina.++South+Caroliniana+Library)} hits=0 status=0 QTime=1 
-16729734 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(54)%0aurl:(54)%0atitle:(54)%0atype_content:(54)%0atype_digital:(54)%0arole_ALL:(54)%0ageolocation_human:(54)%0aalternative_title:(54)%0adescription:(54)%0afull_text:(54)%0atype_physical:(54)%0ashelfmark:(54)%0asubject_heading:(54)%0aextent:(54)%0acopyright_holder:(54)%0ause_permissions:(54)%0alanguage:(54)%0anotes:(54)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=48 status=0 QTime=250 
-16766246 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:(University+of+South+Carolina.++South+Caroliniana+Library)&rows=20} hits=0 status=0 QTime=4 
-16908716 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=120 status=0 QTime=115 
-16911469 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:('University+of+South+Carolina.++South+Caroliniana+Library')&rows=20} hits=0 status=0 QTime=9 
-16958965 ERROR (qtp310175167-20) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: undefined field text
-	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1279)
-	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:429)
-	at org.apache.lucene.analysis.DelegatingAnalyzerWrapper$DelegatingReuseStrategy.getReusableComponents(DelegatingAnalyzerWrapper.java:74)
-	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:169)
-	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:205)
-	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:373)
-	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:760)
-	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:548)
-	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:315)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:186)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:140)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-
-16959001 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={indent=true&q=title:south&_=1462823941946&wt=json&fq=contributing_institution_facet:'University+of+South+Carolina.++South+Caroliniana+Library'} status=400 QTime=38 
-17269379 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=120 status=0 QTime=62 
-17653981 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={indent=true&q=title:south&_=1462824636954&wt=json&fq=contributing_institution_facet:"University+of+South+Carolina.++South+Caroliniana+Library"} hits=1 status=0 QTime=6 
-17742312 INFO  (qtp310175167-12) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=120 status=0 QTime=57 
-17754844 ERROR (qtp310175167-19) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: undefined field text
-	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1279)
-	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:429)
-	at org.apache.lucene.analysis.DelegatingAnalyzerWrapper$DelegatingReuseStrategy.getReusableComponents(DelegatingAnalyzerWrapper.java:74)
-	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:169)
-	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:205)
-	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:373)
-	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:760)
-	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:548)
-	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:315)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:186)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:140)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-
-17754844 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:\"University+of+South+Carolina.++South+Caroliniana+Library\")&rows=20} status=400 QTime=2 
-17768469 ERROR (qtp310175167-14) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: undefined field text
-	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1279)
-	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:429)
-	at org.apache.lucene.analysis.DelegatingAnalyzerWrapper$DelegatingReuseStrategy.getReusableComponents(DelegatingAnalyzerWrapper.java:74)
-	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:169)
-	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:205)
-	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:373)
-	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:760)
-	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:548)
-	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:315)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:186)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:140)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-
-17768508 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:\"University+of+South+Carolina.++South+Caroliniana+Library\")&rows=20} status=400 QTime=40 
-17795863 ERROR (qtp310175167-18) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: undefined field text
-	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1279)
-	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:429)
-	at org.apache.lucene.analysis.DelegatingAnalyzerWrapper$DelegatingReuseStrategy.getReusableComponents(DelegatingAnalyzerWrapper.java:74)
-	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:169)
-	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:205)
-	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:373)
-	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:760)
-	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:548)
-	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:315)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:186)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:140)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-
-17795889 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:\"University+of+South+Carolina.++South+Caroliniana+Library\")&rows=20} status=400 QTime=27 
-17798350 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=120 status=0 QTime=32 
-17803186 ERROR (qtp310175167-17) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'contributing_institution_facet:"University of South Carolina.  South Caroliniana Library")': Encountered " ")" ") "" at line 1, column 89.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
     <PREFIXTERM> ...
     <WILDTERM> ...
     <REGEXPTERM> ...
@@ -1338,21 +424,13 @@ Was expecting one of:
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse 'contributing_institution_facet:"University of South Carolina.  South Caroliniana Library")': Encountered " ")" ") "" at line 1, column 89.
+Caused by: org.apache.solr.search.SyntaxError: Cannot parse 'language:': Encountered "<EOF>" at line 1, column 9.
 Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
     <BAREOPER> ...
     "(" ...
     "*" ...
-    "^" ...
     <QUOTED> ...
     <TERM> ...
-    <FUZZY_SLOP> ...
     <PREFIXTERM> ...
     <WILDTERM> ...
     <REGEXPTERM> ...
@@ -1367,21 +445,13 @@ Was expecting one of:
 	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
 	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
 	... 27 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ")" ") "" at line 1, column 89.
+Caused by: org.apache.solr.parser.ParseException: Encountered "<EOF>" at line 1, column 9.
 Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
     <BAREOPER> ...
     "(" ...
     "*" ...
-    "^" ...
     <QUOTED> ...
     <TERM> ...
-    <FUZZY_SLOP> ...
     <PREFIXTERM> ...
     <WILDTERM> ...
     <REGEXPTERM> ...
@@ -1393,127 +463,75 @@ Was expecting one of:
     
 	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:665)
 	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:547)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:97)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:232)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
 	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
 	... 30 more
 
-17803186 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:"University+of+South+Carolina.++South+Caroliniana+Library")&rows=20} status=400 QTime=1 
-17818939 ERROR (qtp310175167-13) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'contributing_institution_facet:"University of South Carolina.  South Caroliniana Library")': Encountered " ")" ") "" at line 1, column 89.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:217)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse 'contributing_institution_facet:"University of South Carolina.  South Caroliniana Library")': Encountered " ")" ") "" at line 1, column 89.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:158)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:206)
-	... 27 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ")" ") "" at line 1, column 89.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:665)
-	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:547)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:97)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	... 30 more
-
-17818939 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:"University+of+South+Carolina.++South+Caroliniana+Library")&rows=20} status=400 QTime=1 
-17845115 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=120 status=0 QTime=66 
-17846967 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:"University+of+South+Carolina.++South+Caroliniana+Library"&rows=20} hits=1 status=0 QTime=4 
-17853622 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:*&rows=20} hits=120 status=0 QTime=45 
-17859865 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:*&fq=contributing_institution_facet:"University+of+South+Carolina.+Irvin+Department+of+Rare+Books+and+Special+Collections"&rows=20} hits=7 status=0 QTime=18 
-17868756 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:*&rows=20} hits=120 status=0 QTime=31 
-17875745 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=title:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:*&fq=archive_facet:"George+LaGrange+Cook+Photograph+Collection"&rows=20} hits=6 status=0 QTime=18 
-17891091 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=78 
+2267361 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:&rows=20} status=400 QTime=1 
+2270879 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=44 status=0 QTime=128 
+2272755 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&rows=20} hits=2 status=0 QTime=29 
+2318196 INFO  (qtp310175167-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=44 status=0 QTime=38 
+2320548 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&rows=20} hits=2 status=0 QTime=6 
+2544914 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&rows=20} hits=2 status=0 QTime=7 
+2553809 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=8 
+2628233 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=7 
+2632564 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=9 
+2638003 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=7 
+2739787 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=8 
+2752343 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=7 
+3404770 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=11 
+3554013 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=9 
+3562617 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=8 
+3601250 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=8 
+3661303 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=11 
+3754566 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=7 
+3772871 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=7 
+3805341 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=12 
+3891281 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=9 
+3911002 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=8 
+3936002 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=110 
+3965077 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=11 
+3998483 INFO  (qtp310175167-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=10 
+4049127 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&fq=language:""&rows=20} hits=2 status=0 QTime=9 
+4053265 INFO  (qtp310175167-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=44 status=0 QTime=63 
+4057023 INFO  (qtp310175167-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:"English"&rows=20} hits=42 status=0 QTime=81 
+4109481 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:"English"&rows=20} hits=42 status=0 QTime=51 
+4115293 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:"English"&fq=language:"English"&rows=20} hits=42 status=0 QTime=97 
+4118737 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=44 status=0 QTime=38 
+4123391 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&rows=20} hits=2 status=0 QTime=7 
+4187906 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:""&rows=20} hits=2 status=0 QTime=7 
+4196289 INFO  (qtp310175167-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=44 status=0 QTime=37 
+4199853 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=file_format:"image/jpeg"&rows=20} hits=42 status=0 QTime=133 
+4206987 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=file_format:"image/jpeg"&fq=language:""&rows=20} hits=1 status=0 QTime=9 
+4288378 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=file_format:"image/jpeg"&fq=language:""&rows=20} hits=1 status=0 QTime=5 
+4291772 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=file_format:"image/jpeg"&rows=20} hits=42 status=0 QTime=37 
+4295558 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=description:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=44 status=0 QTime=37 
+4317168 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=279 
+4326497 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=contributing_institution_facet:"University+of+South+Carolina.+Irvin+Department+of+Rare+Books+and+Special+Collections"&rows=20} hits=850 status=0 QTime=107 
+4372840 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=55 
+4382332 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=language:"French"&rows=20} hits=7 status=0 QTime=96 
+4393162 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=71 
+4399743 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=type_content:"Still+Image;+Text"&rows=20} hits=1 status=0 QTime=44 
+4403915 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=46 
+4416923 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=45 
+4863696 INFO  (qtp310175167-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=189 
+4866570 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=116 
+4916386 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=95 
+4918097 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=79 
+4994803 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=38 
+5014656 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=41 
+5036119 INFO  (qtp310175167-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=36 
+5037083 INFO  (qtp310175167-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=64 
+5037670 INFO  (qtp310175167-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=72 
+5080056 INFO  (qtp310175167-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=33 
+5123567 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=33 
+5190871 INFO  (qtp310175167-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=92 
+5223899 INFO  (qtp310175167-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=38 
+5249079 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=41 
+5254848 INFO  (qtp310175167-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=46 
+5273450 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=type_content:"Still+Image;+Text"&rows=20} hits=1 status=0 QTime=5 
+5278110 INFO  (qtp310175167-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&rows=20} hits=2465 status=0 QTime=34 
+5284183 INFO  (qtp310175167-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=type_content:"Still+Image"&rows=20} hits=522 status=0 QTime=106 
+5288221 INFO  (qtp310175167-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet=true&indent=true&start=0&q=contributing_institution:(south)%0aurl:(south)%0atitle:(south)%0atype_content:(south)%0atype_digital:(south)%0arole_ALL:(south)%0ageolocation_human:(south)%0aalternative_title:(south)%0adescription:(south)%0afull_text:(south)%0atype_physical:(south)%0ashelfmark:(south)%0asubject_heading:(south)%0aextent:(south)%0acopyright_holder:(south)%0ause_permissions:(south)%0alanguage:(south)%0anotes:(south)%0a&hl.simple.pre=<mark>&hl.simple.post=</mark>&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl.fl=*&wt=json&hl=true&fq=type_content:"Still+Image"&fq=language:"French"&rows=20} hits=7 status=0 QTime=24 

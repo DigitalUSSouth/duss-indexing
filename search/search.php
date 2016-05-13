@@ -135,7 +135,8 @@ $searchHighlighting = $solrResponse['highlighting'];
 //debug
 //var_dump($searchResponse);
 ?>
-<h3 class="text-right">Showing results <?php print ($searchResponse['start']+1)?> to <?php print ($searchResponse['numFound']<=$searchResponse['start']+$searchQuery['rows'] ) ?($searchResponse['numFound']):($searchResponse['start']+$searchQuery['rows'] );?> of <?php print ($searchResponse['numFound'])?></h3>
+
+<h3 class="text-right"><a href="#" id="top-of-results" class="sr-only"></a>Showing results <?php print ($searchResponse['start']+1)?> to <?php print ($searchResponse['numFound']<=$searchResponse['start']+$searchQuery['rows'] ) ?($searchResponse['numFound']):($searchResponse['start']+$searchQuery['rows'] );?> of <?php print ($searchResponse['numFound'])?></h3>
 <p class="text-right">
 <?php if ($searchResponse['start']>0):?>
 	<a href="<?php 

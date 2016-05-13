@@ -6,6 +6,7 @@ $searchResults = $searchResponse['docs'];
 ?>
 
 <div class="row">
+
 	<div class="col-xs-3">
 		<div class="col-xs-12"><h4>Facets (under development):</h4>
 			<div class="panel-group" id="accordion">
@@ -18,15 +19,24 @@ $searchResults = $searchResponse['docs'];
     </div>
     <div id="collapse1" class="panel-collapse collapse in">
       <div class="panel-body">
-      	<?php 
-      	$facets = $searchFacetCounts['facet_fields']['archive_facet'];
+      	<?php
+        $currentFacet = 'archive_facet';
+      	$facets = $searchFacetCounts['facet_fields'][$currentFacet];
       	for($i=0; $i<sizeof($facets); $i++):
       		if ($facets[$i+1]==0){
       			$i++;
       			continue;
       	}
+      	$breadcrumbSet = false;
+      	if (in_array($currentFacet, $searchQuery['fq_field'])):
+      	  if (in_array('"'.$facets[$i].'"',$searchQuery['fq'])):
+      	    $breadcrumbSet = true;
       	?>
-      	<a href="<?php print buildFacetFilterQuery('archive_facet', $facets[$i]);?>">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
+      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>">(x)</a>
+      	<?php 
+      	  endif;
+      	endif;?>
+      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($breadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($breadcrumbSet) ? '</em></strong>' : '';?></a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -40,17 +50,24 @@ $searchResults = $searchResponse['docs'];
     </div>
     <div id="collapse2" class="panel-collapse collapse in">
       <div class="panel-body">
-      <?php 
-      	$facets = $searchFacetCounts['facet_fields']['contributing_institution_facet'];
-      	//debug:
-      	//print_r($facets);
+      <?php
+        $currentFacet = 'contributing_institution_facet';
+      	$facets = $searchFacetCounts['facet_fields'][$currentFacet];
       	for($i=0; $i<sizeof($facets); $i++):
       		if ($facets[$i+1]==0){
       			$i++;
       			continue;
       	}
+      	$breadcrumbSet = false;
+      	if (in_array($currentFacet, $searchQuery['fq_field'])):
+      	  if (in_array('"'.$facets[$i].'"',$searchQuery['fq'])):
+      	    $breadcrumbSet = true;
       	?>
-      	<a href="<?php print buildFacetFilterQuery('contributing_institution_facet', $facets[$i]);?>">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
+      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>">(x)</a>
+      	<?php 
+      	  endif;
+      	endif;?>
+      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($breadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($breadcrumbSet) ? '</em></strong>' : '';?></a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -64,15 +81,24 @@ $searchResults = $searchResponse['docs'];
     </div>
     <div id="collapse3" class="panel-collapse collapse in">
       <div class="panel-body">
-      <?php 
-      	$facets = $searchFacetCounts['facet_fields']['type_content'];
+      <?php
+        $currentFacet = 'type_content';
+      	$facets = $searchFacetCounts['facet_fields'][$currentFacet];
       	for($i=0; $i<sizeof($facets); $i++):
       		if ($facets[$i+1]==0){
       			$i++;
       			continue;
       	}
+      	$breadcrumbSet = false;
+      	if (in_array($currentFacet, $searchQuery['fq_field'])):
+      	  if (in_array('"'.$facets[$i].'"',$searchQuery['fq'])):
+      	    $breadcrumbSet = true;
       	?>
-      	<a href="<?php print buildFacetFilterQuery('type_content', $facets[$i]);?>">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
+      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>">(x)</a>
+      	<?php 
+      	  endif;
+      	endif;?>
+      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($breadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($breadcrumbSet) ? '</em></strong>' : '';?></a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -98,14 +124,23 @@ $searchResults = $searchResponse['docs'];
     <div id="collapse5" class="panel-collapse collapse in">
       <div class="panel-body">
       <?php 
-      	$facets = $searchFacetCounts['facet_fields']['file_format'];
+        $currentFacet = 'file_format';
+      	$facets = $searchFacetCounts['facet_fields'][$currentFacet];
       	for($i=0; $i<sizeof($facets); $i++):
       		if ($facets[$i+1]==0){
       			$i++;
       			continue;
       	}
+      	$breadcrumbSet = false;
+      	if (in_array($currentFacet, $searchQuery['fq_field'])):
+      	  if (in_array('"'.$facets[$i].'"',$searchQuery['fq'])):
+      	    $breadcrumbSet = true;
       	?>
-      	<a href="<?php print buildFacetFilterQuery('file_format', $facets[$i]);?>">-<?php print ($facets[$i]=="")? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
+      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>">(x)</a>
+      	<?php 
+      	  endif;
+      	endif;?>
+      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($breadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($breadcrumbSet) ? '</em></strong>' : '';?></a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -119,15 +154,24 @@ $searchResults = $searchResponse['docs'];
     </div>
     <div id="collapse6" class="panel-collapse collapse in">
       <div class="panel-body">
-      <?php 
-      	$facets = $searchFacetCounts['facet_fields']['language'];
+      <?php
+        $currentFacet = 'language';
+      	$facets = $searchFacetCounts['facet_fields'][$currentFacet];
       	for($i=0; $i<sizeof($facets); $i++):
       		if ($facets[$i+1]==0){
       			$i++;
       			continue;
       	}
+      	$breadcrumbSet = false;
+      	if (in_array($currentFacet, $searchQuery['fq_field'])):
+      	  if (in_array('"'.$facets[$i].'"',$searchQuery['fq'])):
+      	    $breadcrumbSet = true;
       	?>
-      	<a href="<?php print buildFacetFilterQuery('language', $facets[$i]);?>">-<?php print ($facets[$i]=='')? "Other":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)</a><br>
+      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>">(x)</a>
+      	<?php 
+      	  endif;
+      	endif;?>
+      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($breadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($breadcrumbSet) ? '</em></strong>' : '';?></a><br>
       	<?php endfor;?>
       </div>
     </div>
@@ -178,6 +222,7 @@ foreach ($searchResults as $result){
 	$displaySearchResults[] = $displayResult;
 }
 ?>
+<a data-target="#resultsCarousel" data-slide-to="0" class="sr-only" id="back-results-link"></a>
 <div id="resultsCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 
 <div class="carousel-inner" role="listbox">
@@ -224,6 +269,7 @@ foreach($displaySearchResults as $result):?>
 </div>
 <?php endforeach;?>
 </div>
+
 <?php 
 foreach ($searchResults as $result):
 ?>
@@ -231,7 +277,7 @@ foreach ($searchResults as $result):
 <div class="item">
 <div class="col-xs-12">
 	<div class="col-xs-12">
-		<a data-target="#resultsCarousel" data-slide-to="0" class="btn btn-default">&lt;-- Back to search results</a>
+		<a data-target="#resultsCarousel" data-slide-to="0" class="btn btn-default btn-results-back">&lt;-- Back to search results</a>
 	</div>
 	<div class="col-xs-12">
 		<h3><a target="_blank" href="<?php print $result['url'];?>"><?php print $result['title']?></a></h3>

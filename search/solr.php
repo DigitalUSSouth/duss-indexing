@@ -380,5 +380,33 @@ function buildQueryForAllFields($query){
 
 function buildFacetFilterQuery($facet,$query){
 	$newQuery = http_build_query($_GET);
-	return $_SERVER['PHP_SELF'].'?'.$newQuery.'&fq[]='.urlencode(($query=='')? '*':('"'.$query).'"').'&fq_field[]='.$facet;
+	return $_SERVER['PHP_SELF'].'?'.$newQuery.'&fq[]='.urlencode(($query=='')? '""':('"'.$query).'"').'&fq_field[]='.$facet;
+}
+
+function buildFacetBreadcrumbQuery($facet, $query){
+	$newGet = array();
+	foreach ($_GET as $key => $value){
+		$newGet[$key] = $value;
+	}
+	$new_fq = array();
+	$new_fq_field = array();
+	$counter=0;
+	//debug
+	//print_r($newGet);
+	foreach ($newGet['fq_field'] as $fq_field){
+		//debug
+		//print $fq_field.'__'.$newGet['fq'][$counter].'nn'.$query.'--'.'<br>';
+		if (!($fq_field==$facet && $newGet['fq'][$counter]=='"'.$query.'"')){
+			$new_fq[] = $newGet['fq'][$counter];
+			$new_fq_field[] = $fq_field;
+		}
+		$counter++;
+	}
+	
+	$newGet['fq_field'] = $new_fq_field;
+	$newGet['fq'] = $new_fq;
+	//debug
+	//print_r($newGet);
+	$newQuery = http_build_query($newGet);
+	return $_SERVER['PHP_SELF'].'?'.$newQuery;
 }

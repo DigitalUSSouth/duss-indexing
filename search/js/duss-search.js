@@ -79,5 +79,21 @@ $(document).ready(function () {
 $(".btn-results-more").click(function (e){
 	//alert (window.location +'&view');
 	window.history.pushState("view", "View Result", (window.location +'&view'));
+	$('html, body').animate({
+	    scrollTop: $("#top-of-results").offset().top
+	}, 1000);
 });
+
+$(".btn-results-back").click(function (e){
+	//alert (window.location +'&view');
+	window.history.back();
+});
+
+
+$(window).bind('popstate',  
+	    function(event) {
+	        $("#back-results-link")[0].click();
+	    });
+
+
 
