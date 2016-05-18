@@ -136,32 +136,274 @@ function importTabFileGCook(){
 	}
 }
 
+//Pope Brown Collection of Natural History
+function importTabFilePBrown(){
+	//global $mysqli;
+	$file = NULL;
+
+	try {
+		$file = new SplFileObject("uploads/upload-p-brown.txt");
+	}
+	catch (Exception $error){
+		echo '<div class="jumbotron"><h1 class="text-danger">Unable to open uploaded file. Please try again.</h1><p>'.$error->getMessage().'</p></div>';
+		return;
+	}
+
+	$counter=0;
+
+	while ($line = $file->fgets()) {
+		if ($counter++ == 0) continue; //discard first line because it only contains headers
+
+		$fields = explode("\t",$line);
+
+		$document = array(
+				'title' => $fields[0],
+				//'role_creator' => $fields[1],
+				//'date' => parse_date($fields[2]),
+				//'shelfmark' => $fields[3],
+				'shelfmark' => $fields[4],
+				//'description' => $fields[5],
+				'language' => $fields[6],
+				'archive' => $fields[7],
+				//'contributing_institution' => $fields[8],
+				'contributing_institution' => $fields[9],
+				//'type_content' => $fields[10],
+				'type_content' => $fields[11],
+				'file_format' => $fields[12],
+				'type_digital' => $fields[13],
+				'description' => $fields[14],
+				//'geolocation_human' => $fields[15],
+				//'notes' => $fields[16],
+				//'date_digital' => parse_date($fields[17]),
+				//'none' => $fields[18],
+				//'none' => $fields[19],
+				//'none' => $fields[20],
+				'geolocation_human' => $fields[21],
+				//'id' => $fields[22],
+				//'id' => $fields[23],
+				//'id' => $fields[24],
+				//'id' => $fields[25],
+				'id' => $fields[26],
+				'url' => $fields[26]
+		);
+
+		indexDocument($document);
+
+		//$date_parsed = parse_date($date);
+		//$date_digital_parsed = parse_date($date_digital);
+	}
+}
+
+//SIMMS
+function importTabFileSimms(){
+	
+	print 'importTabFileSimms()<br>';
+	//global $mysqli;
+	$file = NULL;
+
+	try {
+		$file = new SplFileObject("uploads/upload-simms.txt");
+	}
+	catch (Exception $error){
+		echo '<div class="jumbotron"><h1 class="text-danger">Unable to open uploaded file. Please try again.</h1><p>'.$error->getMessage().'</p></div>';
+		return;
+	}
+
+	$counter=0;
+
+	while ($line = $file->fgets()) {
+		if ($counter++ == 0) continue; //discard first line because it only contains headers
+
+		$fields = explode("\t",$line);
+
+		$document = array(
+				'title' => $fields[0],
+				//'role_creator' => $fields[1],
+				//'date' => parse_date($fields[2]),
+				//'shelfmark' => $fields[3],
+				//'shelfmark' => $fields[4],
+				'contributing_institution' => $fields[5],
+				//'language' => $fields[6],
+				//'archive' => $fields[7],
+				//'contributing_institution' => $fields[8],
+				//'contributing_institution' => $fields[9],
+				//'type_content' => $fields[10],
+				//'type_content' => $fields[11],
+				//'file_format' => $fields[12],
+				//'type_digital' => $fields[13],
+				//'description' => $fields[14],
+				//'geolocation_human' => $fields[15],
+				//'notes' => $fields[16],
+				//'date_digital' => parse_date($fields[17]),
+				//'none' => $fields[18],
+				//'none' => $fields[19],
+				//'none' => $fields[20],
+				//'geolocation_human' => $fields[21],
+				//'id' => $fields[22],
+				'geolocation_human' => $fields[23],
+				//'id' => $fields[24],
+				//'id' => $fields[25],
+				'description' => $fields[26],
+				//'url' => $fields[27],
+				'archive' => $fields[28],
+				'url' => $fields[29],
+				//'url' => $fields[30],
+				//'role_creator' => $fields[311],
+				//'date' => parse_date($fields[32]),
+				//'shelfmark' => $fields[33],
+				//'shelfmark' => $fields[34],
+				//'description' => $fields[35],
+				'type_content' => $fields[36],
+				'file_format' => $fields[37],
+				'type_digital' => $fields[38],
+				//'contributing_institution' => $fields[39],
+				//'type_content' => $fields[40],
+				'notes' => $fields[41],
+				'full_text' => $fields[42],
+				//'type_digital' => $fields[43],
+				//'description' => $fields[44],
+				//'geolocation_human' => $fields[45],
+				//'notes' => $fields[46],
+				'url' => $fields[47],
+				'id' => $fields[47]
+				//'none' => $fields[49],
+				//'none' => $fields[50],
+		);
+
+		indexDocument($document);
+
+		//$date_parsed = parse_date($date);
+		//$date_digital_parsed = parse_date($date_digital);
+	}
+}
+
+
+//Southworth
+function importTabFileSouthworth(){
+	//global $mysqli;
+	$file = NULL;
+
+	try {
+		$file = new SplFileObject("uploads/upload-southworth.txt");
+	}
+	catch (Exception $error){
+		echo '<div class="jumbotron"><h1 class="text-danger">Unable to open uploaded file. Please try again.</h1><p>'.$error->getMessage().'</p></div>';
+		return;
+	}
+
+	$counter=0;
+
+	while ($line = $file->fgets()) {
+		if ($counter++ == 0) continue; //discard first line because it only contains headers
+
+		$fields = explode("\t",$line);
+
+		$document = array(
+				'title' => $fields[0],
+				'alternative_title' => $fields[1],
+				//'date' => parse_date($fields[2]),
+				//'shelfmark' => $fields[3],
+				//'shelfmark' => $fields[4],
+				//'contributing_institution' => $fields[5],
+				'geolocation_human' => $fields[6],
+				//'archive' => $fields[7],
+				'shelfmark' => $fields[8],
+				//'' => $fields[9],
+				'description' => $fields[10],
+				//'type_content' => $fields[11],
+				'archive' => $fields[12],
+				//'type_digital' => $fields[13],
+				'contributing_institution' => $fields[14],
+				//'geolocation_human' => $fields[15],
+				'language' => $fields[16],
+				//'date_digital' => parse_date($fields[17]),
+				//'none' => $fields[18],
+				'type_content' => $fields[19],
+				'file_format' => $fields[20],
+				'type_digital' => $fields[21],
+				//'id' => $fields[22],
+				//'geolocation_human' => $fields[23],
+				'notes' => $fields[24],
+				'full_text' => $fields[25],
+				//'description' => $fields[26],
+				//'url' => $fields[27],
+				//'archive' => $fields[28],
+				'url' => $fields[29],
+				'id' => $fields[29],
+				//'role_creator' => $fields[311],
+				//'date' => parse_date($fields[32]),
+				//'shelfmark' => $fields[33],
+				//'shelfmark' => $fields[34],
+				//'description' => $fields[35],
+				//'type_content' => $fields[36],
+				//'file_format' => $fields[37],
+				//'type_digital' => $fields[38],
+				//'contributing_institution' => $fields[39],
+				//'type_content' => $fields[40],
+				//'notes' => $fields[41],
+				//'full_text' => $fields[42],
+				//'type_digital' => $fields[43],
+				//'description' => $fields[44],
+				//'geolocation_human' => $fields[45],
+				//'notes' => $fields[46],
+				//'url' => $fields[47],
+				//'id' => $fields[47]
+				//'none' => $fields[49],
+				//'none' => $fields[50],
+		);
+
+		indexDocument($document);
+
+		//$date_parsed = parse_date($date);
+		//$date_digital_parsed = parse_date($date_digital);
+	}
+}
+
 function indexDocument($doc){
-	
-	
-	$url = 'http://localhost:8983/solr/duss-indexing/update';
-	//$data = json_encode($doc);
+	//print 'indexDocument()<br>';
 	$data = array(
 			'add' => array (
 					'doc' => $doc
-			),
-			'commit' => new stdClass()
+			)
 	);
 	$data_string = json_encode($data);                                                                                   
-                                                                                                                     
-	$ch = curl_init($url);                                                                      
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
-    	'Content-Type: application/json',                                                                                
-    	'Content-Length: ' . strlen($data_string))                                                                       
-	);                                                                                                                   
-                                                                                                                     
-	$result = curl_exec($ch);
-	print_r($data_string);
-	print_r($result);	
+
+	print 'curl_exec() done <br>';
+	print $doc['title'];	
+	postJsonDataToSolr($data_string, 'update');
+}
+
+function commitIndex(){
+	$data = array(
+			'commit' => new stdClass()
+	);
+	$data_string = json_encode($data);
+	postJsonDataToSolr($data_string, 'update');
+}
+
+
+//$data = json formatted string
+//$action = solr handler eg. 'update', 'select'
+function postJsonDataToSolr($data, $action){
+	$url = $solrUrl.$action;
+	//validate json data
+	if (json_decode($data)==NULL){
+		echo '<div class="col-xs-12"><h1 class="text-danger">postJsonData() invalid Json</h1><p><pre>'.json_last_error().'<br>'.json_last_error_msg().'</pre></p></div>';
+		return;
+	}
 	
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			'Content-Type: application/json',
+			'Content-Length: ' . strlen($data))
+			);
+	
+	$result = curl_exec($ch);
+	//print_r($data);
+	print_r($result);
 }
 
 /* function parse_date($date_string);
@@ -188,6 +430,7 @@ function indexDocument($doc){
  * 
  * */
 function parse_date($date_string){
+	$date_string = trim($date_string);
 	$parts = explode(' - ',$date_string);
 	$parsed_date = array(
 			'year_begin' => 0,
@@ -195,7 +438,8 @@ function parse_date($date_string){
 			'day_begin' => 0,
 			'year_end' => 0,
 			'month_end' => 0,
-			'day_end' => 0
+			'day_end' => 0,
+			'years' => array()
 	);
 	
 	if (sizeof($parts) == 1){//single date
@@ -274,14 +518,15 @@ function getResultsFromSolr($query){
 
 	$jsonResponse = file_get_contents($queryString);
 	
-	print $queryString;
+	print $queryString.'<br>';
 
 	if ($jsonResponse === false) return false;
 
 	$responseArray = json_decode($jsonResponse,true);
 
 	$searchResults = $responseArray/*["response"]*/;
-
+	
+	print_r($searchResults['response']['numFound']);
 
 	return $searchResults;
 

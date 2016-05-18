@@ -11,8 +11,12 @@ require_once 'solr.php';
 <div class="container-fluid">
 <pre>
 <?php 
-importTabFileGCook();
-importTabFileSCCivilWar();
+set_time_limit(600);
+//importTabFileGCook();
+//importTabFileSCCivilWar();
+//importTabFilePBrown();
+importTabFileSimms();
+//importTabFileSouthworth();
 ?>
 </pre>
 </div>
