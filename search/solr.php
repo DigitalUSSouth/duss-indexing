@@ -103,12 +103,28 @@ function importTabFileGCook(){
 
 		$fields = explode("\t",$line);
 		
+		$parsedDate = parse_date($fields[2]);
+		$parsedDateDigital = parse_date($fields[17]);
+		$dateDigital = '';
+		if ($parsedDateDigital['year_begin'] != '0'){
+			$dateDigital = $parsedDateDigital['year_begin'];
+			if ($parsedDateDigital['month_begin'] != '0'){
+				$dateDigital = $dateDigital.'-'.$parsedDateDigital['month_begin'];
+				if ($parsedDateDigital['day_begin'] != '0'){
+					$dateDigital = $dateDigital.'-'.$parsedDateDigital['day_begin'];
+						
+				}
+			}
+		}
+		
+		$subjectHeadings = parseSubjectHeadings($fields[4]);
+		
 		$document = array(
 		'title' => $fields[0],
 		'role_creator' => $fields[1],
 		//'date' => parse_date($fields[2]),
 		'shelfmark' => $fields[3],
-		//'subjects' => $fields[4],
+		'subject_heading' => $subjectHeadings,
 		'description' => $fields[5],
 		'archive' => $fields[6],
 		//'none' => $fields[7],
@@ -121,12 +137,27 @@ function importTabFileGCook(){
 		'language' => $fields[14],
 		'geolocation_human' => $fields[15],
 		'notes' => $fields[16],
-		//'date_digital' => parse_date($fields[17]),
+		//'date_digital' => $fields[17],
 		//'none' => $fields[18],
 		//'none' => $fields[19],
 		//'none' => $fields[20],
 		'url' => $fields[21],
-		'id' => $fields[21]
+		'id' => $fields[21],
+		
+		//date stuff:		
+		'year_begin' => $parsedDate['year_begin'],
+		'month_begin' => $parsedDate['month_begin'],
+		'day_begin' => $parsedDate['day_begin'],
+		'year_end' => $parsedDate['year_end'],
+		'month_end' => $parsedDate['month_end'],
+		'day_end' => $parsedDate['day_end'],
+		'years' => $parsedDate['years'],
+		'date_digital' => $dateDigital,
+		//copyright stuff:
+		'copyright_holder' => 'Copyright 2010, The University of South Carolina. All Rights Reserved.',
+		'use_permissions' => 'For more information, contact South Caroliniana Library, University of South Carolina, Columbia, SC 29327'
+		
+				
 		);
 		
 		indexDocument($document);
@@ -156,35 +187,63 @@ function importTabFilePBrown(){
 
 		$fields = explode("\t",$line);
 
+		$alternativeTitles = array (
+				$fields[1],
+				$fields[2]
+		);
+		
+		//$parsed_date = parse_date('1765 - 1775');
+		$subjectHeadings = parseSubjectHeadings($fields[5]);
+		
+		$parsedDate = parse_date('1765 - 1775');
+		
+		//the following lines combine several fields into the notes field for solr
+		$notes = '';//$fields[14]; //digitization specifications
+		$notes = $notes.(trim($fields[17])!='')?'Scanner technician: '.$fields[17].' ':'' ;
+		$notes = $notes.(trim($fields[18])!='')?'Metadata cataloguer: '.$fields[18].' ':'' ;
+		$notes = $notes.(trim($fields[19])!='')?'Collection administrator: '.$fields[19].' ':'' ;
+		$notes = $notes.(trim($fields[20])!='')?'Collection maintenance: '.$fields[20].' ':'' ;
+		
 		$document = array(
 				'title' => $fields[0],
 				//'role_creator' => $fields[1],
 				//'date' => parse_date($fields[2]),
 				//'shelfmark' => $fields[3],
 				'shelfmark' => $fields[4],
-				//'description' => $fields[5],
+				'subject_heading' => $subjectHeadings,
 				'language' => $fields[6],
 				'archive' => $fields[7],
 				//'contributing_institution' => $fields[8],
 				'contributing_institution' => $fields[9],
-				//'type_content' => $fields[10],
+				'use_permissions' => trim($fields[10]),
 				'type_content' => $fields[11],
 				'file_format' => $fields[12],
 				'type_digital' => $fields[13],
 				'description' => $fields[14],
-				//'geolocation_human' => $fields[15],
+				//date stuff:
+				'year_begin' => $parsedDate['year_begin'],
+				'month_begin' => $parsedDate['month_begin'],
+				'day_begin' => $parsedDate['day_begin'],
+				'year_end' => $parsedDate['year_end'],
+				'month_end' => $parsedDate['month_end'],
+				'day_end' => $parsedDate['day_end'],
+				'years' => $parsedDate['years'],
+				
+				
+				'date_digital' => $fields[15],
 				//'notes' => $fields[16],
 				//'date_digital' => parse_date($fields[17]),
 				//'none' => $fields[18],
 				//'none' => $fields[19],
 				//'none' => $fields[20],
-				'geolocation_human' => $fields[21],
+				'geolocation_human' => $fields[21].(trim($fields[22])!='')?' - '.$fields[22] :'' , //combine sc county and sc region
 				//'id' => $fields[22],
 				//'id' => $fields[23],
 				//'id' => $fields[24],
 				//'id' => $fields[25],
 				'id' => $fields[26],
-				'url' => $fields[26]
+				'url' => $fields[26],
+				'notes' => $notes
 		);
 
 		indexDocument($document);
@@ -359,6 +418,45 @@ function importTabFileSouthworth(){
 	}
 }
 
+
+
+
+
+/* function parseSubjectHeadings($inputString)
+ *
+ *returns array of subject headings
+ *
+ * @param {string} $inputString:
+ *   colon ';' separated list of subject headings
+ * @return {array}: array of strings, each containing a subject heading
+ *
+ */
+function parseSubjectHeadings($inputString){
+	$subjectHeadings = explode(';',trim($inputString));
+	foreach ($subjectHeadings as &$heading){
+		$heading = trim($heading);
+	}
+	return array_filter($subjectHeadings);
+}
+
+
+/* function indexDocument($doc){
+ * indexes a document into solr
+ * does not commit
+ *
+ * @param {array} $doc:
+ *   associative array in the following format:
+ *   $doc = array(
+ *     'field1' => 'value',
+ *     'field2' => array('value1','value2'),
+ *     'field3' => 1234,
+ *     etc
+ *   );
+ *   the keys correspond to a field in the solr schema;
+ *   values are values to be indexed
+ * @return {int}: result value of postJsonDataToSolr();
+ *
+ */
 function indexDocument($doc){
 	//print 'indexDocument()<br>';
 	$data = array(
@@ -369,27 +467,62 @@ function indexDocument($doc){
 	$data_string = json_encode($data);                                                                                   
 
 	print 'curl_exec() done <br>';
-	print $doc['title'];	
-	postJsonDataToSolr($data_string, 'update');
+	print_r($doc);
+	print '<br>';
+	return postJsonDataToSolr($data_string, 'update');
 }
 
+/* function commitIndex()
+ * commits all pending changes in solr
+ * @param {none}
+ * @return {int}: result value of postJsonDataToSolr();
+ */
 function commitIndex(){
 	$data = array(
 			'commit' => new stdClass()
 	);
 	$data_string = json_encode($data);
-	postJsonDataToSolr($data_string, 'update');
+	return postJsonDataToSolr($data_string, 'update');
 }
 
+/* function delete_all()
+ * deletes all documents in solr
+ * @param {none}
+ * @return {int}: result value of postJsonDataToSolr();
+ */
+function delete_all(){
+	print 'delete_all();<br>';
+	$data = array(
+			'delete' => array(
+						'query' => '*:*'
+					),
+			'commit' => new stdClass()
+	);
+	$data_string = json_encode($data);
+	print $data_string;
+	return postJsonDataToSolr($data_string, 'update');
+}
 
-//$data = json formatted string
-//$action = solr handler eg. 'update', 'select'
+/* function postJsonDataToSolr($data, $action)
+ * posts a json-formatted string to solr
+ *
+ * @param {string} $data:
+ *   json-formatted string, may containg any solr commants, or documents
+ * @param {string} $action:
+ *   solr handler eg. 'update', 'select'
+ * @return {bool}:
+ *   returns TRUE is sucessful, otherwise FALSE
+ *   sets appropriate global $lastError message
+ */
 function postJsonDataToSolr($data, $action){
+	global $solrUrl;
 	$url = $solrUrl.$action;
+	print $url;
 	//validate json data
 	if (json_decode($data)==NULL){
 		echo '<div class="col-xs-12"><h1 class="text-danger">postJsonData() invalid Json</h1><p><pre>'.json_last_error().'<br>'.json_last_error_msg().'</pre></p></div>';
-		return;
+		$lastError = 'postJsonDataToSolr(): Invalid Json: '.json_last_error().' - '.json_last_error_msg();
+		return false;
 	}
 	
 	$ch = curl_init($url);
@@ -404,6 +537,7 @@ function postJsonDataToSolr($data, $action){
 	$result = curl_exec($ch);
 	//print_r($data);
 	print_r($result);
+	return true;
 }
 
 /* function parse_date($date_string);
@@ -431,6 +565,7 @@ function postJsonDataToSolr($data, $action){
  * */
 function parse_date($date_string){
 	$date_string = trim($date_string);
+	//print $date_string.'<br>';
 	$parts = explode(' - ',$date_string);
 	$parsed_date = array(
 			'year_begin' => 0,
@@ -443,8 +578,10 @@ function parse_date($date_string){
 	);
 	
 	if (sizeof($parts) == 1){//single date
+		//print 'single_date<br>';
 		$date = explode('-',$parts[0]);
 		if (sizeof($date)==3){//yyyy-mm-dd
+			//print 'single_date3<br>';
 			$parsed_date['year_begin'] = $date[0];
 			$parsed_date['month_begin'] = $date[1];
 			$parsed_date['day_begin'] = $date[2];
@@ -453,19 +590,23 @@ function parse_date($date_string){
 			$parsed_date['day_end'] = $date[2];
 		}
 		else if (sizeof($date)==2){//yyyy-mm
+			//print 'single_date2<br>';
 			$parsed_date['year_begin'] = $date[0];
 			$parsed_date['month_begin'] = $date[1];
 			$parsed_date['year_end'] = $date[0];
 			$parsed_date['month_end'] = $date[1];
 		}
 		else {//yyy
+			//print 'single_date1<br>';
 			$parsed_date['year_begin'] = $parts[0];
 			$parsed_date['year_end'] = $parts[0];
 
 		}
 	}
 	else if (sizeof($parts) == 2){//date range
+		//print_r($parts);
 		$date = explode('-',$parts[0]);
+		//print_r($date);
 		if (sizeof($date)==3){//yyyy-mm-dd
 			$parsed_date['year_begin'] = $date[0];
 			$parsed_date['month_begin'] = $date[1];
@@ -476,10 +617,11 @@ function parse_date($date_string){
 			$parsed_date['month_begin'] = $date[1];
 		}
 		else {//yyy
-			$parsed_date['year_begin'] = $parts[0];		
+			$parsed_date['year_begin'] = $date[0];		
 		}
 		
 		$date = explode('-',$parts[1]);
+		//print_r($date);
 		if (sizeof($date)==3){//yyyy-mm-dd
 			$parsed_date['year_end'] = $date[0];
 			$parsed_date['month_end'] = $date[1];
@@ -490,13 +632,26 @@ function parse_date($date_string){
 			$parsed_date['month_end'] = $date[1];
 		}
 		else {//yyy
-			$parsed_date['year_end'] = $parts[0];
+			$parsed_date['year_end'] = $date[0];
 		
 		}
 	}
 	else {//error
 		
 	}
+	if ($parsed_date['year_begin']<=$parsed_date['year_end']){
+		$startYear = $parsed_date['year_begin'];
+		$endYear = $parsed_date['year_end'];
+	}
+	else{
+		$startYear = $parsed_date['year_end'];
+		$endYear = $parsed_date['year_begin'];
+	}
+	while ($startYear<=$endYear){
+		$parsed_date['years'][] = $startYear++;
+	}
+	
+	//print_r($parsed_date);
 	return $parsed_date;
 }
 
@@ -538,7 +693,6 @@ function getResultsFromSolr($query){
  * builds url query for json results from solr based on parameters
  * @param {array} $query: associative array of search parameters
  * @return {string} url-formatted solr query for json-formatted results
-
  */
 function buildSolrQuery($query){
 
@@ -593,7 +747,12 @@ Date (slider to select range)
 	return $queryString;
 }
 
-
+/* function buildQueryForAllFields($query)
+ * builds a solr query when "search all fields" is selected
+ * @param {string} $query:
+ *   query value
+ * @return {string}: a solr query that will search all fields for $query
+ */
 function buildQueryForAllFields($query){
 	$queryString = '';
 	$searchFields = array(
@@ -622,12 +781,30 @@ function buildQueryForAllFields($query){
 	return $queryString;
 }
 
-
+/* function buildFacetFilterQuery($facet,$query)
+ * builds a facet filter query based of the current search terms
+ * and the corresponding facet and query
+ *
+ * @param {string} $facet:
+ *   facet to narrow down by
+ * @param {string} $query:
+ *   value to filter by
+ * @return {string}: href-ready value for a filter query link
+ */
 function buildFacetFilterQuery($facet,$query){
 	$newQuery = http_build_query($_GET);
 	return $_SERVER['PHP_SELF'].'?'.$newQuery.'&fq[]='.urlencode(($query=='')? '""':('"'.$query).'"').'&fq_field[]='.$facet;
 }
 
+/* function buildFacetBreadcrumbQuery($facet, $query){
+ * builds a breadcrumb href to undo a given facet filter query
+ *
+ * @param {string} $facet:
+ *   facet to narrow down by
+ * @param {string} $query:
+ *   value to filter by
+ * @return {string}: href-ready value for a breadbrumb filter query link
+ */
 function buildFacetBreadcrumbQuery($facet, $query){
 	$newGet = array();
 	foreach ($_GET as $key => $value){

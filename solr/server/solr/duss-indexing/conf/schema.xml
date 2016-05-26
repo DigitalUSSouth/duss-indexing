@@ -150,6 +150,7 @@
    <dynamicField name="role_*" type="string" indexed="true" stored="true" multiValued="true"/>
    <!-- The following field is used for querying all role fields -->
    <field name="role_ALL"  type="string" indexed="true"  stored="true" multiValued="true"/>
+   <copyField source="role_*"    dest="role_ALL"/>
    
    
    <!-- Date of original artifact 
@@ -168,12 +169,10 @@
    <!-- years field - used for date range searching 
    Includes all the years >= year_begin && <= year_end
    -->
-   <field name="years" type="tint" indexed="true" stored="false" multiValued="true"/>
+   <field name="years" type="int" indexed="true" stored="false" multiValued="true"/>
 
    <!--Date of digital surrogate -->
-   <field name="year_digital" type="int" indexed="true" stored="true" multiValued="false"/>
-   <field name="month_digital" type="int" indexed="true" stored="true" multiValued="false"/>
-   <field name="day_digital" type="int" indexed="true" stored="true" multiValued="false"/>
+   <field name="date_digital" type="text_general" indexed="true" stored="true" multiValued="false"/>
    
    <!-- Geographic Location - Human -->
    <field name="geolocation_human" type="text_general" indexed="true" stored="true" required="true" multiValued="true" />
@@ -201,10 +200,10 @@
    <field name="type_physical" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
    
    <!-- Date of Original Artifact - Human readable -->
-   <field name="date_original" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
+   <field name="date_original_human" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
    
    <!-- Date of Digital Surrogate - Human readable -->
-   <field name="date_digital" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
+   <field name="date_digital_human" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
    
    <!-- Geographic Location - Machine -->
    <field name="geolocation_machine" type="location" indexed="true" stored="true" required="false" multiValued="true" />

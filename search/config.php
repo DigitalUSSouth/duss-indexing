@@ -13,6 +13,9 @@ $solrUrl = 'http://localhost:8983/solr/'.$solrCoreName.'/';
 global $solrResultsHighlightTag;
 $solrResultsHighlightTag = "mark";//bootstrap highlight <mark></mark>
 
+global $lastError;
+$lastError = '';
+
 
 global $solrFieldNames;
 $solrFieldNames = array(

@@ -205,7 +205,7 @@ foreach ($searchResults as $result){
 	//type
 	$displayResult['type_content'] = isset($highlightArray['type_content']) ? $highlightArray['type_content'][0] : $result['type_content'];
 	//format
-	$displayResult['format'] = isset($highlightArray['format']) ? $highlightArray['format'][0] : $result['format'];
+	$displayResult['file_format'] = isset($highlightArray['file_format']) ? $highlightArray['file_format'][0] : $result['file_format'];
 	//description
 	$displayResult['description'] = isset($highlightArray['description']) ? $highlightArray['description'][0] : $result['description'];
 	//digital collection/archive
