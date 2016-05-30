@@ -1,5 +1,15 @@
 TODO:
 
+Crosswalks
+ - fix type - to allow parsing multiple types
+ - add trim() to all fields, prior to indexing
+ - add conditional stuff to notes
+ - double check with project managers about copyright
+ - SC Civil War: Do data analysis for County and Region
+ - meeting:
+   - discuss new field genre
+   - copyright
+
 Search Results Page
  - enable ajax for searching instead of reloading page
 
