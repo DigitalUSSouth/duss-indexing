@@ -66,18 +66,29 @@ $advancedSearchFields = array (
 <div class="container-fluid">
 	<div class="row">
 
-		<div class="col-xs-4 center-block" id="carousel">
-			<?php
-			foreach ($carousel as $image) {
-				if (isset($image["image"]) && file_exists("img/carousel/" . $image["image"]) && $image["image"] != "") {
-					print "<img src='img/carousel/" . $image["image"] . "' alt='" . $image["alt"] . "' class='img-responsive'>";
-				} else if (!file_exists("img/carousel/" . $image["image"])) {
-					print "<p class='text-danger'>There was an error finding the file named " . $image["image"] . ".</p>";
-				}
-			}
-			?>
-		</div>
+<div class="col-xs-5 center-block">
+<div id="about-carousel" class="carousel slide" data-ride="carousel">
 
+			<!-- Wrapper for slides -->
+  			<div class="carousel-inner" role="listbox">
+			<?php
+			$counter=0;
+			foreach($carousel as $image):?>
+				<div class="<?php print ($counter++ == 0)?'item active':'item';?>">
+     				<?php 
+     				if (isset($image["image"]) && file_exists("img/carousel/" . $image["image"]) && $image["image"] != "") {
+     					print "<img src='img/carousel/" . $image["image"] . "' alt='" . $image["alt"] . "' class='img-responsive'>";
+     				} else if (!file_exists("img/carousel/" . $image["image"])) {
+     					print "<p class='text-danger'>There was an error finding the file named " . $image["image"] . ".</p>";
+     				}
+     				?>
+     			</div>
+			<?php endforeach;?>
+			</div>
+		</div>
+        
+        
+       </div> 
 	</div>
 <?php
 

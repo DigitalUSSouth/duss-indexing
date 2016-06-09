@@ -34,10 +34,10 @@
 
 	cursor: pointer;
 
-	color: transparent;
+	/*color: transparent;
 	border: none;
 	outline: none;
-	background: transparent;
+	background: transparent;*/
 }
 .slick-prev:hover,
 .slick-prev:focus,

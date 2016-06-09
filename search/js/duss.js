@@ -6,15 +6,27 @@
  * Copyright: 2015. All Rights Reserved.
  */
 
+ /**
+ * Fades Project Icons.
+ 
+ This does not work correctly on Firefox, thus it is commented out.*/
+ $(document).ready(function() {
+  
+$("img.carouselimg").hover(
+function() {
+$(this).stop().animate({"opacity": "0.98"}, "fast");
+},
+function() {
+$(this).stop().animate({"opacity": ".7"}, "fast");
+});
+});
+
 /**
  * Function to be called once the window has finished loaded.
  */
 $(window).load(function () {
   // Fade out the overlay once everything is finished.
   $("body > .overlay").fadeOut();
-  
-  
-  
 });
 
 /**
@@ -37,8 +49,8 @@ $(document).ready(function () {
     autoplay: true,
     autoplaySpeed: 10000,
     dots: true,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     responsive: [ {
       breakpoint: 768,
       settings: {
@@ -93,7 +105,22 @@ $(".nav.navbar-nav > li").click(function (e) {
   var destination = link[link.length - 1].substring(1, link[link.length - 1].length);
 
   $("html, body").animate({scrollTop: $("#" + destination).offset().top }, 1200);
-  $("#query").focus();
+
+  // This is a life savor.
+  e.target.blur();
+  e.preventDefault();
+});
+
+/**
+ * Function to be called when a user clicks on the navigation.
+ *
+ * @param e: The event that is occurring (i.e. click).
+ */
+$(".nav.navbar-nav > li").click(function (e) {
+  var link = $(this).find("> a").prop("href").split("/");
+  var destination = link[link.length - 1].substring(1, link[link.length - 1].length);
+
+  $("html, body").animate({scrollTop: $("#" + destination).offset().top }, 1200);
 
   // This is a life savor.
   e.target.blur();
@@ -274,4 +301,3 @@ function contactAlert(alertClass, text) {
     alert.slideDown();
   }
 }
-

@@ -1,28 +1,32 @@
 TODO:
 
 Crosswalks
+ - add multibyte character support (UTF-8)
  - fix type - to allow parsing multiple types
- - add trim() to all fields, prior to indexing
+ - add mb_trim() to all fields, prior to indexing
  - add conditional stuff to notes
  - double check with project managers about copyright
  - SC Civil War: Do data analysis for County and Region
  - meeting:
    - discuss new field genre
+   - discuss new fields isPartOf/hasPart
    - copyright
 
 Search Results Page
  - enable ajax for searching instead of reloading page
 
-
+DUSS website
+ - check col-XX widths to support mobile devices
+ - fix contact page
+ - fix projects dropdown (core/affiliated pages)
 
 Search Website
- - add separate commit function, to speed up indexing
- - fix facet filter queries for "other" facets
  - enable visual feedback/display for selected facets
  - master search box - search by field
 
 SOLR
  - test tokenizers, make sure indexing works
+ - add support for diacritics!!
  - dynamic field for "role"
  - add support for dates and alternative titles
   

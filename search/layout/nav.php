@@ -22,7 +22,13 @@
 				<ul class="nav navbar-nav navbar-right text-uppercase">
 					<li class="active"><a href="#home">Home</a></li>
 					<li><a href="#about">About</a></li>
-					<li><a href="#projects">Projects</a></li>
+					<li><div class="dropdown"><button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown" id="projButton">
+												Projects</button>
+								<ul class="dropdown-menu">
+									<li><a href="#projects">Core Projects</a></li>
+									<li><a href="#projects">Affiliated Projects</a></li>
+								</ul>
+						</div></li>
 					<li><a href="search">Search</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
@@ -31,3 +37,4 @@
 		</div>
 	</div>
 </nav>
+

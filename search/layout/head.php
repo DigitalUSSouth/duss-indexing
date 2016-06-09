@@ -16,15 +16,23 @@
 
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/slick.css">
-	<link rel="stylesheet" href="css/slick-theme.css">
+	<!--<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/slick-theme.css">-->
 
+
+	<!--Slick Carousel-->
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+		
+		
 	<?php // All pre-defined CSS libraries above this line. ?>
 	<link rel="stylesheet" href="css/duss.css">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/duss-search.css">
+	
 
 	<script src="js/modernizr.min.js"></script>
-	<!--<script>
+	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -33,10 +41,11 @@
 		ga('create', 'UA-65171142-2', 'auto');
 		ga('send', 'pageview');
 
-	</script>-->
+	</script>
+	
 </head>
 <body>
-	<!-- <div class="overlay">
+	 <!--<div class="overlay">
 		<noscript>
 			<style> section { display: none !important; } </style>
 			<div>You have JavaScript disabled. Good luck with that.</div>
@@ -45,6 +54,4 @@
 			<div class="double-bounce1"></div>
 			<div class="double-bounce2"></div>
 		</div>
-	</div>
-	uncomment in production
-	-->
+	</div>-->

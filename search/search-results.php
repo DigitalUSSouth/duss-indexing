@@ -199,7 +199,6 @@ foreach ($searchResults as $result){
 	$url = $result['url'];
 	$highlightArray = $searchHighlighting[$url];
 	
-	$displayResult = array();
 	//title
 	$displayResult['title'] = isset($highlightArray['title']) ? $highlightArray['title'][0] : $result['title'];
 	//type

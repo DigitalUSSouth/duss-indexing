@@ -33,41 +33,67 @@ function importTabFileSCCivilWar(){
 
 
 		$fields = explode("\t",$line);
+		
+		$description = $fields[9].($fields[3]=='')? '': ' - Inscription:'.$fields[3] ;
+		
+		$subjectHeadings = parseSubjectHeadings($fields[8]);
+		
+		
+		$notes = $fields[12].' - '.$fields[18];
+		$notes = $notes.(trim($fields[23])!='')?'Scanner technician: '.$fields[23].' ':'' ;
+		$notes = $notes.(trim($fields[24])!='')?'Metadata cataloguer: '.$fields[24].' ':'' ;
+		$notes = $notes.(trim($fields[25])!='')?'Metadata assistants: '.$fields[25]:'' ;
 
 		$document = array(
 				'title' => $fields[0],
-				'role_creator' => $fields[1],
-				//'date' => parse_date($fields[2]),
+				'role_cre' => $fields[1],//creator
+				'role_ctb' => $fields[2],//contributor
 				//'shelfmark' => $fields[3],
-			    'description' => $fields[9].' - '.$fields[4],
+			    'description' => $description,
+				//date stuff:
+				'year_begin' => $parsedDate['year_begin'],
+				'month_begin' => $parsedDate['month_begin'],
+				'day_begin' => $parsedDate['day_begin'],
+				'year_end' => $parsedDate['year_end'],
+				'month_end' => $parsedDate['month_end'],
+				'day_end' => $parsedDate['day_end'],
+				'years' => $parsedDate['years'],
+				
+				
 				//'description' => $fields[5],
 				//'archive' => $fields[6],
 				'shelfmark' => $fields[7],
-				//'contributing_institution' => $fields[8],
+				'subject_heading' => $subjectHeadings,
 				//'rights' => $fields[9],
 				'extent' => $fields[10],
 				//'file_format' => $fields[11],
-				'notes' => $fields[12].' - '.$fields[18],
+				
+				'notes' => $notes,
+				
 				'language' => $fields[13],
 				'archive' => $fields[14],
 				//'geolocation_human' => $fields[15],
 				'contributing_institution' => $fields[16],
-				//'date_digital' => parse_date($fields[17]),
+				
+				//copyright stuff:
+				'copyright_holder' => 'University of South Carolina. Rare Books and Special Collections, Thomas Cooper Library.',
+				'use_permissions' => 'Images are to be used for educational purposes only, and are not to be reproduced without permission from Rare Books and Special Collections, Thomas Cooper Library, University of South Carolina, SC 29208.',
+
 				//'none' => $fields[18],
-				//'type_content' => $fields[19],
+				'date_digital' => $fields[19],
 				'type_content' => $fields[20],
 				'file_format' => $fields[21],
 				'type_digital' => $fields[22],
 				//'id' => $fields[23],
 				//'id' => $fields[24],
 				//'id' => $fields[25],
-				'geolocation_human' => $fields[26].' - '.$fields[27],
+				//'geolocation_human' => $fields[26].' - '.$fields[27],
 				//'id' => $fields[27],
 				//'id' => $fields[28],
 				//'id' => $fields[29],
 				'full_text' => $fields[30],
 				//'id' => $fields[31],
-				//'id' => $fields[32],
+				'geolocation_human' => $fields[32],
 				//'id' => $fields[33],
 				//'id' => $fields[34],
 				//'id' => $fields[35],
@@ -121,7 +147,7 @@ function importTabFileGCook(){
 		
 		$document = array(
 		'title' => $fields[0],
-		'role_creator' => $fields[1],
+		'role_cre' => $fields[1], //creator
 		//'date' => parse_date($fields[2]),
 		'shelfmark' => $fields[3],
 		'subject_heading' => $subjectHeadings,
@@ -275,6 +301,13 @@ function importTabFileSimms(){
 
 		$fields = explode("\t",$line);
 
+		/*$notes = 8place of publication
+		 . 9 publishers
+		 . 10 place of printing
+		 
+		*/
+		
+		
 		$document = array(
 				'title' => $fields[0],
 				//'role_creator' => $fields[1],
@@ -283,7 +316,7 @@ function importTabFileSimms(){
 				//'shelfmark' => $fields[4],
 				'contributing_institution' => $fields[5],
 				//'language' => $fields[6],
-				//'archive' => $fields[7],
+				'role_cre' => $fields[7],//creator
 				//'contributing_institution' => $fields[8],
 				//'contributing_institution' => $fields[9],
 				//'type_content' => $fields[10],
@@ -311,7 +344,7 @@ function importTabFileSimms(){
 				//'date' => parse_date($fields[32]),
 				//'shelfmark' => $fields[33],
 				//'shelfmark' => $fields[34],
-				//'description' => $fields[35],
+				'date_digital' => $fields[35],
 				'type_content' => $fields[36],
 				'file_format' => $fields[37],
 				'type_digital' => $fields[38],

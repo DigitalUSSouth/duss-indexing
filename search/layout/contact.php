@@ -4,25 +4,8 @@
  * Print out the contact information and form.
  */
 ?>
-<section class="container-fluid" id="contact">
-	<table id="staff">
-		<caption>Project Staff Directory</caption>
-		<tr>
-			<th>Name</th><th>Title</th><th>Email</th><th>Phone</th>
-		</tr>
-		<tr>
-			<td>W. Matthew J. Simmons</td><td>Project Coordinator</td><td>simmonwm@mailbox.sc.edu</td><td>803-777-9783</td>
-		</tr>
-		<tr>
-			<td>Harry Ferguson</td><td>Programmer</td><td>harryf@email.sc.edu</td><td><!--blank--></td>
-		</tr>
-		<tr>
-			<td>Jill Weber</td><td>Content Specialist</td><td>weberjm@email.sc.edu</td><td><!--blank--></td>
-		</tr>
-		<tr>
-			<td>Sam Lackey</td><td>Content Specialist</td><td>lackeys@email.sc.edu</td><td><!--blank--></td>
-		</tr>
-	</table>
+<section class="container-fluid text-center" id="contact">
+	<a href="mailto:simmonwm@mailbox.sc.edu?Subject=Question%20about%20the%20Digital%20US%20South" target="_top">Send an email to Digital US South</a>
 </section>
 <!-- ### maybe use contact form later ###
 <section class="container-fluid" id="contact">

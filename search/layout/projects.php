@@ -59,17 +59,46 @@ $projects = array(
 		"content" => "<p><em>The George LaGrange Cook Photograph Collection</em> presents negatives of various business, churches, public buildings, and residences in both Charleston and Summerville, S.C. Taken in the late 1880s and early 1890s by George LaGrange Cook, son of the famous Civil War photographer George Smith Cook, these photos provide a unique look at life and living conditions in these significant cities, and the South more generally, as the New South emerged at the end of the 19th century.</p>"
 	),
 	array(
+		"thumb" => "oldsouthernorchards.png",
+		"header" => "Old Southern Orchards",
+		"website" => "http://lichen.csd.sc.edu/oldsouthernorchards/index.php",
+		"content" => "<p><em>Old Southern Orchards</em> serves as a companion to <em>American Heritage Vegetables</em>, and provides information 
+		about the most consequential fruits grown in the South prior to the Great Depression.  There were a multitude of varieties grown in the 
+		region that would become the American South from the colonial era onward.  Some were native (plums, pawpaws, persimmons), 
+		some introduced from Europe. Yet there were relatively few that mattered decades on end, in town and city markets throughout the region.  
+		This site documents those durable, marketable varieties.  However splendid a family apple, a local pawpaw, a seedling peach, if it could 
+		not command the interest of the broader public, it does not appear here.</p>"
+	),
+	array(
 		"thumb" => "ravenel.png",
 		"header" => "Plants and Planters - Henry William Ravenel",
 		"website" => "http://tundra.csd.sc.edu/ravenel/",
 		"content" => "<p><em>Plants and Planter</em> connects the life, travels, business pursuits, and scientific work of one of the great minds of the 19th century, Henry William Ravenel. A prolific traveler, collector and cataloger of botanical specimens, Ravenel had many species named for him, and was considered to have specific expertise in North American fungi. Besides his scientific work, Ravenel was a prolific diarist, and his diaries provide one of the most complete pictures of daily life in the mid-19th century South we have. <em>Plants and Planter</em> brings together Ravenel's personal diaries, correspondence, and over 6,200 botanical specimens, providing us with a detailed portrait of science, self, and society in the 19th-century South.</p>"
 	),
 	array(
+		"thumb" => "",
+		"header" => "SC e-Archives",
+		"website" => "",
+		"content" => "SC e-Archives"
+	),
+	array(
+		"thumb" => "",
+		"header" => "SC Historical Properties",
+		"website" => "",
+		"content" => "SC Historical Properties"
+	),
+	array(
+		"thumb" => "",
+		"header" => "SC Online Records",
+		"website" => "",
+		"content" => "SC Online Records"
+	)/*,// The Southern Periodical Humor Repository may be added back at a later date
+	array(
 		"thumb" => "sphr.png",
 		"header" => "Southern Periodical Humor Repository",
 		"website" => "http://library.sc.edu/sphr/",
 		"content" => "<p>Between the 1830s and the outbreak of the Civil War, \"southwestern humor\" was one of the most popular genres of American fiction. While largely forgotten outside of academic circles, southwestern humors continues to influence our conceptions America and the South into the 21<sup>st</sup> century. As America expanded west of the Appalachians after the Louisiana Purchase, the frontier of the \"Old Southwest\"&mdash;those states we now tend to associate with the Deep South&mdash;sparked the imagination of Americans up and down the Eastern Seaboard. Many talented writers used this frontier as the setting for some truly original short fictions. These works prefigured the biting humor of Mark Twain and later generations of great American humorists, and helped shape our ideas about rugged individualism, honor and violence, and swaggering masculinity that we still associate with the West, the Western genre, and the rural South. The goal of the <em>Southern Periodical Humor Repository</em> is to collect forgotten southwestern humor published in newspapers and periodicals, much of which never found publication in books. Currently, it houses works published between 1845 and 1848 in Columbia, SC's <em>The South Carolinian</em>; we hope to collect works from more periodicals as the project matures.</p>"
-	)
+	)*/
 	// array(
 	// 	"thumb" => "civil-rights.png",
 	// 	"header" => "Civil Rights in South Carolina",
@@ -78,46 +107,114 @@ $projects = array(
 	// )
 );
 
-?>
-<section class="container-fluid" id="projects">
-	<div class="positioner">
-		<div class="row">
+?><section class="container-fluid" id="projects">
+		<div class="col-xs-12">
 
-			<?php foreach ($projects as $project): ?>
-			<div class="col-sm-4 project-listing text-center">
-
-				<?php if (isset($project["thumb"]) && file_exists("img/thumb/" . $project["thumb"]) && $project["thumb"] != ""): ?>
-					<img src="img/thumb/<?php echo $project['thumb']; ?>" class="img-responsive center-block" alt="<?php echo $project['header']; ?>">
+		<div id="project-carousel" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+			<?php 
+			$arrayChunks = array_chunk($projects, 8);
+			//print "<pre>";
+			//print_r($arrayChunks);
+			//print "</pre>";
+			for ($i=0; $i<sizeof($arrayChunks); $i++):?>
+				<li data-target="#project-carousel" data-slide-to="<?php print $i?>"<?php print ($i==0)?' class="active"':'';?>></li>
+			<?php endfor;?>
+			</ol>
+			
+			<!-- Wrapper for slides -->
+  			<div class="carousel-inner" role="listbox">
+			<?php
+			$counter=0;
+			$projectCounter=0;
+			foreach($arrayChunks as $projectsChunk):?>
+				<div class="<?php print ($counter++ == 0)?'item active':'item';?>">
+     				<?php 
+     				$columnIndex=0;
+     				foreach ($projectsChunk as $project):
+     				if ($columnIndex==4):
+     				?>
+     				<!-- Add the extra clearfix for only the required viewport -->
+  					<div class="clearfix"></div>
+     				<!-- <div class="col-xs-3">-->
+     				<?php endif;?>
+     				<div class="col-xs-3 wrapper">
+						<div><a href="#" data-toggle="modal" data-target="#modal<?php print $projectCounter++;?>">
+						<?php if (isset($project["thumb"]) && file_exists("img/thumb/" . $project["thumb"]) && $project["thumb"] != ""): ?>
+					<img src="img/thumb/<?php echo $project['thumb']; ?>" class="carousel-img img-responsive" alt="<?php echo $project['header']; ?>">
 				<?php else: ?>
 					<img src="http://placehold.it/200x200" class="img-responsive center-block">
 				<?php endif; ?>
-
-				<h3><?php echo $project["header"]; ?></h3>
+						
+						
+						
+						<!--  <img class="carousel-img img-responsive" src="./img/thumb/<?php //print $project['thumb']?>" alt="<?php //print $project['header']?>" />-->
+						<p class="carousel-text"><?php print $project['header']?></p></a></div>
+					</div>
+     				<?php
+     				
+     				if ($columnIndex==1 || $columnIndex==3 || $columnIndex==5 || $columnIndex==7):
+     				?>
+     				<!-- </div>-->
+     				<?php endif;
+     				$columnIndex++;
+     				endforeach;?>
+     			</div>
+			<?php endforeach;?>
 			</div>
-			<?php endforeach; ?>
+			
+			<!-- Left and right controls -->
+  <a class="left carousel-control" href="#project-carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#project-carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+		</div>
+
+
 
 		</div>
-	</div>
-	<i class="fa fa-3x fa-chevron-down"></i>
-</section>
+		
+		<!-- These are the prject info modals -->
+		
+		<!-- Modal -->
+<?php 
+$counter=0;
+foreach ($projects as $project):
+?>
+<div id="modal<?php print $counter;?>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-<section class="container-fluid" id="projectDetail">
-	<div class="close">Close</div>
-	<?php foreach ($projects as $project): ?>
-		<div class="row" id="<?php echo $project['header']; ?>">
-			<div class="col-sm-6">
-				<?php if (isset($project["thumb"]) && file_exists("img/thumb/" . $project["thumb"]) && $project["thumb"] != ""): ?>
-					<img src="img/thumb/<?php echo $project['thumb']; ?>" class="img-responsive center-block" alt="<?php echo $project['header']; ?>">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title"><?php print $project['header'];?></h2>
+      </div>
+      <div class="modal-body">
+        <p><h4><a target="_blank" href="<?php print $project['website']?>">Visit website</a></h4></p>
+        <?php if (isset($project["thumb"]) && file_exists("img/thumb/" . $project["thumb"]) && $project["thumb"] != ""): ?>
+					<img src="img/thumb/<?php echo $project['thumb']; ?>" class="pull-left project-modal-img" width="150px" alt="<?php echo $project['header']; ?>">
 				<?php else: ?>
-					<img src="http://placehold.it/400x400" class="img-responsive center-block">
+					<!--<img src="http://placehold.it/200x200" class="img-responsive center-block">-->
 				<?php endif; ?>
-			</div>
+        <?php print $project['content'];?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
 
-			<div class="col-sm-6">
-				<h2><?php echo $project["header"]; ?></h2>
-				<h3><a href="<?php echo $project["website"]; ?>" target="_blank">Website</a></h3>
-				<?php echo $project["content"]; ?>
-			</div>
-		</div>
-	<?php endforeach; ?>
+  </div>
+</div>
+<?php 
+$counter++;
+endforeach;?>		
+		
+		
+		
+	<i class="fa fa-3x fa-chevron-down"></i>
 </section>

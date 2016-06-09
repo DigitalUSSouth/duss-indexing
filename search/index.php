@@ -2,6 +2,7 @@
 /**
  * @file index.php
  * This file lays out the structure of the website.
+ * Test edit.
  */
 
 error_reporting(E_ALL);

@@ -1,11 +1,7 @@
 <?php
 /**
  * @file about.php
- * Displays the about section
- * Also displays the new search box
- *
- *
- 
+ * Displays the about section.
  */
 
 // Replicate an image carousel database.
@@ -36,9 +32,14 @@ $carousel = array(
 		"alt" => "South Carolina and the Civil War"
 	),
 	array(
+		"image" => "oldsouthernorchards2.png",
+		"alt" => "Old Southern Orchards"
+	),
+	// Southern Periodical Humor Repository may be added back at a later time
+	/*array(
 		"image" => "sphr.png",
 		"alt" => "Southern Periodical Humor Repository"
-	),
+	),*/
 	array(
 		"image" => "ravenel.png",
 		"alt" => "Plants and Planters - Henry William Ravenel"
@@ -48,18 +49,29 @@ $carousel = array(
 <section class="container-fluid" id="about">
 	<div class="row">
 
-		<div class="col-md-5 center-block" id="carousel">
-			<?php
-			foreach ($carousel as $image) {
-				if (isset($image["image"]) && file_exists("img/carousel/" . $image["image"]) && $image["image"] != "") {
-					print "<img src='img/carousel/" . $image["image"] . "' alt='" . $image["alt"] . "' class='img-responsive'>";
-				} else if (!file_exists("img/carousel/" . $image["image"])) {
-					print "<p class='text-danger'>There was an error finding the file named " . $image["image"] . ".</p>";
-				}
-			}
-			?>
-		</div>
+<div class="col-xs-6 center-block">
+<div id="about-carousel" class="carousel slide" data-ride="carousel">
 
+			<!-- Wrapper for slides -->
+  			<div class="carousel-inner" role="listbox">
+			<?php
+			$counter=0;
+			foreach($carousel as $image):?>
+				<div class="<?php print ($counter++ == 0)?'item active':'item';?>">
+     				<?php 
+     				if (isset($image["image"]) && file_exists("img/carousel/" . $image["image"]) && $image["image"] != "") {
+     					print "<img src='img/carousel/" . $image["image"] . "' alt='" . $image["alt"] . "' class='img-responsive'>";
+     				} else if (!file_exists("img/carousel/" . $image["image"])) {
+     					print "<p class='text-danger'>There was an error finding the file named " . $image["image"] . ".</p>";
+     				}
+     				?>
+     			</div>
+			<?php endforeach;?>
+			</div>
+		</div>
+        
+        
+       </div> 
 	</div>
 
 	<div class="row text-justify">
