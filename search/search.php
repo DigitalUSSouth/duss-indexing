@@ -66,7 +66,7 @@ $advancedSearchFields = array (
 <div class="container-fluid">
 	<div class="row">
 
-<div class="col-xs-5 center-block">
+<div class="col-xs-3 center-block">
 <div id="about-carousel" class="carousel slide" data-ride="carousel">
 
 			<!-- Wrapper for slides -->

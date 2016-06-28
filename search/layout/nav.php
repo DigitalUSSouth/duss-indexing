@@ -22,13 +22,17 @@
 				<ul class="nav navbar-nav navbar-right text-uppercase">
 					<li class="active"><a href="#home">Home</a></li>
 					<li><a href="#about">About</a></li>
-					<li><div class="dropdown"><button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown" id="projButton">
-												Projects</button>
-								<ul class="dropdown-menu">
-									<li><a href="#projects">Core Projects</a></li>
-									<li><a href="#projects">Affiliated Projects</a></li>
-								</ul>
-						</div></li>
+					<li>
+					  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+					  Projects<span class="caret"></span>
+					  </a>
+					  <ul class="dropdown-menu">
+					    <li><a href="#projects">View all projects</a></li>
+					    <li role="separator" class="divider"></li>
+					    <li><a href="core-projects">Core projects</a></li>
+					    <li><a href="affiliated-projects">Affiliated projects</a></li>
+					  </ul>
+					</li>
 					<li><a href="search">Search</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>

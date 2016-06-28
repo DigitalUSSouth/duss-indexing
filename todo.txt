@@ -12,6 +12,10 @@ Crosswalks
    - discuss new fields isPartOf/hasPart
    - copyright
 
+Data submission
+ - create sample document
+ - define formal names for fields
+
 Search Results Page
  - enable ajax for searching instead of reloading page
 
