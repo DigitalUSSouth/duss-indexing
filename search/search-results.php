@@ -34,11 +34,11 @@ $searchResults = $searchResponse['docs'];
       	  if (in_array('"'.$facets[$i].'"',$searchQuery['fq'])):
       	    $isBreadcrumbSet = true;
       	?>
-      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>"><strong><em>(x)</em></strong></a>
+      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>"><strong>(X)</strong></a>
       	<?php 
       	  endif;
       	endif;?>
-      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($$isBreadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($$isBreadcrumbSet) ? '</em></strong>' : '';?></a><br>
+      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($isBreadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($isBreadcrumbSet) ? '</em></strong>' : '';?></a><br>
       	<?php endfor;?>
       </div>
     </div>
