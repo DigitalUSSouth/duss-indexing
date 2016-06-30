@@ -30,6 +30,8 @@
 -->
 
 <schema name="DigitalUSSouth" version="1.5">
+
+<solrQueryParser defaultOperator="AND|OR"/>
   <!-- attribute "name" is the name of this schema and is only used for display purposes.
        version="x.y" is Solr's version number for the schema syntax and 
        semantics.  It should not normally be changed by applications.
@@ -213,6 +215,8 @@
    
    <!-- LC Subject Headings -->
    <field name="subject_heading" type="text_en_splitting" indexed="true" stored="true" required="false" multiValued="true" />
+   <field name="subject_heading_facet"  type="string" indexed="true"  stored="true" multiValued="true"/>
+   <copyField source="subject_heading"    dest="subject_heading_facet"/>
    
    <!-- Extent/Size/Duration -->
    <field name="extent" type="string" indexed="true" stored="true" required="false" multiValued="false" />

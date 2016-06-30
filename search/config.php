@@ -42,3 +42,14 @@ $solrFieldNames = array(
 "language" => "Language",
 "notes" => "Notes"
 );
+
+global $facetFields;
+$facetFields = array(
+		"archive_facet" => "Digital Collection",
+		"contributing_institution_facet" => "Contributing Institution",
+		"subject_heading_facet" => "LC Subject Headings",
+		"type_content" => "Type of Content",
+		"file_format" => "File Format",
+		"language" => "Language"
+		//"date"
+);

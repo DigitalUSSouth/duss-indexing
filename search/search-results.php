@@ -10,172 +10,42 @@ $searchResults = $searchResponse['docs'];
 	<div class="col-xs-3">
 		<div class="col-xs-12"><h4>Facets (under development):</h4>
 			<div class="panel-group" id="accordion">
+  <?php
+  $counter=1;
+  foreach ($facetFields as $facetField => $facetTitle):?>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse1">
-        Digital Collection</a>
+        <a class="accordion-toggle" data-toggle="collapse" href="#collapse<?php print $counter;?>"><?php print $facetTitle?>&nbsp;</a>
       </h4>
     </div>
-    <div id="collapse1" class="panel-collapse collapse in">
+    <div id="collapse<?php print $counter;?>" class="panel-collapse collapse">
       <div class="panel-body">
       	<?php
-        $currentFacet = 'archive_facet';
+        $currentFacet = $facetField;
       	$facets = $searchFacetCounts['facet_fields'][$currentFacet];
       	for($i=0; $i<sizeof($facets); $i++):
       		if ($facets[$i+1]==0){
       			$i++;
       			continue;
       	}
-      	$breadcrumbSet = false;
+      	$isBreadcrumbSet = false;
       	if (in_array($currentFacet, $searchQuery['fq_field'])):
       	  if (in_array('"'.$facets[$i].'"',$searchQuery['fq'])):
-      	    $breadcrumbSet = true;
+      	    $isBreadcrumbSet = true;
       	?>
-      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>">(x)</a>
+      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>"><strong><em>(x)</em></strong></a>
       	<?php 
       	  endif;
       	endif;?>
-      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($breadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($breadcrumbSet) ? '</em></strong>' : '';?></a><br>
+      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($$isBreadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($$isBreadcrumbSet) ? '</em></strong>' : '';?></a><br>
       	<?php endfor;?>
       </div>
     </div>
   </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse2">
-        Contributing Institution</a>
-      </h4>
-    </div>
-    <div id="collapse2" class="panel-collapse collapse in">
-      <div class="panel-body">
-      <?php
-        $currentFacet = 'contributing_institution_facet';
-      	$facets = $searchFacetCounts['facet_fields'][$currentFacet];
-      	for($i=0; $i<sizeof($facets); $i++):
-      		if ($facets[$i+1]==0){
-      			$i++;
-      			continue;
-      	}
-      	$breadcrumbSet = false;
-      	if (in_array($currentFacet, $searchQuery['fq_field'])):
-      	  if (in_array('"'.$facets[$i].'"',$searchQuery['fq'])):
-      	    $breadcrumbSet = true;
-      	?>
-      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>">(x)</a>
-      	<?php 
-      	  endif;
-      	endif;?>
-      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($breadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($breadcrumbSet) ? '</em></strong>' : '';?></a><br>
-      	<?php endfor;?>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse3">
-        Type of Content</a>
-      </h4>
-    </div>
-    <div id="collapse3" class="panel-collapse collapse in">
-      <div class="panel-body">
-      <?php
-        $currentFacet = 'type_content';
-      	$facets = $searchFacetCounts['facet_fields'][$currentFacet];
-      	for($i=0; $i<sizeof($facets); $i++):
-      		if ($facets[$i+1]==0){
-      			$i++;
-      			continue;
-      	}
-      	$breadcrumbSet = false;
-      	if (in_array($currentFacet, $searchQuery['fq_field'])):
-      	  if (in_array('"'.$facets[$i].'"',$searchQuery['fq'])):
-      	    $breadcrumbSet = true;
-      	?>
-      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>">(x)</a>
-      	<?php 
-      	  endif;
-      	endif;?>
-      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($breadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($breadcrumbSet) ? '</em></strong>' : '';?></a><br>
-      	<?php endfor;?>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse4">
-        LC Subject Headings</a>
-      </h4>
-    </div>
-    <div id="collapse4" class="panel-collapse collapse in">
-      <div class="panel-body"></div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse5">
-        File Format</a>
-      </h4>
-    </div>
-    <div id="collapse5" class="panel-collapse collapse in">
-      <div class="panel-body">
-      <?php 
-        $currentFacet = 'file_format';
-      	$facets = $searchFacetCounts['facet_fields'][$currentFacet];
-      	for($i=0; $i<sizeof($facets); $i++):
-      		if ($facets[$i+1]==0){
-      			$i++;
-      			continue;
-      	}
-      	$breadcrumbSet = false;
-      	if (in_array($currentFacet, $searchQuery['fq_field'])):
-      	  if (in_array('"'.$facets[$i].'"',$searchQuery['fq'])):
-      	    $breadcrumbSet = true;
-      	?>
-      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>">(x)</a>
-      	<?php 
-      	  endif;
-      	endif;?>
-      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($breadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($breadcrumbSet) ? '</em></strong>' : '';?></a><br>
-      	<?php endfor;?>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse6">
-        Language</a>
-      </h4>
-    </div>
-    <div id="collapse6" class="panel-collapse collapse in">
-      <div class="panel-body">
-      <?php
-        $currentFacet = 'language';
-      	$facets = $searchFacetCounts['facet_fields'][$currentFacet];
-      	for($i=0; $i<sizeof($facets); $i++):
-      		if ($facets[$i+1]==0){
-      			$i++;
-      			continue;
-      	}
-      	$breadcrumbSet = false;
-      	if (in_array($currentFacet, $searchQuery['fq_field'])):
-      	  if (in_array('"'.$facets[$i].'"',$searchQuery['fq'])):
-      	    $breadcrumbSet = true;
-      	?>
-      	  <a href="<?php print buildFacetBreadcrumbQuery($currentFacet, $facets[$i]);?>">(x)</a>
-      	<?php 
-      	  endif;
-      	endif;?>
-      	<a href="<?php print buildFacetFilterQuery($currentFacet, $facets[$i]);?>"><?php print ($breadcrumbSet) ? '<strong><em>' : '';?>-<?php print ($facets[$i]=='')? "None":$facets[$i];?> (<small><strong><?php print $facets[$i+1]; $i++;?></strong></small>)<?php print ($breadcrumbSet) ? '</em></strong>' : '';?></a><br>
-      	<?php endfor;?>
-      </div>
-    </div>
-  </div>
+  <?php
+  $counter++;
+  endforeach;?>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">

@@ -4,8 +4,6 @@
  * 
  * */
 
-
-
 require_once('config.php');
 
 /*
@@ -500,8 +498,8 @@ function indexDocument($doc){
 	$data_string = json_encode($data);                                                                                   
 
 	print 'curl_exec() done <br>';
-	print_r($doc);
-	print '<br>';
+	//print_r($doc);
+	//print '<br>';
 	return postJsonDataToSolr($data_string, 'update');
 }
 
@@ -535,6 +533,7 @@ function delete_all(){
 	print $data_string;
 	return postJsonDataToSolr($data_string, 'update');
 }
+
 
 /* function postJsonDataToSolr($data, $action)
  * posts a json-formatted string to solr
@@ -703,8 +702,16 @@ function parse_date($date_string){
 function getResultsFromSolr($query){
 
 	$queryString = buildSolrQuery($query);
-
-	$jsonResponse = file_get_contents($queryString);
+	
+	$ch = curl_init();
+	curl_setopt_array($ch, array(
+      CURLOPT_RETURNTRANSFER => 1,
+      CURLOPT_URL => $queryString,
+	));
+	
+	$jsonResponse = curl_exec($ch);
+	
+	//$jsonResponse = file_get_contents($queryString);
 	
 	print $queryString.'<br>';
 
@@ -763,7 +770,8 @@ function buildSolrQuery($query){
 		.'/select?'.$queryString.'&start='.$query['start'].'&rows='.$query['rows']
 		.'&wt=json&hl=true&hl.simple.pre='.urlencode('<'.$solrResultsHighlightTag.'>')
 		.'&hl.simple.post='.urlencode('</'.$solrResultsHighlightTag.'>')
-		.'&hl.fl=*&facet=true&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=type_content&facet.field=file_format'
+		.'&hl.fl=*&facet=true&facet.field=archive_facet&facet.field=contributing_institution_facet'
+		.'&facet.field=type_content&facet.field=file_format&facet.field=subject_heading_facet'
 		.'&facet.field=language&indent=true';
 	
 		/*

@@ -89,11 +89,13 @@ $(".btn-results-back").click(function (e){
 	window.history.back();
 });
 
-
 $(window).bind('popstate',  
 	    function(event) {
 	        $("#back-results-link")[0].click();
 	    });
 
 
-
+$(".panel-heading").click(function (e) {
+	//alert('strst');
+	$(this).find(".accordion-toggle").toggleClass("accordion-opened");
+});
