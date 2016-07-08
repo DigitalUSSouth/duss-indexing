@@ -25,6 +25,13 @@ mark {
 	padding-top:0px;
 }
 
+
+.panel-results {
+	border-top:none !important;
+}
+.panel-heading-results {
+	background-color:inherit !important;
+}
 /* style for facets */
 
 /* these next two styles set the right or down 

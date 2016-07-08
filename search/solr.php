@@ -710,10 +710,13 @@ function getResultsFromSolr($query){
 	));
 	
 	$jsonResponse = curl_exec($ch);
+	if (curl_error($ch)){
+		throw new Exception('Unable to connect to search engine.');
+	}
 	
 	//$jsonResponse = file_get_contents($queryString);
 	
-	print $queryString.'<br>';
+	//print $queryString.'<br>';
 
 	if ($jsonResponse === false) return false;
 
@@ -721,7 +724,7 @@ function getResultsFromSolr($query){
 
 	$searchResults = $responseArray/*["response"]*/;
 	
-	print_r($searchResults['response']['numFound']);
+	//print_r($searchResults['response']['numFound']);
 
 	return $searchResults;
 

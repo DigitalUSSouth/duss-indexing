@@ -125,45 +125,12 @@ print_r($queryArray);
 print '</pre>';*/
 //end debug
 
-//is the search full-text?
-$searchQuery['isFullText'] = (isset($_GET['full-text-search'])) ? $_GET['full-text-search'] : false;
 
-$searchQuery['queryArray'] = $queryArray;
-
-$searchQuery['start'] = (isset($_GET['start'])) ? $_GET['start'] : 0;
-
-$searchQuery['rows'] = 20;
-
-$searchQuery['fq'] = (isset($_GET['fq'])) ? $_GET['fq']: array();
-$searchQuery['fq_field'] = (isset($_GET['fq_field'])) ? $_GET['fq_field']: array();
-
-$solrResponse = getResultsFromSolr($searchQuery);
-$searchResponse = $solrResponse['response'];
-
-$searchFacetCounts = $solrResponse['facet_counts'];
-$searchHighlighting = $solrResponse['highlighting'];
 
 //debug
 //var_dump($searchResponse);
 ?>
-<a href="#" id="top-of-results" class="sr-only"></a>
-<h3 class="text-right">Showing results <?php print ($searchResponse['start']+1)?> to <?php print ($searchResponse['numFound']<=$searchResponse['start']+$searchQuery['rows'] ) ?($searchResponse['numFound']):($searchResponse['start']+$searchQuery['rows'] );?> of <?php print ($searchResponse['numFound'])?></h3>
-<p class="text-right">
-<?php if ($searchResponse['start']>0):?>
-	<a href="<?php 
-	$oldQuery = $_GET;
-	$oldQuery['start'] = $oldQuery['start']-$searchQuery['rows'];
-	$newQuery = http_build_query($oldQuery);
-	print $_SERVER['PHP_SELF'].'?'.$newQuery?>" class="btn btn-default">Previous</a>
-<?php endif;?>
-<?php if ($searchResponse['numFound']>($searchResponse['start']+$searchQuery['rows'])):?>
-	<a href="<?php 
-	$oldQuery = $_GET;
-	$oldQuery['start'] = $oldQuery['start']+$searchQuery['rows'];
-	$newQuery = http_build_query($oldQuery);
-	print $_SERVER['PHP_SELF'].'?'.$newQuery?>" class="btn btn-default">Next</a>
-<?php endif;?>
-</p>
+
 <?php 
 require 'search-results.php';
 

@@ -7,9 +7,11 @@ Crosswalks
  - add conditional stuff to notes
  - double check with project managers about copyright
  - SC Civil War: Do data analysis for County and Region
+   Check notes, make sure no blank data is being entered
  - meeting:
    - discuss new field genre
    - discuss new fields isPartOf/hasPart
+   - discuss type multiple question
    - copyright
 
 Data submission
@@ -18,15 +20,14 @@ Data submission
 
 Search Results Page
  - enable ajax for searching instead of reloading page
+ - email admin to inform when solr is down on server
+ - throw exception when there are no results
+ - master search box - search by field
 
 DUSS website
  - check col-XX widths to support mobile devices
  - fix contact page
  - fix projects dropdown (core/affiliated pages)
-
-Search Website
- - enable visual feedback/display for selected facets
- - master search box - search by field
 
 SOLR
  - test tokenizers, make sure indexing works

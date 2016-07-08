@@ -1,13 +1,40 @@
 <?php
 
+//is the search full-text?
+$searchQuery['isFullText'] = (isset($_GET['full-text-search'])) ? $_GET['full-text-search'] : false;
+
+$searchQuery['queryArray'] = $queryArray;
+
+$searchQuery['start'] = (isset($_GET['start'])) ? $_GET['start'] : 0;
+
+$searchQuery['rows'] = 20;
+
+$searchQuery['fq'] = (isset($_GET['fq'])) ? $_GET['fq']: array();
+$searchQuery['fq_field'] = (isset($_GET['fq_field'])) ? $_GET['fq_field']: array();
+
+try{
+$solrResponse = getResultsFromSolr($searchQuery); //this is where the magic happens
+}
+catch (Exception $e) {
+	print '<h1 class="text-danger text-center">'.$e->getMessage().'</h1>';
+	//todo: email admin to inform that solr is down
+	die();
+}
+$searchResponse = $solrResponse['response'];
+
+$searchFacetCounts = $solrResponse['facet_counts'];
+$searchHighlighting = $solrResponse['highlighting'];
+
 $jsonResponse;
 
 $searchResults = $searchResponse['docs'];
+
+printResultsNavigation($searchResponse['start'],$searchResponse['numFound'],$searchQuery['rows']);
 ?>
-
 <div class="row">
-
-	<div class="col-xs-3">
+<?php /*
+The following displays the facets column
+*/?><div class="col-xs-3">
 		<div class="col-xs-12"><h4>Facets (under development):</h4>
 			<div class="panel-group" id="accordion">
   <?php
@@ -16,10 +43,10 @@ $searchResults = $searchResponse['docs'];
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" href="#collapse<?php print $counter;?>"><?php print $facetTitle?>&nbsp;</a>
+        <a class="accordion-toggle<?php print in_array($facetField,$searchQuery['fq_field'])? ' accordion-opened':'';?>" data-toggle="collapse" href="#collapse<?php print $counter;?>"><?php print $facetTitle?>&nbsp;</a>
       </h4>
     </div>
-    <div id="collapse<?php print $counter;?>" class="panel-collapse collapse">
+    <div id="collapse<?php print $counter;?>" class="panel-collapse collapse<?php print in_array($facetField,$searchQuery['fq_field'])? ' in':'';?>">
       <div class="panel-body">
       	<?php
         $currentFacet = $facetField;
@@ -84,7 +111,7 @@ foreach ($searchResults as $result){
 	global $solrFieldNames;
 	
 	foreach ($highlightArray as $key => $value){
-		if ($key == 'title' || $key == 'type_content' || $key == 'format' || $key == 'description' || $key == 'digital_collection' || $key == 'shelfmark') continue;
+		if ($key == 'title' || $key == 'type_content' || $key == 'file_format' || $key == 'description' || $key == 'archive' || $key == 'shelfmark') continue;
 		if (!isset($solrFieldNames[$key])) continue;
 		$displayResult[$key] = $value[0];
 	}
@@ -92,108 +119,80 @@ foreach ($searchResults as $result){
 	$displaySearchResults[] = $displayResult;
 }
 ?>
-<a data-target="#resultsCarousel" data-slide-to="0" class="sr-only" id="back-results-link"></a>
-<div id="resultsCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 
-<div class="carousel-inner" role="listbox">
-	<div class="item active">
-<?php 
+<div class="panel-group" id="accordion">
+<?php
 $counter=1;
 foreach($displaySearchResults as $result):?>
-<div class="col-xs-12">
-	<div class="col-xs-12">
-		<p class="h3"><a target="_blank" href="<?php print $result['url'];?>"><?php print $result['title']?></a></p>
-	</div>
-	<div class="col-xs-6">
-		<p><strong>Type:</strong> <?php print $result['type_content'];?></p>
-	</div>
-	<div class="col-xs-6">
-		<p><strong>Format:</strong> <?php print $result['file_format'];?></p>
-	</div>
-	<div class="col-xs-12">
-		<p><strong>Description:</strong> <?php print $result['description'];?></p>
-	</div>
-	<?php foreach($result as $key => $value):
-	if ($key == 'title' || $key == 'type_content' || $key == 'format' || $key == 'description' || $key == 'digital_collection' || $key == 'shelfmark') continue;
-	if (!isset($solrFieldNames[$key])) continue;
+  <div class="panel panel-default">
+    <div class="panel-heading container-fluid panel-heading-results">
+      <div class="col-xs-11">
+        <h3><a target="_blank" href="<?php print $result['url']?>"><?php print $result['title']?></a></h3>
+      </div>
+      <p class="col-xs-10 pull-right"><strong>Description:</strong> <?php print $result['description'];?></p>
+	  <div class="clearfix"></div>
+	  <div class="col-xs-2"></div>
+	  <p class="col-xs-5"><strong>Digital Collection:</strong> <?php print $result['archive'];?></p>
+	  <p class="col-xs-5"><strong>Shelfmark:</strong> <?php print $result['shelfmark'];?></p>
+	  <div class="clearfix"></div>
+	  <a class="btn btn-default btn-sm btn-results-more col-xs-2" data-toggle="collapse" href="#results-collapse<?php print $counter;?>">
+      Show more&nbsp;<i class="fa fa-angle-right"></i></a>
+      <p class="col-xs-5"><strong>Type:</strong> <?php print $result['type_content'];?></p>
+	  <p class="col-xs-5"><strong>Format:</strong> <?php print $result['file_format'];?></p>
+    </div>
+    <div id="results-collapse<?php print $counter;?>" class="panel-collapse collapse">
+      <div class="panel-body panel-results">
+      <?php foreach ($result as $key => $value){
+		if ($key == 'title' || $key == 'type_content' || $key == 'file_format' || $key == 'description' || $key == 'archive' || $key == 'shelfmark') continue;
+		if (!isset($solrFieldNames[$key])) continue;
+		?>
+		  <p class="col-xs-6"><strong><?php print $solrFieldNames[$key];?>:</strong><br>&nbsp;&nbsp;
+		  <?php
+		  if (is_array($value)){
+		    foreach ($value as $val){
+		  	  print '<br>'.$val;
+		    }
+		  }
+		  else{
+		    print $value;
+		  }
+		  ?>
+		  </p>
+		<?php 
+	  }//endforeach?>
+      </div>
+    </div>
+  </div>
+<?php 
+$counter++;
+endforeach;?>
+</div><!-- #accordion -->
+</div> <!-- search-results-column -->
+
+<?php 
+
+/*functions*/
+function printResultsNavigation($start,$numFound,$rows){
 	?>
-	<div class="col-xs-12">
-		<p><strong><?php print $solrFieldNames[$key];?>:</strong> <?php print $value;?></p>
-	</div>
-	<?php endforeach;?>
-	<div class="col-xs-6">
-		<p><strong>Shelfmark:</strong> <?php print $result['shelfmark'];?>
-		</p>
-	</div>
-	<div class="col-xs-6">
-		<p><strong>Digital Collection:</strong> <?php print $result['archive'];?>
-		</p>
-	</div>
-	<div class="col-xs-12">
-		<a data-target="#resultsCarousel" data-slide-to="<?php print $counter++;?>" class="btn btn-default btn-results-more">More --&gt;</a>
-	</div>
-	
-	<div class="col-xs-12"><hr></div>	
-	
-
-</div>
-<?php endforeach;?>
-</div>
-
-<?php 
-foreach ($searchResults as $result):
-?>
-<?php //print_r($result);?>
-<div class="item">
-<div class="col-xs-12">
-	<div class="col-xs-12">
-		<a data-target="#resultsCarousel" data-slide-to="0" class="btn btn-default btn-results-back">&lt;-- Back to search results</a>
-	</div>
-	<div class="col-xs-12">
-		<h3><a target="_blank" href="<?php print $result['url'];?>"><?php print $result['title']?></a></h3>
-	</div>
-	<div class="col-xs-12">
-		<?php //foreach ($result['role'] as $role => $value):?>
-			<p><strong><?php //print $role;?>:</strong> <?php// print $value;?></p>
-		<?php //endforeach;?>
-	</div>
-	<div class="col-xs-4">
-		<p><strong>Type:</strong> <?php print $result['type_content'];?></p>
-	</div>
-	<div class="col-xs-4">
-		<p><strong>Date:</strong> <?php //print $result['date_original'];?></p>
-	</div>
-
-	<div class="col-xs-4">
-		<p><strong>Format:</strong> <?php print $result['file_format'];?></p>
-	</div>
-	<div class="col-xs-12">
-		<p><strong>Description:</strong> <?php print $result['description'];?></p>
-	</div>
-	<div class="col-xs-6">
-		<p><strong>LC Subject Headings:</strong> <?php //print $result['subject'];?>
-		</p>
-	</div>
-	<div class="col-xs-6">
-		<p><strong>Shelfmark:</strong> <?php print $result['shelfmark'];?>
-		</p>
-	</div>
-	<div class="col-xs-12">
-		<p><strong>Digital Collection:</strong> <?php print $result['archive'];?>
-		</p>
-	</div>
-	
-	
-	
-<div class="col-xs-12"><hr></div>	
-</div>
-
-</div> <!-- class="item" -->
-<?php 
-endforeach; //foreach ($searchResults as $result):
+	<h3 class="text-right">Showing results <?php print ($start+1)?> to <?php print ($numFound<=$start+$rows ) ?($numFound):($start+$rows );?> of <?php print ($numFound)?></h3>
+	<p class="text-right">
+	<?php if ($start>0):?>
+		<a href="<?php 
+		$oldQuery = $_GET;
+		$oldQuery['start'] = $oldQuery['start']-$rows;
+		$newQuery = http_build_query($oldQuery);
+		print $_SERVER['PHP_SELF'].'?'.$newQuery?>" class="btn btn-default">Previous</a>
+	<?php endif;?>
+	<?php if ($numFound>($start+$rows)):?>
+		<a href="<?php 
+		$oldQuery = $_GET;
+		$oldQuery['start'] = $oldQuery['start']+$rows;
+		$newQuery = http_build_query($oldQuery);
+		print $_SERVER['PHP_SELF'].'?'.$newQuery?>" class="btn btn-default">Next</a>
+	<?php endif;?>
+	</p><?php
+}
 
 ?>
-</div> <!-- carousel inner -->
-</div> <!-- carousel -->
-	</div> <!-- search-results-column -->
-</div>
+</div> <!-- row -->
+<?php printResultsNavigation($searchResponse['start'],$searchResponse['numFound'],$searchQuery['rows']);?>

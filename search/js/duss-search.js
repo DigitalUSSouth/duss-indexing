@@ -77,11 +77,16 @@ $(document).ready(function () {
 });
 
 $(".btn-results-more").click(function (e){
-	//alert (window.location +'&view');
-	window.history.pushState("view", "View Result", (window.location +'&view'));
-	$('html, body').animate({
-	    scrollTop: $("#top-of-results").offset().top
-	}, 1000);
+	var text = $(this).text().trim();
+	//console.log('|'+text+'|');
+	if (text=='Show more'){
+		//console.log('more');
+		$(this).html('Show less&nbsp;<i class="fa fa-angle-down"></i>');
+	}
+	else {
+		//console.log('less');
+		$(this).html('Show more&nbsp;<i class="fa fa-angle-right"></i>');
+	}
 });
 
 $(".btn-results-back").click(function (e){

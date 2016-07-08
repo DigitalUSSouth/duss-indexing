@@ -196,7 +196,7 @@
    <field name="description" type="text_en_splitting" indexed="true" stored="true" required="true" multiValued="false" />
    
    <!-- Full Text -->
-   <field name="full_text" type="text_en" indexed="true" stored="false" required="false" multiValued="false" />
+   <field name="full_text" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
    
    <!-- Type of Physical Artifact -->
    <field name="type_physical" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
