@@ -19,10 +19,11 @@ Data submission
  - define formal names for fields
 
 Search Results Page
- - enable ajax for searching instead of reloading page
+ - hide results fields if they are blank
+ - add MoreLikeThis component to query
+ - boost title field to get better results
  - email admin to inform when solr is down on server
  - throw exception when there are no results
- - master search box - search by field
 
 DUSS website
  - check col-XX widths to support mobile devices

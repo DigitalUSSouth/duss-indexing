@@ -53,3 +53,36 @@ $facetFields = array(
 		"language" => "Language"
 		//"date"
 );
+
+global $searchFields;
+$searchFields = array(
+			"contributing_institution",
+			"url",
+			"title",
+			"type_content",
+			"type_digital",
+			"role_ALL" ,
+			"geolocation_human",
+			"alternative_title",
+			"description",
+			"full_text",
+			"type_physical",
+			"shelfmark",
+			"subject_heading",
+			"extent",
+			"copyright_holder",
+			"use_permissions",
+			"language",
+			"notes",
+);
+
+global $advancedSearchFields;
+$advancedSearchFields = array (
+		"all" => "Search all fields",
+		"title" => "Title (title and alternative title fields)",
+		"description" => "Description",
+		"notes" => "Notes",
+		"shelfmark" => "Shelfmark",
+		"subject" => "LC Subject Headings",
+		"role" => "Roles (authors, editors, etc.)"
+);

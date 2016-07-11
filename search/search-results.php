@@ -17,7 +17,7 @@ $solrResponse = getResultsFromSolr($searchQuery); //this is where the magic happ
 }
 catch (Exception $e) {
 	print '<h1 class="text-danger text-center">'.$e->getMessage().'</h1>';
-	//todo: email admin to inform that solr is down
+	//TODO: email admin to inform that solr is down
 	die();
 }
 $searchResponse = $solrResponse['response'];
@@ -29,6 +29,7 @@ $jsonResponse;
 
 $searchResults = $searchResponse['docs'];
 
+//prints next/previous buttons and total results count
 printResultsNavigation($searchResponse['start'],$searchResponse['numFound'],$searchQuery['rows']);
 ?>
 <div class="row">
@@ -135,17 +136,20 @@ foreach($displaySearchResults as $result):?>
 	  <p class="col-xs-5"><strong>Digital Collection:</strong> <?php print $result['archive'];?></p>
 	  <p class="col-xs-5"><strong>Shelfmark:</strong> <?php print $result['shelfmark'];?></p>
 	  <div class="clearfix"></div>
-	  <a class="btn btn-default btn-sm btn-results-more col-xs-2" data-toggle="collapse" href="#results-collapse<?php print $counter;?>">
+	  <a class="btn btn-default btn-sm btn-results-more col-xs-2" id="btn-results-<?php print $counter;?>" data-toggle="collapse" href="#results-collapse<?php print $counter;?>">
       Show more&nbsp;<i class="fa fa-angle-right"></i></a>
       <p class="col-xs-5"><strong>Type:</strong> <?php print $result['type_content'];?></p>
 	  <p class="col-xs-5"><strong>Format:</strong> <?php print $result['file_format'];?></p>
     </div>
     <div id="results-collapse<?php print $counter;?>" class="panel-collapse collapse">
       <div class="panel-body panel-results">
-      <?php foreach ($result as $key => $value){
-		if ($key == 'title' || $key == 'type_content' || $key == 'file_format' || $key == 'description' || $key == 'archive' || $key == 'shelfmark') continue;
-		if (!isset($solrFieldNames[$key])) continue;
-		?>
+      <?php
+        $counter2=0;
+        foreach ($result as $key => $value){
+		  if ($key == 'title' || $key == 'type_content' || $key == 'file_format' || $key == 'description' || $key == 'archive' || $key == 'shelfmark') continue;
+		  if (!isset($solrFieldNames[$key])) continue;
+		  $counter2++;
+		  ?>
 		  <p class="col-xs-6"><strong><?php print $solrFieldNames[$key];?>:</strong><br>&nbsp;&nbsp;
 		  <?php
 		  if (is_array($value)){
@@ -158,8 +162,26 @@ foreach($displaySearchResults as $result):?>
 		  }
 		  ?>
 		  </p>
-		<?php 
-	  }//endforeach?>
+		  <?php 
+	    }//endforeach
+	    if ($counter2==0)://if counter2==0 then we need to hide the 'more' button
+	    ?>
+	    <script>
+	    <?php //this script disables the 'more' button if there are no additional items to display
+	          //we have to use an array of functions because jquery is not loaded yet
+	          //once the dom is ready, we iterate through this array and execute each function
+	          //see duss-search.js -> $(document).ready()
+	    ?>
+	      //check if disableArray is defined
+	      if (typeof disableArray === 'undefined' || disableArray === null) {
+		    var disableArray = [];
+		  }
+		  disableArray.push(function(){
+		    $("#btn-results-<?php print $counter;?>").css("visibility","hidden");
+		  });
+		  //console.log(disableArray);
+	    </script>
+	  <?php endif;?>
       </div>
     </div>
   </div>

@@ -74,6 +74,15 @@ $(document).ready(function () {
 		$(".close:first").hide();
 	}
 	
+	//this iterates through the disableArray
+	//defined in search-results.php
+	//each function in the array hides a 'more' button
+	//if there is no more information to display
+	if(typeof disableArray != 'undefined' && disableArray != null){
+      for(var i in disableArray){
+	    disableArray[i]();
+	  }
+    }
 });
 
 $(".btn-results-more").click(function (e){
@@ -89,18 +98,7 @@ $(".btn-results-more").click(function (e){
 	}
 });
 
-$(".btn-results-back").click(function (e){
-	//alert (window.location +'&view');
-	window.history.back();
-});
-
-$(window).bind('popstate',  
-	    function(event) {
-	        $("#back-results-link")[0].click();
-	    });
-
-
-$(".panel-heading").click(function (e) {
+$(".accordion-toggle").click(function (e) {
 	//alert('strst');
-	$(this).find(".accordion-toggle").toggleClass("accordion-opened");
+	$(this).toggleClass("accordion-opened");
 });

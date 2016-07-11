@@ -772,21 +772,14 @@ function buildSolrQuery($query){
 	$queryString = 'http://localhost:8983/solr/'.$solrCoreName
 		.'/select?'.$queryString.'&start='.$query['start'].'&rows='.$query['rows']
 		.'&wt=json&hl=true&hl.simple.pre='.urlencode('<'.$solrResultsHighlightTag.'>')
-		.'&hl.simple.post='.urlencode('</'.$solrResultsHighlightTag.'>')
-		.'&hl.fl=*&facet=true&facet.field=archive_facet&facet.field=contributing_institution_facet'
-		.'&facet.field=type_content&facet.field=file_format&facet.field=subject_heading_facet'
-		.'&facet.field=language&indent=true';
+		.'&hl.simple.post='.urlencode('</'.$solrResultsHighlightTag.'>').'&hl.fl=*&facet=true';
 	
-		/*
-		 * Archive (Digital collection)
-Contributing Institution
-Type of content
-LC Subject Headings
-File Format
-Language
-Copyright (Use Rights)
-Date (slider to select range)
-		 * */
+    //add facet fields to query
+	global $facetFields;
+	foreach ($facetFields as $key => $value){
+	  $queryString = $queryString.'&facet.field='.$key;
+	}
+	$queryString = $queryString.'&indent=true';
 
 	return $queryString;
 }
@@ -799,26 +792,7 @@ Date (slider to select range)
  */
 function buildQueryForAllFields($query){
 	$queryString = '';
-	$searchFields = array(
-			"contributing_institution",
-			"url",
-			"title",
-			"type_content",
-			"type_digital",
-			"role_ALL" ,
-			"geolocation_human",
-			"alternative_title",
-			"description",
-			"full_text",
-			"type_physical",
-			"shelfmark",
-			"subject_heading",
-			"extent",
-			"copyright_holder",
-			"use_permissions",
-			"language",
-			"notes",
-	);
+	global $searchFields;
 	foreach ($searchFields as $field){
 		$queryString = $queryString.$field.':('.urlencode($query).')%0A';
 	}

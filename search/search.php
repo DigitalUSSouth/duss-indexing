@@ -6,13 +6,7 @@ require "layout/head.php";
 
 require "layout/nav-search.php";
 
-//require "layout/home.php";
 
-//require "layout/about.php";
-
-//require "layout/projects.php";
-
-//require "layout/contact.php";
 
 require_once 'solr.php';
 
@@ -52,15 +46,6 @@ $carousel = array(
 	)
 );
 
-$advancedSearchFields = array (
-	"all" => "Search all fields",
-	"title" => "Title (title and alternative title fields)",
-	"description" => "Description",
-	"notes" => "Notes",
-	"shelfmark" => "Shelfmark",
-	"subject" => "LC Subject Headings",
-	"role" => "Roles (authors, editors, etc.)"
-);
 
 ?>
 <div class="container-fluid">
@@ -134,19 +119,11 @@ print '</pre>';*/
 <?php 
 require 'search-results.php';
 
-
-
-
-
 endif;//check $_GET query
 
-?>
-
-<?php 
 else: //form not submitted - display advanced search page only
 $queryArray = NULL;
 require 'advanced-search-box.php';
-
 
 endif; //if (isset($_GET['form_submitted'])):
 
