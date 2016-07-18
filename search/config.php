@@ -19,29 +19,56 @@ $lastError = '';
 
 global $solrFieldNames;
 $solrFieldNames = array(
-"archive" => "Digital Collection",
-"contributing_institution" => "Contributing Institution",
-"title" => "Title",
-"type_content" => "Type of Content",
-"type_digital" => "Type of Digital Surrogate",
-"geolocation_human" => "Location",
-"file_format" => "File Format",
-"alternative_title" => "Alternative Title",
-"thumbnail_url" => "Thumbnail URL",
-"description" => "Description",
-"full_text" => "Full Text",
-"type_physical" => "Type of Physical Artifact",
-"date_original" => "Date",
-"date_digital" => "Date Digital",
-"geolocation_machine" => "Geolocation",
-"shelfmark" => "Shelfmark",
-"subject_heading" => "LC Subject Headings",
-"extent" => "Extent",
-"copyright_holder" => "Copyright Holder",
-"use_permissions" => "Use Rights",
-"language" => "Language",
-"notes" => "Notes"
+"archive" => ["field_title" => "Digital Collection",
+	"display" => "brief"],
+"contributing_institution" => ["field_title" => "Contributing Institution",
+	"display" => "brief"],
+"title" => ["field_title" => "Title",
+	"display" => "brief"],
+"type_content" => ["field_title" => "Type of Content",
+	"display" => "brief"],
+"type_digital" => ["field_title" => "Type of Digital Surrogate",
+	"display" => "full"],
+"geolocation_human" => ["field_title" => "Location",
+	"display" => "full"],
+"file_format" => ["field_title" => "File Format",
+	"display" => "full"],
+"alternative_title" => ["field_title" => "Alternative Title",
+	"display" => "full"],
+"thumbnail_url" => ["field_title" => "Thumbnail URL",
+	"display" => "full"],
+"description" => ["field_title" => "Description",
+	"display" => "brief"],
+"full_text" => ["field_title" => "Full Text",
+	"display" => "full"],
+"type_physical" => ["field_title" => "Type of Physical Artifact",
+	"display" => "full"],
+"date_original" => ["field_title" => "Date",
+	"display" => "full"],
+"date_digital" => ["field_title" => "Date Digital",
+	"display" => "full"],
+"geolocation_machine" => ["field_title" => "Geolocation",
+	"display" => "full"],
+"shelfmark" => ["field_title" => "Shelfmark",
+	"display" => "full"],
+"subject_heading" => ["field_title" => "LC Subject Headings",
+	"display" => "full"],
+"extent" => ["field_title" => "Extent",
+	"display" => "full"],
+"copyright_holder" => ["field_title" => "Copyright Holder",
+	"display" => "full"],
+"use_permissions" => ["field_title" => "Use Rights",
+	"display" => "full"],
+"language" => ["field_title" => "Language",
+	"display" => "full"],
+"notes" => ["field_title" => "Notes",
+	"display" => "full"]
 );
+
+global $briefDisplayFields;
+foreach ($solrFieldNames as $name =>$info){
+	if ($info['display']=='brief') $briefDisplayFields[] = $name;
+}
 
 global $facetFields;
 $facetFields = array(

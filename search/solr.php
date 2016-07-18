@@ -36,6 +36,7 @@ function importTabFileSCCivilWar(){
 		
 		$subjectHeadings = parseSubjectHeadings($fields[8]);
 		
+		$parsedDate = parse_date($fields[4]);
 		
 		$notes = $fields[12].' - '.$fields[18];
 		$notes = $notes.(trim($fields[23])!='')?'Scanner technician: '.$fields[23].' ':'' ;

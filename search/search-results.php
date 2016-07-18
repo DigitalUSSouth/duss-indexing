@@ -94,30 +94,29 @@ The following displays the facets column
 $displaySearchResults = array();
 
 foreach ($searchResults as $result){
-	$url = $result['url'];
+	$url = $result['url']; //Fix this!!!
 	$highlightArray = $searchHighlighting[$url];
 	
 	//title
 	$displayResult['title'] = isset($highlightArray['title']) ? $highlightArray['title'][0] : $result['title'];
-	//type
-	$displayResult['type_content'] = isset($highlightArray['type_content']) ? $highlightArray['type_content'][0] : $result['type_content'];
-	//format
-	$displayResult['file_format'] = isset($highlightArray['file_format']) ? $highlightArray['file_format'][0] : $result['file_format'];
-	//description
-	$displayResult['description'] = isset($highlightArray['description']) ? $highlightArray['description'][0] : $result['description'];
-	//digital collection/archive
-	$displayResult['archive'] = isset($highlightArray['archive']) ? $highlightArray['archive'][0] : $result['archive'];
-	//shelfmark
-	$displayResult['shelfmark'] = isset($highlightArray['shelfmark']) ? $highlightArray['shelfmark'][0] : $result['shelfmark'];
+	
+	//brief display
+	foreach ($briefDisplayFields as $field){
+		if (!isset($result[$field])) continue;//TODO: fix this
+		$displayResult[$field] = isset($highlightArray[$field]) ? $highlightArray[$field][0] : $result[$field];
+	}
+	
 	global $solrFieldNames;
 	
 	foreach ($highlightArray as $key => $value){
-		if ($key == 'title' || $key == 'type_content' || $key == 'file_format' || $key == 'description' || $key == 'archive' || $key == 'shelfmark') continue;
+		if (in_array($key,$briefDisplayFields)) continue;
 		if (!isset($solrFieldNames[$key])) continue;
 		$displayResult[$key] = $value[0];
 	}
 	$displayResult['url'] = $url;
 	$displaySearchResults[] = $displayResult;
+	//TODO: fix this
+	$result['url'] = $result['id'];
 }
 ?>
 
@@ -130,27 +129,37 @@ foreach($displaySearchResults as $result):?>
       <div class="col-xs-11">
         <h3><a target="_blank" href="<?php print $result['url']?>"><?php print $result['title']?></a></h3>
       </div>
-      <p class="col-xs-10 pull-right"><strong>Description:</strong> <?php print $result['description'];?></p>
-	  <div class="clearfix"></div>
-	  <div class="col-xs-2"></div>
-	  <p class="col-xs-5"><strong>Digital Collection:</strong> <?php print $result['archive'];?></p>
-	  <p class="col-xs-5"><strong>Shelfmark:</strong> <?php print $result['shelfmark'];?></p>
-	  <div class="clearfix"></div>
+      <?php foreach ($briefDisplayFields as $field):?>
+        <p class="col-xs-5 pull-right">
+          <strong><?php 
+		  print $solrFieldNames[$field]['field_title'];
+		  ?> :</strong>
+		  <?php
+		  $value = $result[$field];
+		  if (is_array($value)){
+		    foreach ($value as $val){
+		  	  print '<br>'.$val;
+		    }
+		  }
+		  else{
+		    print $value;
+		  }
+		  ?>
+        </p>
+      <?php endforeach;?>
 	  <a class="btn btn-default btn-sm btn-results-more col-xs-2" id="btn-results-<?php print $counter;?>" data-toggle="collapse" href="#results-collapse<?php print $counter;?>">
       Show more&nbsp;<i class="fa fa-angle-right"></i></a>
-      <p class="col-xs-5"><strong>Type:</strong> <?php print $result['type_content'];?></p>
-	  <p class="col-xs-5"><strong>Format:</strong> <?php print $result['file_format'];?></p>
     </div>
     <div id="results-collapse<?php print $counter;?>" class="panel-collapse collapse">
       <div class="panel-body panel-results">
       <?php
         $counter2=0;
         foreach ($result as $key => $value){
-		  if ($key == 'title' || $key == 'type_content' || $key == 'file_format' || $key == 'description' || $key == 'archive' || $key == 'shelfmark') continue;
+		  if (in_array($key,$briefDisplayFields)) continue;
 		  if (!isset($solrFieldNames[$key])) continue;
 		  $counter2++;
 		  ?>
-		  <p class="col-xs-6"><strong><?php print $solrFieldNames[$key];?>:</strong><br>&nbsp;&nbsp;
+		  <p class="col-xs-6"><strong><?php print $solrFieldNames[$key]['field_title'];?>:</strong><br>&nbsp;&nbsp;
 		  <?php
 		  if (is_array($value)){
 		    foreach ($value as $val){
