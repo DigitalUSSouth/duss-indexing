@@ -1,4 +1,12 @@
 <?php
+/* search.php
+ * This file prints out the main search page.
+ * Prints out the initual search page.
+ *
+ * Partials:
+ *   - advanced-search-box.php: prints out the search box
+ *   - search-results.php: performs the search and print facets+results
+ */
 
 require "layout/head.php";
 

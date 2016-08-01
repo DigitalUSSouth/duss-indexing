@@ -1,4 +1,11 @@
 <?php
+/* delete-all.php
+ *
+ **********WARNING!!!****************
+ * Executing this script (or opening in browser) will DELETE and COMMIT
+ *   all data in the project Solr index. 
+ */
+
 
 require "layout/head.php";
 

@@ -1,4 +1,8 @@
 <?php
+/* core-projects.php
+ * This file displays a list of DUSS "Core Projects"
+ * List is pulled from the $projects array defined in head.php 
+ */
 
 require "layout/head.php";
 

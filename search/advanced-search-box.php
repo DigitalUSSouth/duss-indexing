@@ -1,3 +1,12 @@
+<?php
+/* advanced-search-box.php
+ * This file contains the Advanced Search Box partial for the main search page.
+ * Prints out the search form for the initual search page. 
+ * If the search page is the result of a query, then it also pre-populates the search
+ *   fields with the query parameters.
+ * As of May 15, 2016 - Multi-field queries are disabled. Will re-enable in the future.
+ */
+?>
 <div class="row text-center">
 		<div class="col-md-10 center-block">
 			<p>Digital US South Initiative - Advanced Search</p>

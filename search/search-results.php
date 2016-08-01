@@ -1,13 +1,21 @@
 <?php
+/* search-results.php
+ * This file performs a search and prints out the facets and results.
+ * Depends on: solr.php
+ */
 
-//is the search full-text?
+
+
+/*
+ * Populate $searchQuery array with appropriate values
+ */
 $searchQuery['isFullText'] = (isset($_GET['full-text-search'])) ? $_GET['full-text-search'] : false;
 
 $searchQuery['queryArray'] = $queryArray;
 
 $searchQuery['start'] = (isset($_GET['start'])) ? $_GET['start'] : 0;
 
-$searchQuery['rows'] = 20;
+$searchQuery['rows'] = $searchResultsRows;
 
 $searchQuery['fq'] = (isset($_GET['fq'])) ? $_GET['fq']: array();
 $searchQuery['fq_field'] = (isset($_GET['fq_field'])) ? $_GET['fq_field']: array();
@@ -24,9 +32,6 @@ $searchResponse = $solrResponse['response'];
 
 $searchFacetCounts = $solrResponse['facet_counts'];
 $searchHighlighting = $solrResponse['highlighting'];
-
-$jsonResponse;
-
 $searchResults = $searchResponse['docs'];
 
 //prints next/previous buttons and total results count
@@ -115,7 +120,7 @@ foreach ($searchResults as $result){
 	}
 	$displayResult['url'] = $url;
 	$displaySearchResults[] = $displayResult;
-	//TODO: fix this
+	//TODO: fix this - need to figure out url/id problems
 	$result['url'] = $result['id'];
 }
 ?>
