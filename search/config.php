@@ -10,6 +10,9 @@ $solrCoreName = "duss-indexing";
 global $solrUrl;
 $solrUrl = 'http://localhost:8983/solr/'.$solrCoreName.'/';
 
+global $searchResultsRows;
+$searchResultsRows = 20;
+
 global $solrResultsHighlightTag;
 $solrResultsHighlightTag = "mark";//bootstrap highlight <mark></mark>
 

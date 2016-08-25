@@ -1,4 +1,8 @@
 <?php
+/* commit.php
+ * Executing this script (or opening in browser) will commit
+ *   all pending changes in the project Solr index. 
+ */
 
 require "layout/head.php";
 
