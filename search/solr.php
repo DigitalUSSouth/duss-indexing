@@ -289,6 +289,11 @@ function importTabFilePBrown(){
 
 //SIMMS
 function importTabFileSimms(){
+
+	/*
+	contentdm simms1 query
+	http://digital.tcl.sc.edu:81/dmwebservices/index.php?q=dmQuery/simms1/0//1024/1024/0/0/0/0/0/0/json
+	*/
 	
 	print 'importTabFileSimms()<br>';
 	//global $mysqli;
