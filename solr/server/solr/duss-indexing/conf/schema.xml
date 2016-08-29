@@ -188,12 +188,18 @@
    <!-- Alternative Title(s) -->
    <!-- TODO: finalize text field type decisions -->
    <field name="alternative_title" type="text_en_splitting" indexed="true" stored="true" required="false" multiValued="true" />
+
+   <!-- Is Part Of -->
+   <field name="is_part_of" type="string" indexed="true" stored="true" required="false" multiValued="true" />
    
    <!-- Thumbnail URL -->
    <field name="thumbnail_url" type="string" indexed="true" stored="true" required="false" multiValued="false" />
    
    <!-- Description -->
    <field name="description" type="text_en_splitting" indexed="true" stored="true" required="true" multiValued="false" />
+
+   <!-- Genre -->
+   <field name="genre" type="text_en_splitting" indexed="true" stored="true" required="false" multiValued="false" />
    
    <!-- Full Text -->
    <field name="full_text" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />

@@ -11,10 +11,17 @@ require_once('config.php');
  * Each function implements the appropriate crosswalk for its
  * respective project.
  * */
+global $invalidDateCounter;
+$invalidDateCounter=0;
+
 
 //SC Civil War
 function importTabFileSCCivilWar(){
+
+
 	$file = NULL;
+
+	//ini_set('memory_limit', '1024M');
 
 	try {
 		$file = new SplFileObject("uploads/upload-sc-civil-war.txt");
@@ -25,18 +32,19 @@ function importTabFileSCCivilWar(){
 	}
 
 	$counter=0;
-
+	global $invalidDateCounter;
+	$invalidDateCounter=0;
 	while ($line = $file->fgets()) {
-		if ($counter++ == 0) continue; //discard first line because it only contains headers
-
+		if ($counter++ == 0) continue; //discard first line because it only contains headers_list
 
 		$fields = explode("\t",$line);
+		print $fields[37].'<br>';
 		
 		$description = $fields[9].($fields[3]=='')? '': ' - Inscription:'.$fields[3] ;
 		
 		$subjectHeadings = parseSubjectHeadings($fields[8]);
 		
-		$parsedDate = parse_date($fields[4]);
+		$parsedDate = (trim($fields[5])!="") ? parse_date($fields[5]) : parse_date("1800 - 1900");
 		
 		$notes = $fields[12].' - '.$fields[18];
 		$notes = $notes.(trim($fields[23])!='')?'Scanner technician: '.$fields[23].' ':'' ;
@@ -106,6 +114,7 @@ function importTabFileSCCivilWar(){
 		//$date_parsed = parse_date($date);
 		//$date_digital_parsed = parse_date($date_digital);
 	}
+	print '<br>Invalid Dates: '.$invalidDateCounter.'<br>Total: '.$counter;
 }
 
 //George Lagrange Cook Photograph Collection
@@ -294,6 +303,8 @@ function importTabFileSimms(){
 	}
 
 	$counter=0;
+    ini_set('memory_limit','512M');
+	$documents = array();
 
 	while ($line = $file->fgets()) {
 		if ($counter++ == 0) continue; //discard first line because it only contains headers
@@ -362,10 +373,13 @@ function importTabFileSimms(){
 		);
 
 		indexDocument($document);
+		$documents[] = $document;
 
 		//$date_parsed = parse_date($date);
 		//$date_digital_parsed = parse_date($date_digital);
 	}
+	$jsonDocs = json_encode($documents,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+	file_put_contents('json/docs.json',$jsonDocs);
 }
 
 
@@ -598,6 +612,22 @@ function postJsonDataToSolr($data, $action){
  * */
 function parse_date($date_string){
 	$date_string = trim($date_string);
+
+	if (!preg_match('/^[0-9]{4}(.*?)$/',$date_string) || preg_match('/\?$/',$date_string) ){
+		print "Invalid date: ".$date_string;
+		global $invalidDateCounter;
+		$invalidDateCounter++;
+		return array(
+			'year_begin' => 0,
+			'month_begin' => 0,
+			'day_begin' => 0,
+			'year_end' => 0,
+			'month_end' => 0,
+			'day_end' => 0,
+			'years' => array()
+		);
+	}
+
 	//print $date_string.'<br>';
 	$parts = explode(' - ',$date_string);
 	$parsed_date = array(
@@ -680,6 +710,7 @@ function parse_date($date_string){
 		$startYear = $parsed_date['year_end'];
 		$endYear = $parsed_date['year_begin'];
 	}
+	//print $startYear.'-'.$endYear;
 	while ($startYear<=$endYear){
 		$parsed_date['years'][] = $startYear++;
 	}
