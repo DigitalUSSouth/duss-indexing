@@ -288,6 +288,9 @@ function importTabFilePBrown(){
 }
 
 //SIMMS
+global $cdmPointerArray;
+$cdmPointerArray = array();
+//array of simms contentdm pointers gets populated in importTabFileSimms
 function importTabFileSimms(){
 
 	/*
@@ -311,27 +314,85 @@ function importTabFileSimms(){
     ini_set('memory_limit','512M');
 	$documents = array();
 
-	while ($line = $file->fgets()) {
-		if ($counter++ == 0) continue; //discard first line because it only contains headers
+	$parentItemsResponseJson = file_get_contents('http://digital.tcl.sc.edu:81/dmwebservices/index.php?q=dmQuery/simms1/0//1024/1024/0/0/0/0/0/0/json');
 
-		$fields = explode("\t",$line);
+	$parentItemsResponse = json_decode($parentItemsResponseJson,true);
 
-		/*$notes = 8place of publication
-		 . 9 publishers
-		 . 10 place of printing
+	//print_r($parentItemsResponse);
+
+	$parentItems = $parentItemsResponse['records'];
+
+	$itemCounter = 0;
+	$maxStackDepth = 0;
+	foreach ($parentItems as $parentItem){
+		$parentPointer = $parentItem['pointer'];
+		$parentItemInfoJson = file_get_contents('http://digital.tcl.sc.edu:81/dmwebservices/index.php?q=dmGetCompoundObjectInfo/simms1/'.$parentPointer.'/json');
+		//print $parentItemInfoJson;
+		$parentItemInfo = json_decode($parentItemInfoJson,true);
+		if (array_key_exists('code',$parentItemInfo)){
+			print 'error parentItemInfo: '.$parentPointer.'<br>';
+			continue;
+		}
+		//print_r($parentItemInfo);
+		global $cdmPointerArray;
+		$cdmPointerArray = array();
+		
+		//recursive function to get child pointers
+		$getPointers = function( $inArray ) use ( &$getPointers ) {
+			//print_r($inArray);
+			global $cdmPointerArray;
+			if (!is_array($inArray)) return;
+			foreach ($inArray as $key => $item) {
+				if (is_array($item)){
+					$getPointers($item);
+				}
+				else if ($key == 'pageptr'){
+					$cdmPointerArray [] = $item;
+					//print $key.'<br>';
+					//print_r($item);
+				}
+			}
+		};
+
+		$getPointers($parentItemInfo);
+
+		indexSimmsObject($parentPointer);
+
+		foreach ($cdmPointerArray as $childPointer){
+			$itemCounter++;
+		}
 		 
-		*/
-		
-		
+
+	}
+	print $itemCounter;
+
+}
+//This function will index a Simms object
+function indexSimmsObject($cdmPointer, $parentPointer = null){
+	$objectInfoJson = file_get_contents('http://digital.tcl.sc.edu:81/dmwebservices/index.php?q=dmGetItemInfo/simms1/'.$cdmPointer.'/json');
+	$objectInfo = json_decode($objectInfoJson,true);
+	if ($parentPointer == null){
+		$match;
+		if (!is_string($objectInfo['websit'])){
+			print 'Unable to find simms url. contentdm pointer: '.$cdmPointer.'<br>';
+			continue;
+		}
+		if (!preg_match('/[0-9]+$/',$objectInfo['websit'],$match)){
+			print 'Unable to find simms url. contentdm pointer: '.$cdmPointer.'<br>';
+			continue;
+		}
+		$url = 'http://simms.library.sc.edu/view_item.php?item='.$match[0];
+		print $url.'<br>';
+		print $cdmPointer.'<br>';
 		$document = array(
-				'title' => $fields[0],
+				'title' => $objectInfo['title'],
 				//'role_creator' => $fields[1],
 				//'date' => parse_date($fields[2]),
 				//'shelfmark' => $fields[3],
 				//'shelfmark' => $fields[4],
-				'contributing_institution' => $fields[5],
+				'contributing_institution' => $objectInfo['holdin'],
 				//'language' => $fields[6],
-				'role_cre' => $fields[7],//creator
+				'role_cre' => $objectInfo['creato'],//creator
 				//'contributing_institution' => $fields[8],
 				//'contributing_institution' => $fields[9],
 				//'type_content' => $fields[10],
@@ -347,44 +408,44 @@ function importTabFileSimms(){
 				//'none' => $fields[20],
 				//'geolocation_human' => $fields[21],
 				//'id' => $fields[22],
-				'geolocation_human' => $fields[23],
+				'geolocation_human' => $objectInfo['sc'],
 				//'id' => $fields[24],
 				//'id' => $fields[25],
-				'description' => $fields[26],
+				'description' => $objectInfo['biblio'],
 				//'url' => $fields[27],
-				'archive' => $fields[28],
-				'url' => $fields[29],
+				'archive' => $objectInfo['relati'],
+				'url' => $url,
 				//'url' => $fields[30],
 				//'role_creator' => $fields[311],
 				//'date' => parse_date($fields[32]),
 				//'shelfmark' => $fields[33],
 				//'shelfmark' => $fields[34],
-				'date_digital' => $fields[35],
-				'type_content' => $fields[36],
-				'file_format' => $fields[37],
-				'type_digital' => $fields[38],
+				'date_digital' => $objectInfo['date'],
+				'type_content' => $objectInfo['type'],
+				'file_format' => $objectInfo['format'],
+				'type_digital' => $objectInfo['media'],
 				//'contributing_institution' => $fields[39],
 				//'type_content' => $fields[40],
-				'notes' => $fields[41],
-				'full_text' => $fields[42],
+				'notes' => $objectInfo['note'],
+				'full_text' => $objectInfo['transc'],
 				//'type_digital' => $fields[43],
 				//'description' => $fields[44],
 				//'geolocation_human' => $fields[45],
 				//'notes' => $fields[46],
-				'url' => $fields[47],
-				'id' => $fields[47]
+				//'url' => $fields[47],
+				'id' => $url
 				//'none' => $fields[49],
 				//'none' => $fields[50],
 		);
 
-		indexDocument($document);
-		$documents[] = $document;
 
-		//$date_parsed = parse_date($date);
-		//$date_digital_parsed = parse_date($date_digital);
+		//contentdm returns empty fields as arrays, so we convert to empty strings for solr
+		foreach ($document as &$field){
+			if (is_array($field)) $field = "";
+		}
+		indexDocument($document);
+		flush();
 	}
-	$jsonDocs = json_encode($documents,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
-	file_put_contents('json/docs.json',$jsonDocs);
 }
 
 
