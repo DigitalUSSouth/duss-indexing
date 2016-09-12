@@ -22,8 +22,20 @@ $statement->store_result();
 
 $statement->bind_result($id,$title,$name,$date,$excerpt,$content);
 
+$counter=1;
 while ($statement->fetch()){
-    print $id;
+    print $counter++.'-'.$id.'<br>';
+    $document = array(
+        'archive' => 'South Carolina Digital Encyclopedia',
+        'contributing_institution' => 'University of South Carolina',
+        'url' => 'http://www.duss.sc.edu/sce/entries/'.$name.'/',
+        'title' => $title,
+        'type_content' => 'Text',
+        'type_digital' => 'Text',
+        'geolocation_human' => 'South Carolina',
+        'file_format' => 'text/html'
+    );
+    indexDocument($document);
 }
 ?>
 </pre>
