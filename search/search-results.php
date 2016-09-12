@@ -147,7 +147,7 @@ foreach($displaySearchResults as $result):?>
 		    }
 		  }
 		  else{
-		    print $value;
+		    print closetags($value);
 		  }
 		  ?>
         </p>
@@ -172,7 +172,7 @@ foreach($displaySearchResults as $result):?>
 		    }
 		  }
 		  else{
-		    print $value;
+		    print closetags($value);
 		  }
 		  ?>
 		  </p>

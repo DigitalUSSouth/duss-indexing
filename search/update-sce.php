@@ -9,6 +9,8 @@ require "layout/head.php";
 require "layout/nav-search.php";
 
 require_once 'solr.php';
+
+require_once 'db-config.php';
 ?>
 <div class="container-fluid">
 <pre>
