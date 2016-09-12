@@ -12,7 +12,7 @@ require_once 'solr.php';
 ?>
 <div class="container-fluid">
 <pre>
-<?php 
+<?php
 set_time_limit(600);
 
 global $mysqli;
@@ -28,23 +28,30 @@ while ($statement->fetch()){
     $document = array(
         'archive' => 'South Carolina Digital Encyclopedia',
         'contributing_institution' => 'University of South Carolina',
+        'id' => 'http://www.duss.sc.edu/sce/entries/'.$name.'/',
         'url' => 'http://www.duss.sc.edu/sce/entries/'.$name.'/',
-        'title' => $title,
+        'title' => utf8_encode($title),
         'type_content' => 'Text',
         'type_digital' => 'Text',
         'geolocation_human' => 'South Carolina',
-        'file_format' => 'text/html'
+        'file_format' => 'text/html',
+        'description' => '',
+        'full_text' => utf8_encode($content)
     );
+//jjprint mb_detect_encoding($content);
+//    print_r($document);
+//print '<br>';
+//continue;
     indexDocument($document);
 }
 ?>
 </pre>
 </div>
-<?php 
+<?php
 
 ?>
 
-<?php 
+<?php
 
 require "layout/footer.php";
 

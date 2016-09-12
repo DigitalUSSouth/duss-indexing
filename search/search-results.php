@@ -143,7 +143,7 @@ foreach($displaySearchResults as $result):?>
 		  $value = $result[$field];
 		  if (is_array($value)){
 		    foreach ($value as $val){
-		  	  print '<br>'.$val;
+		  	  print '<br>'.closetags($val); 
 		    }
 		  }
 		  else{
@@ -168,7 +168,7 @@ foreach($displaySearchResults as $result):?>
 		  <?php
 		  if (is_array($value)){
 		    foreach ($value as $val){
-		  	  print '<br>'.$val;
+		  	  print '<br>'.closetags($val);
 		    }
 		  }
 		  else{
