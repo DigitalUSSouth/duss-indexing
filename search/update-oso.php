@@ -45,7 +45,7 @@ while ($statement->fetch()){
         'type_digital' => 'Text',
         'geolocation_human' => 'US South',
         'file_format' => 'text/html',
-        'description' => utf8_encode(strip_tags(trim($description))/*,
+        'description' => utf8_encode(strip_tags(trim($description)))/*,
         'full_text' => utf8_encode(strip_tags($fullText))*/
     );
 //jjprint mb_detect_encoding($content);
