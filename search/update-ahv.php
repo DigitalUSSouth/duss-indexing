@@ -58,13 +58,13 @@ while ($statement->fetch()){
         'contributing_institution' => 'University of South Carolina',
         'id' => 'http://www.duss.sc.edu/vegetable/vegetable.php?Id='.$id,
         'url' => 'http://www.duss.sc.edu/vegetable/vegetable.php?Id='.$id,
-        'title' => utf8_encode($name.($latinName=='')?'':' ('.$latinName.')'),
+        'title' => utf8_encode($name.((trim($latinName)=='')?'':' ('.trim($latinName).')')),
         'type_content' => 'Text',
         'type_digital' => 'Text',
         'geolocation_human' => 'US South',
         'file_format' => 'text/html',
-        'description' => utf8_encode(closetags($description)),
-        'full_text' => utf8_encode(closetags($fullText))
+        'description' => utf8_encode(strip_tags($description)),
+        'full_text' => utf8_encode(strip_tags($fullText))
     );
 //jjprint mb_detect_encoding($content);
 //    print_r($document);

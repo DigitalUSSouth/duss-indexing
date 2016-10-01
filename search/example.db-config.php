@@ -12,7 +12,7 @@ if ($mysqli->connect_error || $mysqli->connect_errno) {
 }
 
 global $mysql1;
-$mysql1 = new mysqli('locahost','x', 'x', 'x');
+$mysql1 = new mysqli('localhost','x', 'x', 'x');
 if ($mysql1->connect_error || $mysql1->connect_errno) {
   exit ("<h1 class='text-danger'>Database Connection Error (" . $mysql1->connect_errno . "): " . $mysql1->connect_error . "</h1>");
 }
