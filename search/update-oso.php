@@ -25,11 +25,11 @@ if ($mysql2->connect_error || $mysql2->connect_errno) {
 <?php
 set_time_limit(600);
 
-$statement = $mysql2->prepare("SELECT Id, Name, LatinName, Description, Source FROM sub_orc_data");
+$statement = $mysql2->prepare("SELECT name,description FROM sub_orc_data");
 $statement->execute();
 $statement->store_result();
 
-$statement->bind_result($name,$latinName,$description,$source);
+$statement->bind_result($name,$description);
 
 $counter=1;
 while ($statement->fetch()){
@@ -45,14 +45,16 @@ while ($statement->fetch()){
         'type_digital' => 'Text',
         'geolocation_human' => 'US South',
         'file_format' => 'text/html',
-        'description' => utf8_encode(strip_tags($description))/*,
+        'description' => utf8_encode(strip_tags(trim($description))/*,
         'full_text' => utf8_encode(strip_tags($fullText))*/
     );
 //jjprint mb_detect_encoding($content);
 //    print_r($document);
 //print '<br>';
 //continue;
-    indexDocument($document);
+    if($document['description']!=""){
+      indexDocument($document);
+    }
 }
 ?>
 </pre>
