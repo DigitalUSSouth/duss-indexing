@@ -6,7 +6,7 @@
  */
 
 //redirect to www
-if ($_SERVER['HTTP_HOST']=="digitalussouth.org"){}
+if ($_SERVER['HTTP_HOST']=="digitalussouth.org"){
 	$request = $_SERVER['REQUEST_URI'];
 	header("HTTP/1.1 301 Moved Permanently"); 
     header("Location: http://www.digitalussouth.org".$request);
