@@ -216,7 +216,7 @@ foreach($displaySearchResults as $result):?>
   <div class="panel panel-default">
     <div class="panel-heading container-fluid panel-heading-results">
       <div class="col-xs-11">
-        <h3><a class="results-title" href="item?id=<?php print $result['url']?>"><?php print $result['title']?></a></h3>
+        <h3><a class="results-title" target="_blank" href="<?php print $result['url']?>"><?php print $result['title']?></a></h3>
       </div>
 			<div class="col-xs-8 col-md-2 pull-left">
 				<?php

@@ -150,7 +150,8 @@ $projects = array(
 	<link rel="stylesheet" href="css/duss.css">
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/duss-search.css">
-	
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">	
 
 	<script src="js/modernizr.min.js"></script>
 	<script>

@@ -47,3 +47,8 @@ functions that toggle the accordion-opened class
 .accordion-opened.accordion-toggle:after {    
     content: "\f078";    
 }
+
+a[target="blank"]:after{
+	font-family: 'FontAwesome';
+	content: "\f08e"
+}

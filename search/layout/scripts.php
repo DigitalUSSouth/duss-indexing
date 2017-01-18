@@ -4,10 +4,12 @@
  * This file writes all sources to JavaScript files needed and closes out the HTML structure.
  */
 ?>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script src="<?php print $ROOTURL;?>js/jquery.ui.touch-punch.min.js"></script>
+<!--<script src="js/jquery.min.js"></script>-->
+<script src="js/bootstrap.min.js"></script>
+
 <script src="js/sticky.js"></script>
 <script src="js/slick.js"></script>
  <!--Slick Carousel Scripts
