@@ -4,6 +4,9 @@
  config file for global values
 */
 
+global $ROOTURL;
+$ROOTURL = "http://localhost/duss/";
+
 global $solrCoreName;
 $solrCoreName = "duss-indexing";
 

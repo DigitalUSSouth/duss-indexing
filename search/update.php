@@ -24,7 +24,7 @@ require_once 'solr.php';
 <?php 
 set_time_limit(600);
 //importTabFileGCook();
-//importTabFileSCCivilWar();
+importTabFileSCCivilWar();
 //importTabFilePBrown();
 //importTabFileSimms();
 //importTabFileSouthworth();

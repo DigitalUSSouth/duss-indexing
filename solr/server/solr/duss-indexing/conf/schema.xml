@@ -171,7 +171,7 @@
    <!-- years field - used for date range searching 
    Includes all the years >= year_begin && <= year_end
    -->
-   <field name="years" type="int" indexed="true" stored="false" multiValued="true"/>
+   <field name="years" type="int" indexed="true" stored="true" multiValued="true"/>
 
    <!--Date of digital surrogate -->
    <field name="date_digital" type="text_general" indexed="true" stored="true" multiValued="false"/>

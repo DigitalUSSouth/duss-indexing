@@ -6,6 +6,8 @@
 ?>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="<?php print $ROOTURL;?>js/jquery.ui.touch-punch.min.js"></script>
 <script src="js/sticky.js"></script>
 <script src="js/slick.js"></script>
  <!--Slick Carousel Scripts

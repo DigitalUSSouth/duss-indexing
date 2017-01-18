@@ -2,3 +2,5 @@ solr/server/logs/solr.log
 solr/server/logs/solr_gc.log
 *.log
 search/json-streaming-parser/env
+solr/bin/solr-8983.pid
+

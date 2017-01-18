@@ -220,11 +220,12 @@ foreach($displaySearchResults as $result):?>
       </div>
 			<div class="col-xs-8 col-md-2 pull-left">
 				<?php
+				/*
 				$imageList = getImagesForId($result['url']);
 				if (sizeof($imageList)>0):
 				?>
 				<a href="item?id=<?php print $result['url']?>"><img class="img-responsive" src="<?php print $imageList[0] ?>"></a>
-			  <?php endif; ?>
+			  <?php endif; */?>
 			</div>
 			<div class="col-xs-12 col-md-10 pull-right">
 				<table>
