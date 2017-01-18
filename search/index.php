@@ -5,6 +5,15 @@
  * Test edit.
  */
 
+//redirect to www
+if ($_SERVER['HTTP_HOST']=="digitalussouth.org"){}
+	$request = $_SERVER['REQUEST_URI'];
+	header("HTTP/1.1 301 Moved Permanently"); 
+    header("Location: http://www.digitalussouth.org".$request);
+	die();
+}
+
+
 error_reporting(E_ALL);
 ini_set("display_errors", true);
 ini_set("display_startup_errors", true);
