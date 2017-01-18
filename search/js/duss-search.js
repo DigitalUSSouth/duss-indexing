@@ -42,8 +42,6 @@ $(document).ready(function () {
 	  }
   }
 
-console.log("this works");
-
 	$( function() {
     $( "#slider-range" ).slider({
       range: true,
@@ -66,7 +64,6 @@ console.log("this works");
       " - " + $( "#slider-range" ).slider( "values", 1 ) );
   } );
 
-console.log("done");
 });
 
 

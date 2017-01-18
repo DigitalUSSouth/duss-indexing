@@ -63,7 +63,7 @@ $newQuery['minYear'] = $minYear;
 $newQuery['maxYear'] = $maxYear;
 
 
-$currentQuery = '//'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.http_build_query($newQuery);
+$currentQuery = $ROOTURL.'search?'.http_build_query($newQuery);
 
 $jsonResponse;
 
