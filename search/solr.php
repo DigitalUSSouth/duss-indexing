@@ -877,7 +877,7 @@ function buildSolrQuery($query){
 	foreach ($facetFields as $key => $value){
 	  $queryString = $queryString.'&facet.field='.$key;
 	}
-	$queryString = $queryString.'&indent=true';
+$queryString = $queryString.'&stats=true&stats.field=years&indent=true';
 
 	return $queryString;
 }

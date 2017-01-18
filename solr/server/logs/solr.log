@@ -1,231 +1,87 @@
-2016-09-12 14:40:02.796 INFO  (main) [   ] o.e.j.u.log Logging initialized @717ms
-2016-09-12 14:40:03.159 INFO  (main) [   ] o.e.j.s.Server jetty-9.2.13.v20150730
-2016-09-12 14:40:03.216 WARN  (main) [   ] o.e.j.s.h.RequestLogHandler !RequestLog
-2016-09-12 14:40:03.240 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:/home/adrian/Documents/duss-indexing/solr/server/contexts/] at interval 0
-2016-09-12 14:40:04.557 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
-2016-09-12 14:40:04.579 WARN  (main) [   ] o.e.j.s.SecurityHandler ServletContext@o.e.j.w.WebAppContext@31ef45e3{/solr,file:/home/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp/,STARTING}{/home/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp} has uncovered http methods for path: /
-2016-09-12 14:40:04.599 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init(): WebAppClassLoader=1845904670@6e06451e
-2016-09-12 14:40:04.639 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
-2016-09-12 14:40:04.639 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /home/adrian/Documents/duss-indexing/solr/server/solr
-2016-09-12 14:40:04.640 INFO  (main) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: '/home/adrian/Documents/duss-indexing/solr/server/solr'
-2016-09-12 14:40:04.641 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
-2016-09-12 14:40:04.641 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /home/adrian/Documents/duss-indexing/solr/server/solr
-2016-09-12 14:40:04.649 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from /home/adrian/Documents/duss-indexing/solr/server/solr/solr.xml
-2016-09-12 14:40:04.821 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Config-defined core root directory: /home/adrian/Documents/duss-indexing/solr/server/solr
-2016-09-12 14:40:04.883 INFO  (main) [   ] o.a.s.c.CoreContainer New CoreContainer 683962652
-2016-09-12 14:40:04.888 INFO  (main) [   ] o.a.s.c.CoreContainer Loading cores into CoreContainer [instanceDir=/home/adrian/Documents/duss-indexing/solr/server/solr]
-2016-09-12 14:40:04.889 WARN  (main) [   ] o.a.s.c.CoreContainer Couldn't add files from /home/adrian/Documents/duss-indexing/solr/server/solr/lib to classpath: /home/adrian/Documents/duss-indexing/solr/server/solr/lib
-2016-09-12 14:40:04.919 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory created with socketTimeout : 600000,connTimeout : 60000,maxConnectionsPerHost : 20,maxConnections : 10000,corePoolSize : 0,maximumPoolSize : 2147483647,maxThreadIdleTime : 5,sizeOfQueue : -1,fairnessPolicy : false,useRetries : false,
-2016-09-12 14:40:05.229 INFO  (main) [   ] o.a.s.u.UpdateShardHandler Creating UpdateShardHandler HTTP client with params: socketTimeout=600000&connTimeout=60000&retry=true
-2016-09-12 14:40:05.239 INFO  (main) [   ] o.a.s.l.LogWatcher SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
-2016-09-12 14:40:05.239 INFO  (main) [   ] o.a.s.l.LogWatcher Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
-2016-09-12 14:40:05.245 INFO  (main) [   ] o.a.s.c.CoreContainer Security conf doesn't exist. Skipping setup for authorization module.
-2016-09-12 14:40:05.248 INFO  (main) [   ] o.a.s.c.CoreContainer No authentication plugin used.
-2016-09-12 14:40:05.316 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Looking for core definitions underneath /home/adrian/Documents/duss-indexing/solr/server/solr
-2016-09-12 14:40:05.323 INFO  (main) [   ] o.a.s.c.CoreDescriptor Created CoreDescriptor: {name=duss-indexing, config=solrconfig.xml, transient=false, schema=schema.xml, loadOnStartup=true, configSetProperties=configsetprops.json, instanceDir=/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing, absoluteInstDir=/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/, dataDir=data}
-2016-09-12 14:40:05.324 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found core duss-indexing in /home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/
-2016-09-12 14:40:05.346 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions
-2016-09-12 14:40:05.351 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: '/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing'
-2016-09-12 14:40:05.352 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
-2016-09-12 14:40:05.352 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /home/adrian/Documents/duss-indexing/solr/server/solr
-2016-09-12 14:40:05.357 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter user.dir=/home/adrian/Documents/duss-indexing/solr/server
-2016-09-12 14:40:05.357 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init() done
-2016-09-12 14:40:05.375 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@31ef45e3{/solr,file:/home/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp/,AVAILABLE}{/home/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp}
-2016-09-12 14:40:05.441 INFO  (main) [   ] o.e.j.s.ServerConnector Started ServerConnector@14a7997a{HTTP/1.1}{0.0.0.0:8983}
-2016-09-12 14:40:05.448 INFO  (main) [   ] o.e.j.s.Server Started @3370ms
-2016-09-12 14:40:05.448 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig current version of requestparams : -1
-2016-09-12 14:40:05.509 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.u.SolrIndexConfig IndexWriter infoStream solr logging is enabled
-2016-09-12 14:40:05.528 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 5.4.1
-2016-09-12 14:40:05.681 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig Loaded SolrConfig: solrconfig.xml
-2016-09-12 14:40:05.748 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema [duss-indexing] Schema name=DigitalUSSouth
-2016-09-12 14:40:06.264 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema query parser default operator is AND|OR
-2016-09-12 14:40:06.265 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema unique key field: id
-2016-09-12 14:40:06.413 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.FileExchangeRateProvider Reloading exchange rates from file currency.xml
-2016-09-12 14:40:06.436 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.FileExchangeRateProvider Reloading exchange rates from file currency.xml
-2016-09-12 14:40:06.455 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.ConfigSetProperties Did not find ConfigSet properties, assuming default properties: Can't find resource 'configsetprops.json' in classpath or '/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing'
-2016-09-12 14:40:06.460 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.CoreContainer Creating SolrCore 'duss-indexing' using configuration from instancedir /home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing
-2016-09-12 14:40:06.491 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore solr.NRTCachingDirectoryFactory
-2016-09-12 14:40:06.510 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore [[duss-indexing] ] Opening new SolrCore at [/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing], dataDir=[null]
-2016-09-12 14:40:06.521 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.JmxMonitoredMap No JMX servers found, not exposing Solr information with JMX.
-2016-09-12 14:40:06.651 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory return new directory for /home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data
-2016-09-12 14:40:06.653 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore New index directory detected: old=null new=/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/index/
-2016-09-12 14:40:06.653 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory return new directory for /home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/index
-2016-09-12 14:40:06.674 INFO  (OldIndexDirectoryCleanupThreadForCore-duss-indexing) [   x:duss-indexing] o.a.s.c.SolrCore Looking for old index directories to cleanup for core duss-indexing in /home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/
-2016-09-12 14:40:06.804 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore no updateRequestProcessorChain defined as default, creating implicit default
-2016-09-12 14:40:06.881 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
-2016-09-12 14:40:06.891 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
-2016-09-12 14:40:06.893 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
-2016-09-12 14:40:06.894 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
-2016-09-12 14:40:06.912 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.PluginBag requestHandler : '/analysis/field' created with startup=lazy 
-2016-09-12 14:40:06.913 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.PluginBag requestHandler : '/analysis/document' created with startup=lazy 
-2016-09-12 14:40:06.915 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.PluginBag requestHandler : '/terms' created with startup=lazy 
-2016-09-12 14:40:06.916 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.RequestHandlers Registered paths: /admin/mbeans,/update/json/docs,/admin/luke,/export,/get,/admin/properties,/update/json,/admin/threads,/query,/analysis/field,/analysis/document,/update/csv,/select,/admin/segments,/admin/system,/replication,/config,/schema,/admin/plugins,/admin/logging,/admin/ping,/update,/admin/file,/debug/dump,/terms
-2016-09-12 14:40:06.920 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore Using default statsCache cache: org.apache.solr.search.stats.LocalStatsCache
-2016-09-12 14:40:07.077 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2016-09-12 14:40:07.086 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2016-09-12 14:40:07.152 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
-2016-09-12 14:40:07.154 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2016-09-12 14:40:07.304 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrDeletionPolicy SolrDeletionPolicy.onInit: commits: num=1
-	commit{dir=NRTCachingDirectory(MMapDirectory@/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@494291ca; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_7l,generation=273}
-2016-09-12 14:40:07.304 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrDeletionPolicy newest commit generation = 273
-2016-09-12 14:40:07.406 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.s.SolrIndexSearcher Opening Searcher@549fee10[duss-indexing] main
-2016-09-12 14:40:07.426 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf
-2016-09-12 14:40:07.426 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.RestManager Initializing RestManager with initArgs: {storageDir=/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf}
-2016-09-12 14:40:07.442 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResourceStorage Reading _rest_managed.json using file:dir=/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf
-2016-09-12 14:40:07.451 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _rest_managed.json using file:dir=/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf
-2016-09-12 14:40:07.451 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResource Loaded initArgs {} for /rest/managed
-2016-09-12 14:40:07.452 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.RestManager Initializing 0 registered ManagedResources
-2016-09-12 14:40:07.467 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.ReplicationHandler Commits will be reserved for  10000
-2016-09-12 14:40:07.473 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Looking up max value of version field to seed version buckets
-2016-09-12 14:40:07.479 INFO  (searcherExecutor-7-thread-1-processing-x:duss-indexing) [   x:duss-indexing] o.a.s.c.SolrCore [duss-indexing] Registered new searcher Searcher@549fee10[duss-indexing] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_8k(5.4.1):C5854/2:delGen=2) Uninverting(_8m(5.4.1):C44/39:delGen=2) Uninverting(_8n(5.4.1):C24/23:delGen=2) Uninverting(_8o(5.4.1):C11/10:delGen=1)))}
-2016-09-12 14:40:07.481 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.VersionInfo Refreshing highest value of _version_ for 65536 version buckets from index
-2016-09-12 14:40:07.508 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.VersionInfo Found MAX value 1544196703801835520 from Terms for _version_ in index
-2016-09-12 14:40:07.521 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Took 40.0ms to seed version buckets with highest version 1544196703801835520
-2016-09-12 14:40:07.523 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.CoreContainer registering core: duss-indexing
-2016-09-12 14:40:12.039 INFO  (qtp1830712962-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={abbevile=&start=0&rows=20&wt=json} hits=0 status=0 QTime=29 
-2016-09-12 14:40:35.505 INFO  (qtp1830712962-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1473691236841} status=0 QTime=2 
-2016-09-12 14:40:35.576 INFO  (qtp1830712962-13) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1473691236881} status=0 QTime=34 
-2016-09-12 14:40:37.468 ERROR (qtp1830712962-18) [   x:duss-indexing] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.menu-top.html [/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf/admin-extra.menu-top.html]
-2016-09-12 14:40:37.477 ERROR (qtp1830712962-15) [   x:duss-indexing] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.menu-bottom.html [/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf/admin-extra.menu-bottom.html]
-2016-09-12 14:40:37.496 INFO  (qtp1830712962-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/file params={file=admin-extra.menu-bottom.html&contentType=text/html;charset%3Dutf-8&_=1473691238807} status=404 QTime=19 
-2016-09-12 14:40:37.485 INFO  (qtp1830712962-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/file params={file=admin-extra.menu-top.html&contentType=text/html;charset%3Dutf-8&_=1473691238805} status=404 QTime=17 
-2016-09-12 14:40:37.547 ERROR (qtp1830712962-12) [   x:duss-indexing] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.html [/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/conf/admin-extra.html]
-2016-09-12 14:40:37.564 INFO  (qtp1830712962-12) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/file params={file=admin-extra.html&_=1473691238867} status=404 QTime=17 
-2016-09-12 14:40:37.561 INFO  (qtp1830712962-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/luke params={show=index&numTerms=0&wt=json&_=1473691238858} status=0 QTime=7 
-2016-09-12 14:40:37.570 INFO  (qtp1830712962-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/ping params={action=status&wt=json&_=1473691238870} status=503 QTime=1 
-2016-09-12 14:40:37.575 INFO  (qtp1830712962-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/replication params={wt=json&command=details&_=1473691238862} status=0 QTime=44 
-2016-09-12 14:40:37.603 INFO  (qtp1830712962-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/admin/system params={wt=json&_=1473691238864} status=0 QTime=76 
-2016-09-12 14:40:51.686 INFO  (qtp1830712962-12) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={charleston=&start=0&rows=20&wt=json} hits=0 status=0 QTime=1 
-2016-09-12 14:41:12.119 INFO  (qtp1830712962-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={charleston=&start=1&rows=20&wt=json} hits=0 status=0 QTime=0 
-2016-09-12 14:41:16.279 INFO  (qtp1830712962-12) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={charleston=&start=0&rows=20&wt=json} hits=0 status=0 QTime=0 
-2016-09-12 14:41:32.659 INFO  (qtp1830712962-16) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={charleston=&start=0&rows=20&wt=json} hits=0 status=0 QTime=0 
-2016-09-12 14:41:41.671 INFO  (qtp1830712962-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={charleston=&start=0&rows=20&wt=json} hits=0 status=0 QTime=1 
-2016-09-12 14:42:32.433 INFO  (qtp1830712962-14) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=1399 status=0 QTime=399 
-2016-09-12 14:42:39.478 INFO  (qtp1830712962-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=1399 status=0 QTime=169 
-2016-09-12 14:44:45.330 INFO  (qtp1830712962-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=title:(charleston)%0afull_text:(charleston)&start=0&rows=20&wt=json} hits=774 status=0 QTime=5 
-2016-09-12 14:46:19.853 INFO  (qtp1830712962-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=title:(charleston)%0afull_text:(charleston)&indent=true&start=0&rows=20&wt=json} hits=774 status=0 QTime=0 
-2016-09-12 14:50:11.067 INFO  (qtp1830712962-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=1399 status=0 QTime=76 
-2016-09-12 14:54:23.035 ERROR (qtp1830712962-15) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: undefined field a
-	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1279)
-	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:429)
-	at org.apache.lucene.analysis.DelegatingAnalyzerWrapper$DelegatingReuseStrategy.getReusableComponents(DelegatingAnalyzerWrapper.java:74)
-	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:169)
-	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:205)
-	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:373)
-	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:760)
-	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:548)
-	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:315)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:186)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:190)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:160)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-
-2016-09-12 14:54:23.036 INFO  (qtp1830712962-15) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=a:(l)%0aN+A:(D)%0ah+c:(a)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} status=400 QTime=6 
-2016-09-12 14:54:45.860 ERROR (qtp1830712962-17) [   x:duss-indexing] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: undefined field a
-	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1279)
-	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:429)
-	at org.apache.lucene.analysis.DelegatingAnalyzerWrapper$DelegatingReuseStrategy.getReusableComponents(DelegatingAnalyzerWrapper.java:74)
-	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:169)
-	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:205)
-	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:373)
-	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:760)
-	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:548)
-	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:315)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:186)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
-	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:190)
-	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:154)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:160)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:247)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:156)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2073)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:658)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:457)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:223)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:181)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:499)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
-	at java.lang.Thread.run(Thread.java:745)
-
-2016-09-12 14:54:45.861 INFO  (qtp1830712962-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=a:(l)%0aN+A:(D)%0ah+c:(a)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} status=400 QTime=1 
-2016-09-12 14:56:44.090 INFO  (qtp1830712962-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=1399 status=0 QTime=44 
-2016-09-12 14:56:55.483 INFO  (qtp1830712962-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=1399 status=0 QTime=122 
-2016-09-12 14:59:49.107 INFO  (qtp1830712962-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=1399 status=0 QTime=31 
-2016-09-12 15:00:27.880 INFO  (qtp1830712962-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=1399 status=0 QTime=37 
-2016-09-12 15:07:12.394 INFO  (qtp1830712962-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=1399 status=0 QTime=108 
-2016-09-12 15:07:32.884 INFO  (qtp1830712962-12) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=1399 status=0 QTime=45 
-2016-09-12 15:07:51.097 INFO  (qtp1830712962-18) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=1399 status=0 QTime=27 
-2016-09-12 15:08:23.680 INFO  (qtp1830712962-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=20&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=1399 status=0 QTime=80 
-2016-09-12 15:15:51.638 INFO  (qtp1830712962-13) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&fq=archive_facet:""&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=3 status=0 QTime=39 
-2016-09-12 15:16:07.184 INFO  (qtp1830712962-12) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=1399 status=0 QTime=53 
-2016-09-12 15:16:12.669 INFO  (qtp1830712962-19) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&fq=archive_facet:"William+Gilmore+Simms+Digital+Collection"&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=2 status=0 QTime=37 
-2016-09-12 15:17:30.556 INFO  (qtp1830712962-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=20&fq=archive_facet:"William+Gilmore+Simms+Digital+Collection"&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=2 status=0 QTime=3 
-2016-09-12 15:17:36.916 INFO  (qtp1830712962-12) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&fq=archive_facet:"William+Gilmore+Simms+Digital+Collection"&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=2 status=0 QTime=6 
-2016-09-12 15:18:04.525 INFO  (qtp1830712962-17) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(charleston)%0aurl:(charleston)%0atitle:(charleston)%0atype_content:(charleston)%0atype_digital:(charleston)%0arole_ALL:(charleston)%0ageolocation_human:(charleston)%0aalternative_title:(charleston)%0adescription:(charleston)%0afull_text:(charleston)%0atype_physical:(charleston)%0ashelfmark:(charleston)%0asubject_heading:(charleston)%0aextent:(charleston)%0acopyright_holder:(charleston)%0ause_permissions:(charleston)%0alanguage:(charleston)%0anotes:(charleston)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&fq=archive_facet:"William+Gilmore+Simms+Digital+Collection"&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=2 status=0 QTime=5 
-2016-09-12 16:18:30.281 INFO  (ShutdownMonitor) [   ] o.e.j.s.ServerConnector Stopped ServerConnector@14a7997a{HTTP/1.1}{0.0.0.0:8983}
-2016-09-12 16:18:30.283 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=683962652
-2016-09-12 16:18:30.284 INFO  (ShutdownMonitor) [   x:duss-indexing] o.a.s.c.SolrCore [duss-indexing]  CLOSING SolrCore org.apache.solr.core.SolrCore@4bff1f2a
-2016-09-12 16:18:30.289 INFO  (ShutdownMonitor) [   x:duss-indexing] o.a.s.u.DirectUpdateHandler2 closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=129839,transaction_logs_total_number=4}
-2016-09-12 16:18:30.298 INFO  (ShutdownMonitor) [   x:duss-indexing] o.a.s.u.SolrCoreState Closing SolrCoreState
-2016-09-12 16:18:30.298 INFO  (ShutdownMonitor) [   x:duss-indexing] o.a.s.u.DefaultSolrCoreState SolrCoreState ref count has reached 0 - closing IndexWriter
-2016-09-12 16:18:30.298 INFO  (ShutdownMonitor) [   x:duss-indexing] o.a.s.u.DefaultSolrCoreState closing IndexWriter with IndexWriterCloser
-2016-09-12 16:18:30.324 INFO  (ShutdownMonitor) [   x:duss-indexing] o.a.s.c.SolrCore [duss-indexing] Closing main searcher on request.
-2016-09-12 16:18:30.338 INFO  (ShutdownMonitor) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
-2016-09-12 16:18:30.341 INFO  (ShutdownMonitor) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory looking to close /home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data [CachedDir<<refCount=0;path=/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data;done=false>>]
-2016-09-12 16:18:30.341 INFO  (ShutdownMonitor) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory Closing directory: /home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data
-2016-09-12 16:18:30.341 INFO  (ShutdownMonitor) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory looking to close /home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/index [CachedDir<<refCount=0;path=/home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/index;done=false>>]
-2016-09-12 16:18:30.341 INFO  (ShutdownMonitor) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory Closing directory: /home/adrian/Documents/duss-indexing/solr/server/solr/duss-indexing/data/index
-2016-09-12 16:18:30.345 INFO  (ShutdownMonitor) [   x:duss-indexing] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@31ef45e3{/solr,file:/home/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp/,UNAVAILABLE}{/home/adrian/Documents/duss-indexing/solr/server/solr-webapp/webapp}
+2017-01-18 16:04:20.249 INFO  (main) [   ] o.e.j.u.log Logging initialized @728ms
+2017-01-18 16:04:20.595 INFO  (main) [   ] o.e.j.s.Server jetty-9.2.13.v20150730
+2017-01-18 16:04:20.647 WARN  (main) [   ] o.e.j.s.h.RequestLogHandler !RequestLog
+2017-01-18 16:04:20.650 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:/home/ubuntu/Documents/duss/solr/server/contexts/] at interval 0
+2017-01-18 16:04:21.919 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2017-01-18 16:04:21.938 WARN  (main) [   ] o.e.j.s.SecurityHandler ServletContext@o.e.j.w.WebAppContext@3c0ecd4b{/solr,file:/home/ubuntu/Documents/duss/solr/server/solr-webapp/webapp/,STARTING}{/home/ubuntu/Documents/duss/solr/server/solr-webapp/webapp} has uncovered http methods for path: /
+2017-01-18 16:04:21.966 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init(): WebAppClassLoader=1846896625@6e1567f1
+2017-01-18 16:04:22.017 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
+2017-01-18 16:04:22.018 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /home/ubuntu/Documents/duss/solr/server/solr
+2017-01-18 16:04:22.019 INFO  (main) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: '/home/ubuntu/Documents/duss/solr/server/solr'
+2017-01-18 16:04:22.020 INFO  (main) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
+2017-01-18 16:04:22.020 INFO  (main) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /home/ubuntu/Documents/duss/solr/server/solr
+2017-01-18 16:04:22.037 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from /home/ubuntu/Documents/duss/solr/server/solr/solr.xml
+2017-01-18 16:04:22.231 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Config-defined core root directory: /home/ubuntu/Documents/duss/solr/server/solr
+2017-01-18 16:04:22.289 INFO  (main) [   ] o.a.s.c.CoreContainer New CoreContainer 341853399
+2017-01-18 16:04:22.289 INFO  (main) [   ] o.a.s.c.CoreContainer Loading cores into CoreContainer [instanceDir=/home/ubuntu/Documents/duss/solr/server/solr]
+2017-01-18 16:04:22.290 WARN  (main) [   ] o.a.s.c.CoreContainer Couldn't add files from /home/ubuntu/Documents/duss/solr/server/solr/lib to classpath: /home/ubuntu/Documents/duss/solr/server/solr/lib
+2017-01-18 16:04:22.319 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory created with socketTimeout : 600000,connTimeout : 60000,maxConnectionsPerHost : 20,maxConnections : 10000,corePoolSize : 0,maximumPoolSize : 2147483647,maxThreadIdleTime : 5,sizeOfQueue : -1,fairnessPolicy : false,useRetries : false,
+2017-01-18 16:04:22.626 INFO  (main) [   ] o.a.s.u.UpdateShardHandler Creating UpdateShardHandler HTTP client with params: socketTimeout=600000&connTimeout=60000&retry=true
+2017-01-18 16:04:22.640 INFO  (main) [   ] o.a.s.l.LogWatcher SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+2017-01-18 16:04:22.642 INFO  (main) [   ] o.a.s.l.LogWatcher Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+2017-01-18 16:04:22.645 INFO  (main) [   ] o.a.s.c.CoreContainer Security conf doesn't exist. Skipping setup for authorization module.
+2017-01-18 16:04:22.645 INFO  (main) [   ] o.a.s.c.CoreContainer No authentication plugin used.
+2017-01-18 16:04:22.714 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Looking for core definitions underneath /home/ubuntu/Documents/duss/solr/server/solr
+2017-01-18 16:04:22.726 INFO  (main) [   ] o.a.s.c.CoreDescriptor Created CoreDescriptor: {name=duss-indexing, config=solrconfig.xml, transient=false, schema=schema.xml, loadOnStartup=true, configSetProperties=configsetprops.json, instanceDir=/home/ubuntu/Documents/duss/solr/server/solr/duss-indexing, absoluteInstDir=/home/ubuntu/Documents/duss/solr/server/solr/duss-indexing/, dataDir=data}
+2017-01-18 16:04:22.726 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found core duss-indexing in /home/ubuntu/Documents/duss/solr/server/solr/duss-indexing/
+2017-01-18 16:04:22.726 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions
+2017-01-18 16:04:22.730 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader new SolrResourceLoader for directory: '/home/ubuntu/Documents/duss/solr/server/solr/duss-indexing'
+2017-01-18 16:04:22.730 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader JNDI not configured for solr (NoInitialContextEx)
+2017-01-18 16:04:22.730 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrResourceLoader using system property solr.solr.home: /home/ubuntu/Documents/duss/solr/server/solr
+2017-01-18 16:04:22.733 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter user.dir=/home/ubuntu/Documents/duss/solr/server
+2017-01-18 16:04:22.733 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter SolrDispatchFilter.init() done
+2017-01-18 16:04:22.746 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@3c0ecd4b{/solr,file:/home/ubuntu/Documents/duss/solr/server/solr-webapp/webapp/,AVAILABLE}{/home/ubuntu/Documents/duss/solr/server/solr-webapp/webapp}
+2017-01-18 16:04:22.795 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig current version of requestparams : -1
+2017-01-18 16:04:22.809 INFO  (main) [   ] o.e.j.s.ServerConnector Started ServerConnector@26669c6c{HTTP/1.1}{0.0.0.0:8983}
+2017-01-18 16:04:22.809 INFO  (main) [   ] o.e.j.s.Server Started @3290ms
+2017-01-18 16:04:22.862 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.u.SolrIndexConfig IndexWriter infoStream solr logging is enabled
+2017-01-18 16:04:22.875 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 5.4.1
+2017-01-18 16:04:23.024 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.SolrConfig Loaded SolrConfig: solrconfig.xml
+2017-01-18 16:04:23.121 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema [duss-indexing] Schema name=DigitalUSSouth
+2017-01-18 16:04:23.619 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema query parser default operator is AND|OR
+2017-01-18 16:04:23.619 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.IndexSchema unique key field: id
+2017-01-18 16:04:23.783 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.FileExchangeRateProvider Reloading exchange rates from file currency.xml
+2017-01-18 16:04:23.794 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.s.FileExchangeRateProvider Reloading exchange rates from file currency.xml
+2017-01-18 16:04:23.804 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.ConfigSetProperties Did not find ConfigSet properties, assuming default properties: Can't find resource 'configsetprops.json' in classpath or '/home/ubuntu/Documents/duss/solr/server/solr/duss-indexing'
+2017-01-18 16:04:23.809 INFO  (coreLoadExecutor-6-thread-1) [   ] o.a.s.c.CoreContainer Creating SolrCore 'duss-indexing' using configuration from instancedir /home/ubuntu/Documents/duss/solr/server/solr/duss-indexing
+2017-01-18 16:04:23.846 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore solr.NRTCachingDirectoryFactory
+2017-01-18 16:04:23.863 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore [[duss-indexing] ] Opening new SolrCore at [/home/ubuntu/Documents/duss/solr/server/solr/duss-indexing], dataDir=[null]
+2017-01-18 16:04:23.868 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.JmxMonitoredMap No JMX servers found, not exposing Solr information with JMX.
+2017-01-18 16:04:24.042 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory return new directory for /home/ubuntu/Documents/duss/solr/server/solr/duss-indexing/data
+2017-01-18 16:04:24.044 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore New index directory detected: old=null new=/home/ubuntu/Documents/duss/solr/server/solr/duss-indexing/data/index/
+2017-01-18 16:04:24.045 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.CachingDirectoryFactory return new directory for /home/ubuntu/Documents/duss/solr/server/solr/duss-indexing/data/index
+2017-01-18 16:04:24.075 INFO  (OldIndexDirectoryCleanupThreadForCore-duss-indexing) [   x:duss-indexing] o.a.s.c.SolrCore Looking for old index directories to cleanup for core duss-indexing in /home/ubuntu/Documents/duss/solr/server/solr/duss-indexing/data/
+2017-01-18 16:04:24.215 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore no updateRequestProcessorChain defined as default, creating implicit default
+2017-01-18 16:04:24.474 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+2017-01-18 16:04:24.486 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+2017-01-18 16:04:24.488 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+2017-01-18 16:04:24.491 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.l.XMLLoader xsltCacheLifetimeSeconds=60
+2017-01-18 16:04:24.516 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.PluginBag requestHandler : '/analysis/field' created with startup=lazy 
+2017-01-18 16:04:24.517 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.PluginBag requestHandler : '/analysis/document' created with startup=lazy 
+2017-01-18 16:04:24.520 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.PluginBag requestHandler : '/terms' created with startup=lazy 
+2017-01-18 16:04:24.520 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.RequestHandlers Registered paths: /admin/mbeans,/update/json/docs,/admin/luke,/export,/get,/admin/properties,/update/json,/admin/threads,/query,/analysis/field,/analysis/document,/update/csv,/select,/admin/segments,/admin/system,/replication,/config,/schema,/admin/plugins,/admin/logging,/admin/ping,/update,/admin/file,/debug/dump,/terms
+2017-01-18 16:04:24.521 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrCore Using default statsCache cache: org.apache.solr.search.stats.LocalStatsCache
+2017-01-18 16:04:24.534 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2017-01-18 16:04:24.536 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2017-01-18 16:04:24.545 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2017-01-18 16:04:24.545 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2017-01-18 16:04:24.653 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrDeletionPolicy SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(MMapDirectory@/home/ubuntu/Documents/duss/solr/server/solr/duss-indexing/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@7e30a8ed; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+2017-01-18 16:04:24.653 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.SolrDeletionPolicy newest commit generation = 1
+2017-01-18 16:04:24.675 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.s.SolrIndexSearcher Opening Searcher@da778de[duss-indexing] main
+2017-01-18 16:04:24.706 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /home/ubuntu/Documents/duss/solr/server/solr/duss-indexing/conf
+2017-01-18 16:04:24.706 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.RestManager Initializing RestManager with initArgs: {storageDir=/home/ubuntu/Documents/duss/solr/server/solr/duss-indexing/conf}
+2017-01-18 16:04:24.722 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResourceStorage Reading _rest_managed.json using file:dir=/home/ubuntu/Documents/duss/solr/server/solr/duss-indexing/conf
+2017-01-18 16:04:24.723 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _rest_managed.json using file:dir=/home/ubuntu/Documents/duss/solr/server/solr/duss-indexing/conf
+2017-01-18 16:04:24.723 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.ManagedResource Loaded initArgs {} for /rest/managed
+2017-01-18 16:04:24.723 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.r.RestManager Initializing 0 registered ManagedResources
+2017-01-18 16:04:24.733 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.h.ReplicationHandler Commits will be reserved for  10000
+2017-01-18 16:04:24.742 INFO  (searcherExecutor-7-thread-1-processing-x:duss-indexing) [   x:duss-indexing] o.a.s.c.SolrCore [duss-indexing] Registered new searcher Searcher@da778de[duss-indexing] main{ExitableDirectoryReader(UninvertingDirectoryReader())}
+2017-01-18 16:04:24.742 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Looking up max value of version field to seed version buckets
+2017-01-18 16:04:24.744 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.VersionInfo Refreshing highest value of _version_ for 65536 version buckets from index
+2017-01-18 16:04:24.744 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.VersionInfo No terms found for _version_, cannot seed version bucket highest value from index
+2017-01-18 16:04:24.744 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1556878946199404544
+2017-01-18 16:04:24.749 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.u.UpdateLog Took 4.0ms to seed version buckets with highest version 1556878946199404544
+2017-01-18 16:04:24.750 INFO  (coreLoadExecutor-6-thread-1) [   x:duss-indexing] o.a.s.c.CoreContainer registering core: duss-indexing
+2017-01-18 16:04:29.045 INFO  (qtp1013423070-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={q=contributing_institution:(*)%0aurl:(*)%0atitle:(*)%0atype_content:(*)%0atype_digital:(*)%0arole_ALL:(*)%0ageolocation_human:(*)%0aalternative_title:(*)%0adescription:(*)%0afull_text:(*)%0atype_physical:(*)%0ashelfmark:(*)%0asubject_heading:(*)%0aextent:(*)%0acopyright_holder:(*)%0ause_permissions:(*)%0alanguage:(*)%0anotes:(*)%0a&facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&hl.simple.post=</mark>&indent=true&start=0&hl.fl=*&rows=20&wt=json&facet=true&hl.simple.pre=<mark>} hits=0 status=0 QTime=79 
+2017-01-18 16:10:37.413 INFO  (qtp1013423070-20) [   x:duss-indexing] o.a.s.c.S.Request [duss-indexing] webapp=/solr path=/select params={facet.field=archive_facet&facet.field=contributing_institution_facet&facet.field=subject_heading_facet&facet.field=type_content&facet.field=file_format&facet.field=language&hl=true&indent=true&start=0&rows=20&hl.simple.pre=<mark>&q=contributing_institution:(*)%0aurl:(*)%0atitle:(*)%0atype_content:(*)%0atype_digital:(*)%0arole_ALL:(*)%0ageolocation_human:(*)%0aalternative_title:(*)%0adescription:(*)%0afull_text:(*)%0atype_physical:(*)%0ashelfmark:(*)%0asubject_heading:(*)%0aextent:(*)%0acopyright_holder:(*)%0ause_permissions:(*)%0alanguage:(*)%0anotes:(*)%0a&hl.simple.post=</mark>&stats=true&hl.fl=*&wt=json&facet=true&stats.field=years} hits=0 status=0 QTime=17 
