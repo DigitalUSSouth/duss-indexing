@@ -89,7 +89,11 @@ $projects = array(
 				"header" => "Plants and Planters - Henry William Ravenel",
 				"website" => "http://tundra.csd.sc.edu/ravenel/",
 				"content" => "<p><em>Plants and Planter</em> connects the life, travels, business pursuits, and scientific work of one of the great minds of the 19th century, Henry William Ravenel. A prolific traveler, collector and cataloger of botanical specimens, Ravenel had many species named for him, and was considered to have specific expertise in North American fungi. Besides his scientific work, Ravenel was a prolific diarist, and his diaries provide one of the most complete pictures of daily life in the mid-19th century South we have. <em>Plants and Planter</em> brings together Ravenel's personal diaries, correspondence, and over 6,200 botanical specimens, providing us with a detailed portrait of science, self, and society in the 19th-century South.</p>"
-		),
+				)
+);
+		
+		/*//removing these projects from slider
+		,
 		array(
 				"type" => "affiliated",
 				"thumb" => "",
@@ -110,7 +114,9 @@ $projects = array(
 				"header" => "SC Online Records",
 				"website" => "",
 				"content" => "SC Online Records"
-		)/*,// The Southern Periodical Humor Repository may be added back at a later date
+		)
+		
+		/*,// The Southern Periodical Humor Repository may be added back at a later date
 		array(
 				"thumb" => "sphr.png",
 				"header" => "Southern Periodical Humor Repository",
@@ -123,7 +129,7 @@ $projects = array(
 		// 	"website" => "http://library.sc.edu/digital/collections/newman.html",
 		// 	"content" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in nunc dapibus, finibus sem ac, tristique metus. Donec semper eros sit amet tellus accumsan, ac accumsan ante varius. Cras interdum rutrum condimentum."
 		// )
-);
+
 ?><!DOCTYPE html>
 <html>
 <head>
