@@ -37,6 +37,7 @@ if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["message"]))
 
 	exit();
 }
+require "config.php";
 
 require "layout/head.php";
 
