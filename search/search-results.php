@@ -307,6 +307,12 @@ foreach($displaySearchResults as $result):?>
 								break;
 							}
 						}
+						//we also need to check if it is a facet field. We don't want
+						//to display a facet field
+						if (preg_match('/_facet$/',$hKey)){
+							$condition=false;
+						}
+
 						if ($condition):
 						?>
 						<tr>
