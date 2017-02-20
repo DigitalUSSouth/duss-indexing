@@ -18,7 +18,7 @@ require_once 'db-config.php';
 set_time_limit(600);
 
 global $mysqli;
-$statement = $mysqli->prepare("SELECT item_id,item_title,work_id,item_hierarchy FROM simms_items WHERE post_type='entry' AND post_status='publish'");
+$statement = $mysqli->prepare("SELECT item_id,item_title,work_id,item_hierarchy,parent_id,grandparent_id FROM simms_items WHERE item_status='Approved'");
 $statement->execute();
 $statement->store_result();
 
@@ -29,6 +29,8 @@ $currentID = 2;
 $query  = "SELECT item_text FROM simms_fulltext WHERE item_id=?";
 
 $query  = "SELECT work_name FROM simms_works WHERE work_id=?";
+
+$query  = "SELECT item_bibliographi_description,item_bibliographic_citation,item_genre FROM simms_item_revisions WHERE item_id=? ORDER BY revision_time DESC";
 
 
 $counter=1;
@@ -51,7 +53,7 @@ while ($statement->fetch()){
 //    print_r($document);
 //print '<br>';
 //continue;
-    indexDocument($document);
+    //indexDocument($document);
 }
 ?>
 </pre>
