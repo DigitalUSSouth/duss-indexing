@@ -26,7 +26,7 @@ $counter=1;
 foreach ($objects as $object){
     print $counter++.'-'.$object.'<br>';
     flush();
-    $jsonDoc = file_get_contents('http:simms.library.sc.edu/index_api.php?id='.$object);
+    $jsonDoc = file_get_contents('http://simms.library.sc.edu/index_api.php?id='.$object);
     $doc = json_decode($jsonDoc,true);
     $document = array(
         'archive' => 'William Gilmore Simms Digital Collection',
