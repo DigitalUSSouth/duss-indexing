@@ -7,6 +7,7 @@
 		<div class="col-xs-12">
 
 		<div id="project-carousel" class="carousel slide" data-ride="carousel">
+		  <!-- test commit ->
 			<ol class="carousel-indicators">
 			<?php 
 			$arrayChunks = array_chunk($projects, 8);
