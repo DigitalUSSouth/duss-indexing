@@ -301,3 +301,24 @@ function contactAlert(alertClass, text) {
     alert.slideDown();
   }
 }
+
+
+
+//function to toggle collapsed divs
+$(".explore-link").click(function (e) {
+    return;
+    e.preventDefault();
+    var href = $(this).attr('href');
+    
+    $('#projects .collapse').each(function (i) {
+      if ($(this).is(':visible')){
+        var attrHref =  '#' + ($(this).attr('id'));
+        if ( attrHref== href) {
+          return;
+        }
+        $(this).slideToggle(200);
+      }
+    });
+
+    $(href).slideToggle(200);
+});
