@@ -29,7 +29,7 @@
 					  <ul class="dropdown-menu">
 					    <li><a href="index#projects">View all projects</a></li>
 					    <li role="separator" class="divider"></li>
-					    <li><a href="core-projects">Core projects</a></li>
+					    <li><a href="featured-projects">Featured projects</a></li>
 					    <!--<li><a href="affiliated-projects">Affiliated projects</a></li>-->
 					  </ul>
 					</li>

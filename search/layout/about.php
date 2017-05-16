@@ -76,28 +76,32 @@ $carousel = array(
 
 	<div class="row text-justify">
 		<div class="col-md-10 center-block">
-			<p>The goal of the Digital US South Initiative is to combine rigorous scholarship and new technologies in ways that will promote and enhance thoughtful engagement with the South’s history, cultures, and landscapes. These projects are designed with both scholar and non-scholar in mind and provide opportunities for classroom teaching, new scholarly production, and individual study and enjoyment. Currently, DUSS federates twelve projects, with topics as diverse as agriculture, 19th-century literature, natural history, the Civil War, and the Civil Rights Movement. These projects have benefited from the generous financial support of the University of South Carolina’s College of Arts and Sciences, University Libraries, USC's Center for Digital Humanities, the Watson-Brown Foundation, and the Humanities Council<sup>SC</sup>.</p>
+			<p>The goal of DUSS is to promote and enhance thoughtful engagement with the South’s history, cultures, and landscapes though the various projects--digital archives, tools, and interactives--we federate together. These projects are designed with both scholar and non-scholar in mind and provide opportunities for classroom teaching, new scholarly production, and individual study and enjoyment. Underlying all DUSS projects is the DUSS Index, which allows you to search across all projects simultaneously in order to find connections you may not have otherwise discovered. Both the Index and DUSS projects generally have benefited from the generous financial support of many sources, including the University of South Carolina’s College of Arts and Sciences, the University Libraries, USC's Center for Digital Humanities, the Watson-Brown Foundation, and SCHumanities.</p>
 		</div>
 	</div>
 	<div class="row text-center">
 		<div class="col-md-9 center-block">
 			<form class="form-horizontal" id="home-search" name="home-search" method="GET" action="search">
 			<div class="row">
-				<input type="text" name="query" id="query" class="form-control" placeholder="Search our projects"><br>
+				<div class="row form-group search-row">
+				<div class="col-xs-1 nopadding">
+					<select class="form-control boolean-selector" name="op[]">
+						<option value="AND" selected="">AND</option>
+						<option value="OR">OR</option>
+						<option value="NOT">NOT</option>
+					</select>
+				</div>
+				<div class="col-xs-7">
+					<input type="text" name="q[]" class="form-control" placeholder="Search our projects">
+				</div>
+					<input type="hidden" name="f[]" value="all">
+				<div class="col-xs-4">
+					<input type="submit" class="btn btn-primary" value="Search">
+					<input type="hidden" name="form_submitted">
+					<input type="hidden" name="start" value="0">
+				</div>
+				<div class="col-xs-12"><hr></div>
 			</div>
-			<div class="row">
-				<div class="col-xs-4">
-					<input type="checkbox" value="false" name="full-text-search" id="full-text-search">
-					<label for="full-text-search" class="control-label">Search full text</label><br>
-					<input type="checkbox" value="false" name="new-tab" id="new-tab">
-					<label for="new-tab" class="control-label">Open results in new tab</label>
-				</div>
-				<div class="col-xs-4">
-					<input type="submit" class="btn btn-primary" name="Search" value="Search">
-				</div>
-				<div class="col-xs-4">
-					<a class="form-control col-xs-5 center-block" href="search">Advanced search</a>
-				</div>
 			</div>
 			</form>
 		</div>

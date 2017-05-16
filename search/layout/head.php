@@ -30,7 +30,7 @@ $projects = array(
 				"<p>When combined with the site's full-text searchability, the ability to read and examine all items closely, and robust metadata and informative headnotes, <em>The Simms Initiatives</em> provides scholars, researchers, and interested readers with unparalleled access to and information about Simms and his work.</p>"
 		),
 		array(
-				"type" => "core",
+				"type" => "affiliated",
 				"thumb" => "southworth.png",
 				"header" => "E.D.E.N. Southworth Collection",
 				"website" => "http://library.sc.edu/p/Collections/Digital/Browse/Southworth",
@@ -44,35 +44,35 @@ $projects = array(
 				"content" => "<p><em>The Burning of Columbia</em> is an interactive map and timeline that both narrates and visualizes the destruction of Colubmia, SC during the waning days of the Civil War. The project draws on William Gilmore Simms's first-person account, <em>Sack and Destruction of the City of Columbia, S.C.</em>, alongside Marion B. Lucas's definitive scholarly history, <em>Sherman and the Burning of Columbia</em>. By combining these two sources with nineteenth-century maps and images from the digital collections of the University of South Carolina Libraries, this project provides a robust overview of what happened in February 1865. The extent of the destruction is also superimposed on maps from 1869, 1872, and 1895, helping to contextualize how the burning might have shaped post-War development in South Carolina's capital city.</p>"
 		),
 		array(
-				"type" => "core",
+				"type" => "affiliated",
 				"thumb" => "american-heritage.png",
 				"header" => "American Heritage Vegetables",
 				"website" => "http://lichen.csd.sc.edu/vegetable/",
 				"content" => "<p><em>The American Heritage Vegetables</em> project presents the variety of vegetables&mdash;excluding grains like rice, wheat, and corn&mdash;found in American fields, kitchens, markets, and tables before the 20th century. The project documents varieties of vegetables from artichokes to melons, and includes cultivation practices, period recipes, and other information of interest to agricultural historians, serious gardeners, and those simply interested in how our ancestors ate. The information presented here has been gleaned from the seminal 19th-century works of American gardening, period seed catalogues and cookbooks, and agricultural textbooks.</p>"
 		),
 		array(
-				"type" => "core",
+				"type" => "affiliated",
 				"thumb" => "civil-war.png",
 				"header" => "South Carolina and the Civil War",
 				"website" => "http://library.sc.edu/digital/collections/civilwar.html",
 				"content" => "<p>While South Carolina's importance in the Civil War's political and military history is clear, less noticed have been the personal and social histories of South Carolina and South Carolinians during our nation's greatest conflict. <em>South Carolina and the Civil War</em> addresses this lack, providing us with primary documents that reveal more than Fort Sumter, the <em>H.L. Hunley</em>, and Sherman's Carolinas Campaign. This collection brings together books, diaries, sheet music, photographs, letters, drawings, and other primary materials that tell the complex history of South Carolina during the War from myriad social and personal perspectives: Union and Confederate, man and woman, slave and free, urban and rural, at home and on campaign.</p>"
 		),
 		array(
-				"type" => "core",
+				"type" => "affiliated",
 				"thumb" => "pope-brown.png",
 				"header" => "The Ethelind Pope Brown Collection of South Carolina Natural History",
 				"website" => "http://library.sc.edu/digital/collections/popebrown.html",
 				"content" => "<p><em>The Ethelind Pope Brown Collection of South Carolina Natural History</em> consists of 32 watercolor paintings of a total of 48 species of flora and fauna native to the US South, with the majority found in South Carolina. While the artist is unknown, John Laurens, an 18th century Charleston artist and amateur naturalist, is thought to be the most likely candidate. This collection was given to USC by Mrs. Ethelind Pope Brown of Belton, S.C. in 1991; Mrs. Brown and her husband purchased a portfolio containing these paintings from a New York antiques dealer in the early 1950s. These beautiful, vibrant works provide excellent illustrations of many of the plants and animals found in the Southern landscape.</p>"
 		),
 		array(
-				"type" => "core",
+				"type" => "affiliated",
 				"thumb" => "george-lagrange-cook.png",
 				"header" => "George LaGrange Cook Photograph Collection, c.1880-1895",
 				"website" => "http://library.sc.edu/digital/collections/scook.html",
 				"content" => "<p><em>The George LaGrange Cook Photograph Collection</em> presents negatives of various business, churches, public buildings, and residences in both Charleston and Summerville, S.C. Taken in the late 1880s and early 1890s by George LaGrange Cook, son of the famous Civil War photographer George Smith Cook, these photos provide a unique look at life and living conditions in these significant cities, and the South more generally, as the New South emerged at the end of the 19th century.</p>"
 		),
 		array(
-				"type" => "core",
+				"type" => "affiliated",
 				"thumb" => "oldsouthernorchards.png",
 				"header" => "Old Southern Orchards",
 				"website" => "http://lichen.csd.sc.edu/oldsouthernorchards/index.php",
@@ -89,7 +89,21 @@ $projects = array(
 				"header" => "Plants and Planters - Henry William Ravenel",
 				"website" => "http://tundra.csd.sc.edu/ravenel/",
 				"content" => "<p><em>Plants and Planter</em> connects the life, travels, business pursuits, and scientific work of one of the great minds of the 19th century, Henry William Ravenel. A prolific traveler, collector and cataloger of botanical specimens, Ravenel had many species named for him, and was considered to have specific expertise in North American fungi. Besides his scientific work, Ravenel was a prolific diarist, and his diaries provide one of the most complete pictures of daily life in the mid-19th century South we have. <em>Plants and Planter</em> brings together Ravenel's personal diaries, correspondence, and over 6,200 botanical specimens, providing us with a detailed portrait of science, self, and society in the 19th-century South.</p>"
-				)
+				),
+		array(
+				"type" => "core",
+				"thumb" => "sce.png",
+				"header" => "South Carolina Encyclopedia",
+				"website" => "http://www.scencyclopedia.org/sce/",
+				"content" => "South Carolina Encyclopedia"
+		),
+		array(
+				"type" => "core",
+				"thumb" => "bullstreet.png",
+				"header" => "Digitizing Bull Street",
+				"website" => "http://www.digitalussouth.org/bullstreet/",
+				"content" => "Digitizing Bull Street"
+		)
 );
 		
 		/*//removing these projects from slider
