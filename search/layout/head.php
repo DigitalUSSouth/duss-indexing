@@ -146,6 +146,11 @@ $projects = array(
 		// 	"content" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in nunc dapibus, finibus sem ac, tristique metus. Donec semper eros sit amet tellus accumsan, ac accumsan ante varius. Cras interdum rutrum condimentum."
 		// )
 
+		//SORT PROJECTS ALPHABETICALLY
+		usort($projects, function($a, $b){
+			return strcmp($a['header'], $b['header']);
+		});
+
 ?><!DOCTYPE html>
 <html>
 <head>
