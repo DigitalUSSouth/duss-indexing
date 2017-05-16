@@ -99,12 +99,19 @@ $projects = array(
 <p>The Digital South Carolina Encyclopedia builds on the 2006 print volume, edited by Dr. Walter B. Edgar and with articles by more than 600 authors. Working with our partner institutions, we have enhanced the print version by adding more than 1200 photos, videos, documents, and audio recordings. In addition to the entries from the print version, we will, over time, add entries as well as update others as needed. Thus, not only is the Digital South Carolina Encyclopedia an essential means of exploring the past and present of the Palmetto State – fostering a deeper appreciation of its richness and complexity – but it also serves as the most complete bibliography on South Carolina ever assembled.</p>"
 		),
 		array(
-				"type" => "core",
+				"type" => "affiliated",
 				"thumb" => "bullstreet.png",
 				"header" => "Digitizing Bull Street",
 				"website" => "http://www.digitalussouth.org/bullstreet/",
 				"content" => "<p>Our mission is to research and analyze the history of the built environment of the Bull Street campus of the South Carolina State Hospital (formerly the South Carolina State Hospital for the Insane). This website is intended to present our findings and to begin a public conversation about the site's history and future as it faces redevelopment.</p>
 <p>This website presents the work of the second in a series of classes on the history and architecture of Bull Street taught by Lydia Mattice Brandt, PhD at the University of South Carolina. The first course, taught in fall 2012, documented and began researching the buildings of the former South Carolina State Hospital. Presentations of this research may be found on <a target=\"_blank\" href=\"http://www.youtube.com/user/BullStreetSymposium2\">YouTube</a>.</p>"
+		),
+		array(
+				"type" => "core",
+				"thumb" => "bsm.png",
+				"header" => "Black Soldiers Mattered",
+				"website" => "http://www.blacksoldiersmattered.com/",
+				"content" => "<p>April 6, 1917, changed the lives of 21,609 young African American men from North Carolina. The participation of these Black North Carolinians in World War I has been mostly ignored. Black Soldiers Mattered addresses that void with this interactive site. Explore the journey of Black North Carolinians (BNC)—as units and individual soldiers—from induction to demobilization.</p>"
 		)
 );
 		
