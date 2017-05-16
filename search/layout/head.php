@@ -95,14 +95,16 @@ $projects = array(
 				"thumb" => "sce.png",
 				"header" => "South Carolina Encyclopedia",
 				"website" => "http://www.scencyclopedia.org/sce/",
-				"content" => "South Carolina Encyclopedia"
+				"content" => "<p>A joint project of South Carolina Humanities, the University of South Carolina Press, the USC Libraries, the USC Center for Digital Humanities, the USC College of Arts &amp; Sciences, the USC Institute for Southern Studies, the South Carolina State Library, and many other organizations, the Digital South Carolina Encyclopedia is a comprehensive reference source of the people, places, events, things, achievements, and ideals that have contributed to the evolution of the Palmetto State. Consisting of almost 2000 entries with more than 1100 digital assets, the digital encyclopedia aspires to be an authoritative compilation of essays on topics ranging from politics to the arts, from Hilton Head to Caesars Head, from the Lords Proprietors to Hootie and the Blowfish. In short, we hope it will be <em>the</em> go-to reference for everything South Carolina.</p>
+<p>The Digital South Carolina Encyclopedia builds on the 2006 print volume, edited by Dr. Walter B. Edgar and with articles by more than 600 authors. Working with our partner institutions, we have enhanced the print version by adding more than 1200 photos, videos, documents, and audio recordings. In addition to the entries from the print version, we will, over time, add entries as well as update others as needed. Thus, not only is the Digital South Carolina Encyclopedia an essential means of exploring the past and present of the Palmetto State – fostering a deeper appreciation of its richness and complexity – but it also serves as the most complete bibliography on South Carolina ever assembled.</p>"
 		),
 		array(
 				"type" => "core",
 				"thumb" => "bullstreet.png",
 				"header" => "Digitizing Bull Street",
 				"website" => "http://www.digitalussouth.org/bullstreet/",
-				"content" => "Digitizing Bull Street"
+				"content" => "<p>Our mission is to research and analyze the history of the built environment of the Bull Street campus of the South Carolina State Hospital (formerly the South Carolina State Hospital for the Insane). This website is intended to present our findings and to begin a public conversation about the site's history and future as it faces redevelopment.</p>
+<p>This website presents the work of the second in a series of classes on the history and architecture of Bull Street taught by Lydia Mattice Brandt, PhD at the University of South Carolina. The first course, taught in fall 2012, documented and began researching the buildings of the former South Carolina State Hospital. Presentations of this research may be found on <a target=\"_blank\" href=\"http://www.youtube.com/user/BullStreetSymposium2\">YouTube</a>.</p>"
 		)
 );
 		
