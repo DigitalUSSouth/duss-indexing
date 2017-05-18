@@ -40,14 +40,14 @@ $projects = array(
 				"type" => "core",
 				"thumb" => "burning-of-columbia.png",
 				"header" => "The Burning of Columbia",
-				"website" => "http://calliope.cse.sc.edu/burning/neatline/show/colaburning",
+				"website" => "http://www.digitalussouth.org/burningofcolumbia/neatline/show/colaburning",
 				"content" => "<p><em>The Burning of Columbia</em> is an interactive map and timeline that both narrates and visualizes the destruction of Colubmia, SC during the waning days of the Civil War. The project draws on William Gilmore Simms's first-person account, <em>Sack and Destruction of the City of Columbia, S.C.</em>, alongside Marion B. Lucas's definitive scholarly history, <em>Sherman and the Burning of Columbia</em>. By combining these two sources with nineteenth-century maps and images from the digital collections of the University of South Carolina Libraries, this project provides a robust overview of what happened in February 1865. The extent of the destruction is also superimposed on maps from 1869, 1872, and 1895, helping to contextualize how the burning might have shaped post-War development in South Carolina's capital city.</p>"
 		),
 		array(
 				"type" => "affiliated",
 				"thumb" => "american-heritage.png",
 				"header" => "American Heritage Vegetables",
-				"website" => "http://lichen.csd.sc.edu/vegetable/",
+				"website" => "http://www.duss.sc.edu/vegetable",
 				"content" => "<p><em>The American Heritage Vegetables</em> project presents the variety of vegetables&mdash;excluding grains like rice, wheat, and corn&mdash;found in American fields, kitchens, markets, and tables before the 20th century. The project documents varieties of vegetables from artichokes to melons, and includes cultivation practices, period recipes, and other information of interest to agricultural historians, serious gardeners, and those simply interested in how our ancestors ate. The information presented here has been gleaned from the seminal 19th-century works of American gardening, period seed catalogues and cookbooks, and agricultural textbooks.</p>"
 		),
 		array(
@@ -75,7 +75,7 @@ $projects = array(
 				"type" => "affiliated",
 				"thumb" => "oldsouthernorchards.png",
 				"header" => "Old Southern Orchards",
-				"website" => "http://lichen.csd.sc.edu/oldsouthernorchards/index.php",
+				"website" => "http://www.digitalussouth.org/oldsouthernorchards/index.php",
 				"content" => "<p><em>Old Southern Orchards</em> serves as a companion to <em>American Heritage Vegetables</em>, and provides information
 		about the most consequential fruits grown in the South prior to the Great Depression.  There were a multitude of varieties grown in the
 		region that would become the American South from the colonial era onward.  Some were native (plums, pawpaws, persimmons),
