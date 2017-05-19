@@ -4,6 +4,8 @@
  * List is pulled from the $projects array defined in head.php 
  */
 
+require "config.php";
+
 require "layout/head.php";
 
 //require "layout/splash.php";

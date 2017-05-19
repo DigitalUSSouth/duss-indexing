@@ -28,7 +28,7 @@ $counter=1;
 while ($statement->fetch()){
     print $counter++.'-'.$id.'<br>';
     $document = array(
-        'archive' => 'South Carolina Digital Encyclopedia',
+        'archive' => 'South Carolina Encyclopedia',
         'contributing_institution' => 'University of South Carolina',
         'id' => 'http://www.duss.sc.edu/sce/entries/'.$name.'/',
         'url' => 'http://www.duss.sc.edu/sce/entries/'.$name.'/',
