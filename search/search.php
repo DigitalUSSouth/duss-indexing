@@ -7,7 +7,7 @@
  *   - advanced-search-box.php: prints out the search box
  *   - search-results.php: performs the search and print facets+results
  */
-
+require_once ("config.php");
 require "layout/head.php";
 
 //require "layout/splash.php";

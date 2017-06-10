@@ -4,6 +4,13 @@
  config file for global values
 */
 
+if ($_SERVER['SERVER_NAME']=='localhost'){
+	define ("DEBUGGING",true);
+}
+else {
+	define ("DEBUGGING",false);
+}
+
 global $ROOTURL;
 $ROOTURL = "http://localhost/duss/";
 
