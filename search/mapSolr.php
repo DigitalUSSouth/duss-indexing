@@ -30,10 +30,12 @@ function getMainMapData(){
           "title"=>$result['title']
         );
         if (!array_key_exists($loc,$locations)){
-          $locations[$loc] = array(1,[0,0]);
+          $locations[$loc] = array(
+            "num"=>1,
+            "latlng"=>[0,0]);
         }
         else {
-          $locations[$loc][0]++;
+          $locations[$loc]['num']++;
         }
         $allMarkers[] = $marker;
       }
@@ -43,13 +45,14 @@ function getMainMapData(){
 
   //geocode all locations
   foreach ($locations as $loc=>$data){
-    $locations[$loc][1] = geocode($loc);
+    $locations[$loc]['latlng'] = geocode($loc);
   }
   print "<pre>";
   $jsonLocations = json_encode($locations,JSON_PRETTY_PRINT);
   print $jsonLocations;
   print "</pre>";
   file_put_contents("data/locations.json", $jsonLocations);
+  
 }
 
 

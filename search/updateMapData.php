@@ -1,8 +1,7 @@
 <?php
-/* map.php
- */
 
-$isMapPage = true;
+
+$isMapPage = false;
 
 require_once ("config.php");
 
@@ -13,6 +12,8 @@ require "layout/head.php";
 require "layout/nav-search.php";
 
 require "mapSolr.php";
+
+getMainMapData();
 
 
 
