@@ -814,7 +814,7 @@ function getResultsFromSolr($query){
 	
 	//$jsonResponse = file_get_contents($queryString);
 	
-	//print $queryString.'<br>';
+	if(DEBUGGING){print $queryString.'<br>';}
 
 	if ($jsonResponse === false) return false;
 

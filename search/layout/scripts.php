@@ -22,7 +22,7 @@
 <script src="js/duss.js"></script>
 <script src="js/duss-search.js"></script>
 
-<?php	if (isset($isMapPage)|| $isMapPage==true):?>
+<?php	if ($isMapPage==true):?>
 <script src="js/map.js"></script>
 <?php endif;?>
 

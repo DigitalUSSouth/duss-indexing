@@ -18,7 +18,10 @@ require "layout/head.php";
 
 require "layout/nav-search.php";
 
-file_get_contents("http://localhost/duss/api?q=*&");
+require "mapSolr.php";
+
+getMainMapData();
+
 
 
 ?>

@@ -7,6 +7,9 @@
  *   - advanced-search-box.php: prints out the search box
  *   - search-results.php: performs the search and print facets+results
  */
+
+$isMapPage=false;
+
 require_once ("config.php");
 require "layout/head.php";
 

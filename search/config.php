@@ -89,7 +89,8 @@ $facetFields = array(
 		"subject_heading_facet" => "LC Subject Headings",
 		"type_content" => "Type of Content",
 		"file_format" => "File Format",
-		"language" => "Language"
+		"language" => "Language",
+		//"geolocation_human" => "Location"
 		//"date"
 );
 

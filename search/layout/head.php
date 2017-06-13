@@ -190,7 +190,7 @@ $projects = array(
 	<script src="js/modernizr.min.js"></script>
 	
 	<?php if (!DEBUGGING){include "google-analytics.php";} 
-	if (isset($isMapPage)|| $isMapPage==true):?>
+	if ($isMapPage==true):?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 	<link rel="stylesheet" href="leaflet/leaflet.css"/>
