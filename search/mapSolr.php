@@ -27,7 +27,9 @@ function getMainMapData(){
       foreach ($result['geolocation_human'] as $loc){
         $marker = array(
           "location"=>$loc,
-          "title"=>$result['title']
+          "title"=>$result['title'],
+          "url"=>$result['url'],
+          "description"=>$result['description']
         );
         if (!array_key_exists($loc,$locations)){
           $locations[$loc] = array(
@@ -52,7 +54,15 @@ function getMainMapData(){
   print $jsonLocations;
   print "</pre>";
   file_put_contents("data/locations.json", $jsonLocations);
-  
+
+  foreach ($allMarkers as &$marker){
+    $marker['latlng'] = $locations[$marker['location']]['latlng'];
+  }
+  print "<pre>";
+  $jsonMarkers = json_encode($allMarkers,JSON_PRETTY_PRINT);
+  print $jsonMarkers;
+  print "</pre>";
+  file_put_contents("data/markers.json", $jsonMarkers);
 }
 
 
