@@ -12,7 +12,7 @@ function getMainMapData(){
   
 
   $start = 0;
-  $rows = 100;
+  $rows = 1000;
   $numFound = $res['response']['numFound'];
   print $numFound;
 
@@ -30,17 +30,42 @@ function getMainMapData(){
           "title"=>$result['title']
         );
         if (!array_key_exists($loc,$locations)){
-          $locations[$loc] = 1;
+          $locations[$loc] = array(1,[0,0]);
         }
         else {
-          $locations[$loc]++;
+          $locations[$loc][0]++;
         }
         $allMarkers[] = $marker;
       }
     }
-    $start = $start+100;
+    $start = $start+$rows;
+  }
+
+  //geocode all locations
+  foreach ($locations as $loc=>$data){
+    $locations[$loc][1] = geocode($loc);
   }
   print "<pre>";
-  var_dump($locations);
+  $jsonLocations = json_encode($locations,JSON_PRETTY_PRINT);
+  print $jsonLocations;
   print "</pre>";
+  file_put_contents("data/locations.json", $jsonLocations);
 }
+
+
+/**
+ * geocode a place name - uses google geocoding API
+ * @param {string} literal name of place to geocode
+ * @return {array} [(float)lat,(float)lng]
+ */
+function geocode($locationName){
+//CHANGE TO DUSS API KEY IN PRODUCTION
+if ($locationName=="") return [0,0];
+	 $url = 'https://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($locationName).'&key=AIzaSyBVXm_BC0-fmKBncSUzB_5NMGIv9HPLhYY';
+ 	print $url.'<br>';
+	 $jsonResult = file_get_contents($url);
+	 $result = json_decode($jsonResult,true);
+	 $lat = $result['results'][0]['geometry']['location']['lat'];
+	 $lng = $result['results'][0]['geometry']['location']['lng'];
+	 return [$lat,$lng];
+}  
