@@ -198,6 +198,10 @@ $projects = array(
 
 		<link rel="stylesheet" href="css/map.css"/>
 
+		<link rel="stylesheet" href="leaflet/dist/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="leaflet/dist/MarkerCluster.css">
+    <script type="text/javascript" src="leaflet/dist/leaflet.markercluster.js"></script>
+
 	<?php endif;
 	?>
 	

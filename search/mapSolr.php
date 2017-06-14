@@ -59,7 +59,7 @@ function getMainMapData(){
     $marker['latlng'] = $locations[$marker['location']]['latlng'];
   }
   print "<pre>";
-  $jsonMarkers = json_encode($allMarkers,JSON_PRETTY_PRINT);
+  $jsonMarkers = json_encode($allMarkers);
   print $jsonMarkers;
   print "</pre>";
   file_put_contents("data/markers.json", $jsonMarkers);

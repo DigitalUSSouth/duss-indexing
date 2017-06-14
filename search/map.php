@@ -13,16 +13,17 @@ require "layout/head.php";
 require "layout/nav-search.php";
 
 require "mapSolr.php";
-
-
-
 ?>
+<script>
+var itemLocations = <?php print file_get_contents("data/markers.json");?>;
+</script>
 
 <div class="container-fluid">
 	<div class="row">
-   <div id="mainMap">
-
-   </div>
+    <div class="col-xs-12">
+      <div id="mainMap">
+      </div>
+    </div>
   </div>
 </div>
 <?php 
