@@ -214,7 +214,7 @@
    <field name="date_digital_human" type="text_en" indexed="true" stored="true" required="false" multiValued="false" />
    
    <!-- Geographic Location - Machine -->
-   <field name="geolocation_machine" type="location" indexed="true" stored="true" required="false" multiValued="true" />
+   <field name="geolocation_machine" type="location_rpt" indexed="true" stored="true" required="false" multiValued="true" />
    
    <!-- Source/Shelfmark -->
    <field name="shelfmark" type="text_general" indexed="true" stored="true" required="false" multiValued="false" />

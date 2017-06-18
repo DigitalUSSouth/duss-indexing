@@ -10,7 +10,7 @@ require "layout/nav-search.php";
 
 require_once 'solr.php';
 
-require_once 'db-config.php';
+//require_once 'db-config.php';
 ?>
 <div class="container-fluid">
 <pre>
@@ -36,7 +36,8 @@ foreach ($objects as $object){
         'title' => $doc['title'],
         'type_content' => 'Text',
         'type_digital' => 'Text',
-        'geolocation_human' => 'South Carolina',
+        'geolocation_human' => $doc['geolocation_human'],
+        'geolocation_machine' => $doc['geolocation_machine'],
         'file_format' => 'text/html',
         'description' => '',
         'full_text' => $doc['text']
