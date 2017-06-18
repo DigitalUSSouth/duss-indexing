@@ -28,6 +28,9 @@ foreach ($objects as $object){
     flush();
     $jsonDoc = file_get_contents('http://simms.library.sc.edu/index_api.php?id='.$object);
     $doc = json_decode($jsonDoc,true);
+    if (empty($doc['geolocation_human'])){
+        $doc['geolocation_human'] = "South Carolina";
+    }
     $document = array(
         'archive' => 'William Gilmore Simms Digital Collection',
         'contributing_institution' => 'University of South Carolina',
