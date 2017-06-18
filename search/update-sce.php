@@ -30,8 +30,8 @@ while ($statement->fetch()){
     $document = array(
         'archive' => 'South Carolina Encyclopedia',
         'contributing_institution' => 'University of South Carolina',
-        'id' => 'http://www.duss.sc.edu/sce/entries/'.$name.'/',
-        'url' => 'http://www.duss.sc.edu/sce/entries/'.$name.'/',
+        'id' => 'http://www.scencyclopedia.org/sce/entries/'.$name.'/',
+        'url' => 'http://www.scencyclopedia.org/sce/entries/'.$name.'/',
         'title' => utf8_encode($title),
         'type_content' => 'Text',
         'type_digital' => 'Text',
