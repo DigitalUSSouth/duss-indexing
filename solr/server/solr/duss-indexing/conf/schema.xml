@@ -178,6 +178,8 @@
    
    <!-- Geographic Location - Human -->
    <field name="geolocation_human" type="text_general" indexed="true" stored="true" required="true" multiValued="true" />
+   <field name="geohuman_facet"  type="string" indexed="true"  stored="true" multiValued="true"/>
+   <copyField source="geolocation_human"    dest="geohuman_facet"/>
    
    <!-- File Format -->
    <field name="file_format" type="string" indexed="true" stored="true" required="true" multiValued="false" />

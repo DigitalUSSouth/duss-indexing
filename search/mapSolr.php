@@ -44,7 +44,9 @@ function getMainMapData(){
     }
     $start = $start+$rows;
   }
-
+//var_dump($locations);
+//print sizeof($locations);
+//die();
   //geocode all locations
   foreach ($locations as $loc=>$data){
     $locations[$loc]['latlng'] = geocode($loc);

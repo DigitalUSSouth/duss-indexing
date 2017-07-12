@@ -23,11 +23,11 @@ require_once 'solr.php';
 <pre>
 <?php 
 set_time_limit(600);
-//importTabFileGCook();
+importTabFileGCook();
 importTabFileSCCivilWar();
-//importTabFilePBrown();
+importTabFilePBrown();
 //importTabFileSimms();
-//importTabFileSouthworth();
+importTabFileSouthworth();
 ?>
 </pre>
 </div>
