@@ -15,7 +15,7 @@ require "layout/nav-search.php";
 require "mapSolr.php";
 ?>
 <script>
-var itemLocations = <?php print file_get_contents("data/markers.json");?>;
+var itemLocations = <?php print file_get_contents("data/locationMarkers.json");?>;
 </script>
 
 <div class="container-fluid">
