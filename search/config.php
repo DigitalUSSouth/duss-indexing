@@ -90,7 +90,7 @@ $facetFields = array(
 		"type_content" => "Type of Content",
 		"file_format" => "File Format",
 		"language" => "Language",
-		//"geolocation_human" => "Location"
+		"geohuman_facet" => "Location"
 		//"date"
 );
 

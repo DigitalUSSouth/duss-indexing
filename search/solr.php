@@ -476,7 +476,7 @@ function importTabFileSouthworth(){
 				//'shelfmark' => $fields[3],
 				//'shelfmark' => $fields[4],
 				//'contributing_institution' => $fields[5],
-				'geolocation_human' => $fields[6],
+				'geolocation_human' => '',//$fields[6],
 				//'archive' => $fields[7],
 				'shelfmark' => $fields[8],
 				//'' => $fields[9],

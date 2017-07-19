@@ -28,6 +28,7 @@ function getMainMapData(){
         $marker = array(
           "location"=>$loc,
           "title"=>$result['title'],
+          "archive"=>$result['archive'],
           "url"=>$result['url'],
           "description"=>$result['description']
         );
@@ -49,22 +50,37 @@ function getMainMapData(){
 //die();
   //geocode all locations
   foreach ($locations as $loc=>$data){
-    $locations[$loc]['latlng'] = geocode($loc);
+    //$locations[$loc]['latlng'] = geocode($loc);
   }
   print "<pre>";
   $jsonLocations = json_encode($locations,JSON_PRETTY_PRINT);
   print $jsonLocations;
   print "</pre>";
-  file_put_contents("data/locations.json", $jsonLocations);
+  //file_put_contents("data/locations.json", $jsonLocations);
 
+  $locations = json_decode(file_get_contents("data/locations.json"),true);
+
+  $locationMarkers = array();
   foreach ($allMarkers as &$marker){
-    $marker['latlng'] = $locations[$marker['location']]['latlng'];
+    $loc = $marker['location'];
+    if(!array_key_exists($loc,$locationMarkers)){
+      $locationMarkers[$loc]['num'] = 1;
+      $locationMarkers[$loc]['items'] = array();
+    }
+    else {
+      $locationMarkers[$loc]['num']++;
+
+    }
+    $locationMarkers[$loc]['latlng'] = $locations[$loc]['latlng'];
+    unset($marker['latlng']);
+    unset($marker['location']);
+    $locationMarkers[$loc]['items'][] = $marker;
   }
   print "<pre>";
-  $jsonMarkers = json_encode($allMarkers);
+  $jsonMarkers = json_encode($locationMarkers,JSON_PRETTY_PRINT);
   print $jsonMarkers;
   print "</pre>";
-  file_put_contents("data/markers.json", $jsonMarkers);
+  file_put_contents("data/locationMarkers.json", $jsonMarkers);
 }
 
 

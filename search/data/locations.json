@@ -1,9 +1,16 @@
 {
-    "South Carolina": {
-        "num": 54620,
+    "Charleston, SC": {
+        "num": 196,
         "latlng": [
-            33.836081,
-            -81.1637245
+            32.7764749,
+            -79.9310512
+        ]
+    },
+    "University of South Carolina, South Caroliniana Library": {
+        "num": 196,
+        "latlng": [
+            33.9983698,
+            -81.0299614
         ]
     },
     "Charleston County (S.C.)": {
@@ -144,62 +151,6 @@
         "latlng": [
             39.768403,
             -86.158068
-        ]
-    },
-    "London Journal; New York Ledger": {
-        "num": 1,
-        "latlng": [
-            null,
-            null
-        ]
-    },
-    "New York Ledger": {
-        "num": 7,
-        "latlng": [
-            40.7421356,
-            -73.9177217
-        ]
-    },
-    "National Era (Washington, DC)": {
-        "num": 2,
-        "latlng": [
-            38.888684,
-            -77.004719
-        ]
-    },
-    "Saturday Evening Post (Philadelphia, PA)": {
-        "num": 2,
-        "latlng": [
-            null,
-            null
-        ]
-    },
-    "National Era; London Journal": {
-        "num": 1,
-        "latlng": [
-            null,
-            null
-        ]
-    },
-    "New York Ledger; London Journal": {
-        "num": 4,
-        "latlng": [
-            null,
-            null
-        ]
-    },
-    "New York Ledger; London Reader": {
-        "num": 1,
-        "latlng": [
-            null,
-            null
-        ]
-    },
-    "Saturday Evening Post": {
-        "num": 1,
-        "latlng": [
-            39.782593,
-            -86.181596
         ]
     }
 }

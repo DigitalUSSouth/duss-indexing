@@ -14,12 +14,18 @@ $(document).ready(function(e){
 	var itemMarkers =  L.markerClusterGroup();
   console.log('created layers')
 	var counter = 1;
-	itemLocations.forEach(function (mkr){
+	itemLocations.forEach(function (mkrs,location){
 		//if (counter++ > 100) return;
 		if (mkr.latlng[0]== null || mkr.latlng[1]== null) return; //if key is blank then it's an invalid marker so we just return
 		//console.log(mkr);
 		//var marker = new L.marker(mkr.latlng).addTo(mainMap).bindPopup(mkr.title);//.addTo(mainMap
-		var marker = L.marker(mkr.latlng,{title:mkr.title}).bindPopup("<h1>"+mkr.title+"</h1><p><a target=\"_blank\" href=\""+mkr.url+"\">Click here to view</a><br>"+mkr.description+"</p>")//.addTo(mainMap);
+		var marker = L.marker(mkr.latlng,{title:location});
+		
+		var popup = "<h1>"+location+"</h1>";
+
+		mkr.forEach()
+
+		//.bindPopup("<h1>"+mkr.title+"</h1><p><a target=\"_blank\" href=\""+mkr.url+"\">Click here to view</a><br>"+mkr.description+"</p>")//.addTo(mainMap);
 		//console.log(marker);
 
 		itemMarkers.addLayer(marker);
