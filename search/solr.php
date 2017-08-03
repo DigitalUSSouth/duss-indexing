@@ -375,11 +375,11 @@ function indexSimmsObject($cdmPointer, $parentPointer = null){
 		$match;
 		if (!is_string($objectInfo['websit'])){
 			print 'Unable to find simms url. contentdm pointer: '.$cdmPointer.'<br>';
-			continue;
+			//continue;
 		}
 		if (!preg_match('/[0-9]+$/',$objectInfo['websit'],$match)){
 			print 'Unable to find simms url. contentdm pointer: '.$cdmPointer.'<br>';
-			continue;
+			//continue;
 		}
 		$url = 'http://simms.library.sc.edu/view_item.php?item='.$match[0];
 		print $url.'<br>';
