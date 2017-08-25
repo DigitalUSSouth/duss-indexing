@@ -47,7 +47,7 @@ $projects = array(
 				"type" => "affiliated",
 				"thumb" => "american-heritage.png",
 				"header" => "American Heritage Vegetables",
-				"website" => "http://www.duss.sc.edu/vegetable",
+				"website" => "http://www.digitalussouth.org/vegetable",
 				"content" => "<p><em>The American Heritage Vegetables</em> project presents the variety of vegetables&mdash;excluding grains like rice, wheat, and corn&mdash;found in American fields, kitchens, markets, and tables before the 20th century. The project documents varieties of vegetables from artichokes to melons, and includes cultivation practices, period recipes, and other information of interest to agricultural historians, serious gardeners, and those simply interested in how our ancestors ate. The information presented here has been gleaned from the seminal 19th-century works of American gardening, period seed catalogues and cookbooks, and agricultural textbooks.</p>"
 		),
 		array(
