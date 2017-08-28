@@ -866,9 +866,10 @@ function buildSolrQuery($query){
 	
 	global $solrCoreName;
 	global $solrResultsHighlightTag;
+	global $solrUrl;
 
-	$queryString = 'http://localhost:8983/solr/'.$solrCoreName
-		.'/select?'.$queryString.'&start='.$query['start'].'&rows='.$query['rows']
+	$queryString = $solrUrl
+		.'select?'.$queryString.'&start='.$query['start'].'&rows='.$query['rows']
 		.'&wt=json&hl=true&hl.simple.pre='.urlencode('<'.$solrResultsHighlightTag.'>')
 		.'&hl.simple.post='.urlencode('</'.$solrResultsHighlightTag.'>').'&hl.fl=*&facet=true';
 	
