@@ -531,6 +531,30 @@ function importTabFileSouthworth(){
 }
 
 
+//ExploreSC markers
+
+function importExploreSC(){
+
+  $file = file_get_contents("uploads/markers.json");
+  $markers = json_decode($file,true);
+
+  foreach ($markers as $marker){
+	$document = array(
+		'title' => $marker['title'],
+		'alternative_title' => $marker['cmt'],
+		'geolocation_human' => "South Carolina",
+		'description' => $marker['desc'],
+		'archive' => 'Historical Marker Database',
+		'language' => "English",
+		'type_content' =>  "Text",
+		'file_format' => "text/html",//$marker[20],
+		'type_digital' => "Text",
+		'url' => $marker['url'],
+		'id' => $marker['url'],
+	);
+	indexDocument($document)
+  }
+}
 
 
 
