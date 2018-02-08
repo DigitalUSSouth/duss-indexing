@@ -540,9 +540,10 @@ function importExploreSC(){
 
   foreach ($markers as $marker){
 	$document = array(
-		'title' => $marker['title'],
+		'title' => $marker['name'],
 		'alternative_title' => $marker['cmt'],
 		'geolocation_human' => "South Carolina",
+		'geolocation_machine' => $marker['geolocation'][0].",".$marker['geolocation'][1],
 		'description' => $marker['desc'],
 		'archive' => 'Historical Marker Database',
 		'language' => "English",
@@ -550,9 +551,10 @@ function importExploreSC(){
 		'file_format' => "text/html",//$marker[20],
 		'type_digital' => "Text",
 		'url' => $marker['url'],
-		'id' => $marker['url'],
+		'id' => $marker['url']
 	);
-	indexDocument($document)
+	flush();
+	indexDocument($document);
   }
 }
 
@@ -838,7 +840,7 @@ function getResultsFromSolr($query){
 	
 	//$jsonResponse = file_get_contents($queryString);
 	
-	//print $queryString.'<br>';
+	print $queryString.'<br>';
 
 	if ($jsonResponse === false) return false;
 
