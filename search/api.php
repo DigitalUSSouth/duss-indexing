@@ -12,7 +12,7 @@ if (!isset($_GET['q']) || !isset($_GET['start'])){
 
 $searchQuery['isFullText'] = true;
 
-$searchQuery['queryArray'] = array(array("all","AND",urlencode($_GET['q'])));
+$searchQuery['queryArray'] = array(array("all","AND",$_GET['q']));
 
 $searchQuery['start'] = $_GET['start'];
 
