@@ -1,0 +1,52 @@
+<section class="container-fluid" id="projects">
+  <div class="col-xs-12">
+    {%for project in projects %}
+    <div class="col-sm-3 col-xs-6" style="padding-bottom:1em;">
+      <a href="#" data-toggle="modal" data-target="#modal{{loop.index}}">
+        <div style="height:4em;">
+          <h4>{{ project['header']}}</h4>
+        </div>
+        <img src="static/img/thumb/{{project['thumb']}}" class="img-responsive" alt="{{project['header']}}">
+        
+      </a>
+      <div class="col-xs-12" id="projects{{projectCounter}}">
+        <a href="{{project['website']}}" target="_blank">Visit website</a>
+      </div>
+    </div>
+      {% if (loop.index%4)==0 %} 
+      <div class=\"clearfix\"></div>
+      {% endif %}
+    {% endfor %}
+
+<!-- These are the prject info modals -->
+		
+		<!-- Modal -->
+{% for project in projects %}
+<div id="modal{{loop.index}}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title">{{project['header']}}</h2>
+      </div>
+      <div class="modal-body">
+        <p><h4><a target="_blank" href="{{project['website']}}">Visit website</a></h4></p>
+
+					<img src="static/img/thumb/{{project['thumb']}}" class="pull-left project-modal-img" width="150px" alt="{{project['header']}}">
+
+        {{project['content']|safe}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endfor %}	
+
+
+  </div>
+</section>

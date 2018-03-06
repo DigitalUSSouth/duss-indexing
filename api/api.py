@@ -53,7 +53,7 @@ def simple_search():
         search_query['fq'] =  []
         search_query['fq_field']= []
         print ("Notice: archive not set")
-    pprint(search_query)
+    #pprint(search_query)
     try:
         solr_response = get_solr_results (search_query)
         if not solr_response['responseHeader']['status'] ==0:

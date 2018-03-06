@@ -1,0 +1,444 @@
+/**
+ * duss.css
+ *
+ * Author: Center for Digital Humanities - University of South Carolina.
+ * Version: Alpha.
+ * Copyright: 2015-2017. All Rights Reserved.
+ *
+ * Updated at Digital US South - University of South Carolina
+ * 2016-2017
+ */
+
+/**
+ * Global Tags and Classes
+ */
+html, body { height: 100%; }
+@media screen and (max-width: 991px) {
+	html, body { height: initial; }
+}
+
+section {
+	position: relative;
+	min-height: 100%;
+	padding: 100px !important;
+}
+section > .row { position: relative; }
+section > i.fa {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 50px;
+	z-index: 99;
+
+	width: 42px;
+	margin-left: auto;
+	margin-right: auto;
+
+	cursor: pointer;
+}
+@media screen and (max-width: 991px) {
+	section { padding: 75px !important; }
+}
+@media screen and (max-width: 767px) {
+	section { padding: 45px !important; }
+	section > i.fa { display: none; }
+}
+@media screen and (max-width: 600px) {
+	section { padding: 15px !important; }
+}
+
+.positioner {
+	top: 50%;
+
+	-webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+@media screen and (max-width: 991px) {
+	.positioner {
+		position: relative !important;
+		top: initial;
+
+		-webkit-transform: initial;
+		    -ms-transform: initial;
+		        transform: initial;
+	}
+}
+
+/**
+ * Page Loading Overlay
+ */
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10000;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: #ECECEC;
+}
+
+/**
+ * Splash Section
+ */
+#splash .background-gradient {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	width: 100%;
+	height: 100%;
+
+	background: -webkit-radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0) 100%);
+	background:    -moz-radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0) 100%);
+	background:      -o-radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0) 100%);
+	background:         radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0) 100%);
+}
+#splash .background-pattern {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+
+	width: 100%;
+	height: 100%;
+
+	background-image: url(../img/pattern.png);
+}
+#splash .positioner {
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 2;
+}
+@media screen and (max-height: 1100px) {
+	#splash img { max-width: 50%; }
+}
+@media screen and (max-height: 900px) {
+	#splash img { max-width: 30%; }
+}
+
+/**
+ * Home Section
+ */
+#home,
+#home .row { height: 100%; }
+#home .row > div { margin-left: 10%; }
+#home p {
+	font-size: 18px;
+	line-height: 1.789;
+}
+@media screen and (max-width: 991px) {
+	#home .row > div { margin-left: 0; }
+}
+
+/**
+ * Navigation Section
+ */
+.navbar {
+	z-index: 1000;
+
+	width: 100%;
+
+	border-bottom: 1px solid black;
+}
+
+.navbar-duss {
+	background-color: rgba(236, 236, 236, 1);
+}
+.navbar-toggle { background-color: #F13046; }
+.navbar-toggle > .icon-bar { background-color: #FFFFFF; }
+
+.navbar-brand {
+	height: 70px;
+	padding: 1.5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.navbar-nav {
+	-webkit-transform: translateY(30%);
+	    -ms-transform: translateY(30%);
+	        transform: translateY(30%);
+}
+
+.navbar-nav > li > .dropdown > button,
+.navbar-nav > li > a {
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-bottom: 5px;
+
+	color: #000000;
+
+	border-bottom: 1px solid transparent;
+
+	-webkit-transition: 0.35s ease-in-out;
+	        transition: 0.35s ease-in-out;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus,
+.navbar-nav > li > a.active {
+	border-bottom: 1px solid red;
+	background-color: transparent;
+}
+
+.navbar-nav > li > .dropdown > button {
+	text-transform: uppercase;
+	margin-top:7.54px;
+	padding-bottom:15.9px;
+}
+
+.navbar-nav > li > .dropdown > button:hover,
+.navbar-nav > li > .dropdown > button:focus,
+.navbar-nav > li > .dropdown > button.active {
+	border-bottom: 1px solid red;
+	background-color: transparent;
+	text-decoration:none;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+/**
+ * About Section
+ */
+#about { background-color: #ECECEC; }
+#about .row:first-child { margin-top: 2%; }
+#about #carousel { cursor: pointer; }
+#about p {
+	font-size: 16px;
+	line-height: 1.789;
+}
+
+
+
+/**
+ * Projects Section
+ */
+#projects { 
+	/*background-image: url(../img/pattern.png);*/
+	background-color: #ececec;
+}
+
+#project-carousel {
+	height: 480px;
+	background: none;
+	padding-left: 7em;
+	padding-right: 5em;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.carousel-text {
+	/*position:relative;
+	bottom:3em;*/
+/*text-align: center;
+left:7px;
+visibility:hidden;
+margin-left:1px;
+margin-right: 0px;
+
+color: #FFFFFF;
+text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;*/
+}
+
+div.wrapper {
+	/*max-height: 175px;*/
+	margin-bottom: .5em;
+}
+
+.carousel-img {
+	max-height: 145px;
+}
+
+.carousel-indicators li {
+	background-color: grey;
+	color: black;
+}
+
+.carousel-indicators li.active {
+	border: 1px solid black;
+}
+
+/*.projectcarousel > button {
+	background: #376FB;
+}
+
+#projects .positioner {
+	position: absolute;
+
+	width: 100%;
+	margin-left: -100px;
+	margin-right: -100px;
+	padding: 90px 100px;
+	padding-bottom: 80px;
+
+	background-color: #376FB7;
+}
+
+/*#projects .row { color: white; }
+
+#projects .project-listing {
+	top: 10px;
+
+	min-height: 260px;
+
+	cursor: pointer;
+}
+
+#projects .project-listing > img { height: 200px; }
+@media screen and (max-width: 991px) {
+	#projects .positioner { width: initial; }
+}
+@media screen and (min-height: 991px) {
+	#projects .positioner {
+		padding: 30px 100px;
+		padding-top: 50px;
+	}
+}*/
+
+/**
+ * Project Detail Section
+ */
+.project-modal-img {
+	margin: 2em;
+}
+
+a[target="_blank"]:after {
+    font-family:'Glyphicons Halflings';
+    font-size: 0.8em;
+    content: " \e164";
+}
+
+/**
+ * Contact Section
+ */
+
+#contact > .row {
+	background-color: #ECECEC;
+}
+#contact .positioner {
+	position: absolute;
+
+	width: 100%;
+	padding: 50px 100px;
+	margin-left: -100px;
+	margin-right: -100px;
+}
+@media screen and (max-width: 991px) {
+	#contact .positioner { width: initial; }
+}
+
+/**
+ *	Staff Table in Contact Section
+ */
+#staff {font-size: 16px;  margin-left:auto; margin-right:auto;}
+#staff caption {font-size: 24px; color: red;}
+#staff  tr th {padding: 15px; background-color:gray; color: white}
+#staff  tr td {padding: 15px;}
+#staff  tr:nth-child(odd) {background-color: #ECECEC;}
+#staff  tr:nth-child(even) {background-color: #FFFFFF;}
+
+/**
+ * Footer Section
+ */
+#footer { min-height: initial; }
+
+/**
+ * CSS Loading Animation
+ *
+ * The following is credited to Tobias Ahlin from http://tobiasahlin.com/spinkit/.
+ */
+.spinner {
+	position: relative;
+	top: 50%;
+	left: 0;
+	right: 0;
+
+	width: 40px;
+	height: 40px;
+	margin-left: auto;
+	margin-right: auto;
+
+	-webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+
+.double-bounce1, .double-bounce2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	border-radius: 50%;
+	background-color: #333333;
+
+	opacity: 0.6;
+
+	-webkit-animation: bounce 2.0s infinite ease-in-out;
+	        animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+	-webkit-animation-delay: -1.0s;
+	        animation-delay: -1.0s;
+}
+
+@-webkit-keyframes bounce {
+	0%, 100% {
+		-webkit-transform: scale(0.0);
+		    -ms-transform: scale(0.0);
+		        transform: scale(0.0);
+	}
+	50% {
+		-webkit-transform: scale(1.0);
+		    -ms-transform: scale(1.0);
+		        transform: scale(1.0);
+	}
+}
+
+@keyframes bounce {
+	0%, 100% {
+		-webkit-transform: scale(0.0);
+		    -ms-transform: scale(1.0);
+		        transform: scale(0.0);
+	} 50% {
+		-webkit-transform: scale(1.0);
+		    -ms-transform: scale(1.0);
+		        transform: scale(1.0);
+	}
+}
+
+.text {
+position:relative;
+text-align: center;
+margin-left:1px;
+margin-right: 0px;
+color: #FFFFFF;
+text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+font-size: 18px;
+}
+
+.carouselimg{
+  border-radius: 25px;
+  border: 5px solid #EEEEEE;
+  margin: 5px;
+  background-color: #FFFFFF;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.7;
+   /*transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;*/
+}
