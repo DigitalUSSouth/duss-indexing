@@ -2,7 +2,7 @@
 /* search-results.php
  * this field performs a search based on parameters in the $_GET request in index.php
  * called by: index.php
- */
+ */ 
 
 //is the search full-text?
 $searchQuery['isFullText'] = (isset($_GET['full-text-search'])) ? $_GET['full-text-search'] : false;

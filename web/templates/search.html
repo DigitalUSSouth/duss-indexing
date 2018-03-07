@@ -1,0 +1,34 @@
+{% include 'head.html' %}
+{% include 'nav.html' %}
+
+<div class="container-fluid">
+	<div class="row">
+
+<div class="col-xs-3 center-block">
+<div id="about-carousel" class="carousel slide" data-ride="carousel">
+
+			<!-- Wrapper for slides -->
+  			<div class="carousel-inner" role="listbox">
+            {% for image in carousel %}
+                {% if loop.index==1 %}
+				<div class="item active">
+                {% else %}
+				<div class="item">
+                {% endif %}
+     				<img src="static/img/carousel/{{image['image']}}" alt="{{image['alt']}}" class="img-responsive">
+     			</div>
+			{% endfor %}
+			</div>
+		</div>
+        
+        
+       </div> 
+	</div>
+{% include 'search-results.html' %}
+
+</div> <!-- container-fluid -->
+
+{% include 'footer.html' %}
+
+{% include 'scripts.html' %}
+
