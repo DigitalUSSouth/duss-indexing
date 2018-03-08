@@ -64,7 +64,6 @@ def search():
     r = requests.post('http://localhost:5000/search',json=unsafe_query)
     print(r.status_code)
     
-    print("Heloooooo")
     print(r.text)
     search_results = json.loads(r.text)
     pprint(search_results)
@@ -98,13 +97,26 @@ def search():
             facet_counter += 2
     #pprint(facets)
     ordered_facets = []
-    for name,title in facet_fields.items():
+    for (name,title) in facet_fields:
         if name in facets:
-            ordered_facets.append([facet_fields[name],facets[name]])
+            ordered_facets.append([title,facets[name]])
     pprint(ordered_facets)
     #response.set_data(r.content)
 
     results = search_results['response']['docs']
+    highlighting = search_results['highlighting']
+    pprint(highlighting)
+    new_results = []
+    for doc in results:
+        if doc['url'] in highlighting:
+            new_doc = doc
+            for key,item in highlighting[doc['url']].items():
+                new_doc[key] = strip_html(item[0]).replace("{{mark}}","<mark>").replace("{{/mark}}","</mark>")
+            new_results.append(new_doc)
+        else:
+            new_results.append(doc)
+
+    results = new_results
     new_results = []
     for doc in results:
         new_doc = {}
@@ -112,9 +124,9 @@ def search():
             if isinstance(item,str):
                 new_doc[key] = [item]
             else:
-                new_doc[key] = [item]
+                new_doc[key] = item
         new_results.append(new_doc)
-    #pprint(brief_display_fields)
+    pprint(new_results)
 
     #build nav_string
     start = int(search_results['responseHeader']['params']['start'])

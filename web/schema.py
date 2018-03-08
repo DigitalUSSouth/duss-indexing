@@ -60,15 +60,15 @@ for name,info in solr_field_names.items():
 	if info['display']=='brief':
 		brief_display_fields.append(name)
 
-facet_fields = {
-		"archive_facet" : "Digital Collection",
-		"contributing_institution_facet" : "Contributing Institution",
-		"subject_heading_facet" : "LC Subject Headings",
-		"type_content" : "Type of Content",
-		"file_format" : "File Format",
-		"language" : "Language"
+facet_fields = [
+		("archive_facet" , "Digital Collection"),
+		("contributing_institution_facet" , "Contributing Institution"),
+		("subject_heading_facet" , "LC Subject Headings"),
+		("type_content" , "Type of Content"),
+		("file_format" , "File Format"),
+		("language" , "Language")
 		#"date"
-}
+]
 
 search_fields = {
 		"contributing_institution",

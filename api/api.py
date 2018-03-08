@@ -111,7 +111,7 @@ def build_solr_query(query):
     for fq_field,fq in filter_queries:
         query_string = query_string + '&fq=' + quote_plus(str(fq_field)) + ':' + quote_plus(str(fq))
     
-    query_string = solr_url + 'select?' + query_string + '&start=' + str(query['start'])+'&rows=' + str(query['rows']) + '&wt=json&hl=true&hl.simple.pre='+quote_plus('<'+solr_results_highlight_tag + '>')+                 '&hl.simple.post='+quote_plus('</'+solr_results_highlight_tag+'>')+'&hl.fl=*&facet=true'
+    query_string = solr_url + 'select?' + query_string + '&start=' + str(query['start'])+'&rows=' + str(query['rows']) + '&wt=json&hl=true&hl.simple.pre='+quote_plus('{{'+solr_results_highlight_tag + '}}')+                 '&hl.simple.post='+quote_plus('{{/'+solr_results_highlight_tag+'}}')+'&hl.fl=*&facet=true'
 
     #add facet fields to query
     for key,value in facet_fields.items():
