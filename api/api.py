@@ -147,6 +147,9 @@ def search():
     except ValueError:
         print("Warning: Rows value error")
         rows = None
+    except TypeError:
+        print("Warning: Rows value error")
+        rows = None
     rows = 20 if rows==None else rows
 
     #check start vaue
@@ -187,7 +190,8 @@ def search():
         'error':'None',
         'response':solr_response['response'],
         'facets': solr_response['facet_counts'],
-        'highlighting': solr_response['highlighting']
+        'highlighting': solr_response['highlighting'],
+        'responseHeader':solr_response['responseHeader']
         }))
         return response
     except ValueError:

@@ -50,8 +50,22 @@ def search():
         unsafe_query['fq'] = filter_queries
     #pprint(filter_queries)
     #pprint(request.args.to_dict())
+
+    with open('carousel.json') as data_file:    
+        carousel = json.load(data_file)
+    #check for missing values and set to default if missing
+    if unsafe_query['q']==None or unsafe_query['f']==None:
+        return render_template("search.html",
+                advanced_search_fields = advanced_search_fields,
+                carousel = carousel,
+                field="all")
+    unsafe_query['start'] = unsafe_query['start'] if not unsafe_query['start']==None else "0"
+    unsafe_query['rows'] = unsafe_query['rows'] if not unsafe_query['rows']==None else "20"
     r = requests.post('http://localhost:5000/search',json=unsafe_query)
     print(r.status_code)
+    
+    print("Heloooooo")
+    print(r.text)
     search_results = json.loads(r.text)
     pprint(search_results)
     facets = {}
@@ -100,13 +114,78 @@ def search():
             else:
                 new_doc[key] = [item]
         new_results.append(new_doc)
-    pprint(brief_display_fields)
-    with open('carousel.json') as data_file:    
-        carousel = json.load(data_file)
-    return render_template("search.html",facets = ordered_facets,carousel=carousel,search_results=new_results,brief_display_fields=brief_display_fields,solr_field_names=solr_field_names)
+    #pprint(brief_display_fields)
+
+    #build nav_string
+    start = int(search_results['responseHeader']['params']['start'])
+    rows = int(search_results['responseHeader']['params']['rows'])
+    numFound = int(search_results['response']['numFound'])
+    nav_string = "Showing results " + str(start+1) +" to "
+    if numFound<=(start+rows):
+        nav_string += str(numFound)
+    else:
+        nav_string += str(start+rows) + " of " + str(numFound)
+    
+    #build prev and next queries
+    prev_query,next_query = build_nav_queries(unsafe_query,start,rows,numFound)
+
+    print("news url: ",next_query)
+
+    return render_template("search.html",
+                has_results = True,
+                facets = ordered_facets,
+                carousel=carousel,
+                search_results=new_results,brief_display_fields=brief_display_fields,solr_field_names=solr_field_names,
+                start = start,
+                rows = rows,
+                numFound = numFound,
+                nav_string = nav_string,
+                prev_query = prev_query,
+                next_query=next_query,
+                query=unsafe_query['q'],
+                field=unsafe_query['f'],
+                advanced_search_fields = advanced_search_fields)
+
+def build_nav_queries(query,start,rows,numFound):
+    current_query = copy.deepcopy(query)
+
+    new_start = int(current_query['start'])+rows
+    print("New start",new_start)
+    nexturl = "search?q="+quote_plus(current_query['q'])
+    nexturl = nexturl + "&f=" + quote_plus(current_query['f'])
+    nexturl = nexturl + "&start=" + quote_plus(str(new_start))
+    nexturl = nexturl + "&rows=" + quote_plus(current_query['rows'])
+    if 'fq' in current_query:
+        fqs = "&fq="
+        for q,f in current_query['fq'].items():
+            fqs  = fqs + q + ":\"" + f.replace("\"","") + "\";"
+        nexturl = nexturl + fqs
+    if new_start>numFound:
+        nexturl = None
+    print("news url: ",nexturl)
+    new_start = int(current_query['start'])-rows
+
+    prevurl = "search?q="+quote_plus(current_query['q'])
+    prevurl = prevurl + "&f=" + quote_plus(current_query['f'])
+    if new_start<0:
+        prevurl = prevurl + "&start=" + quote_plus(str(0))
+    else:
+        prevurl = prevurl + "&start=" + quote_plus(str(new_start))
+
+    prevurl = prevurl + "&rows=" + quote_plus(current_query['rows'])
+    if 'fq' in current_query:
+        fqs = "&fq="
+        for q,f in current_query['fq'].items():
+            fqs  = fqs + q + ":\"" + f.replace("\"","") + "\";"
+        prevurl = prevurl + fqs
+
+    if start==0:
+        prevurl = None
+    return prevurl,nexturl
 
 def build_facet_filter_query(current_query,query,field):
     current_query = copy.deepcopy(current_query)
+    #pprint(current_query)
     if 'fq' in current_query:
         current_query['fq'][field] = query
     else:
