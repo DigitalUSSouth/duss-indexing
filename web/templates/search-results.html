@@ -58,48 +58,83 @@
 
   <div class="col-xs-12 col-md-9" id="search-results-column">
 <div class="panel-group" id="accordion">
+  {% for result in search_results %}
   <div class="panel panel-default">
     <div class="panel-heading container-fluid panel-heading-results">
       <div class="col-xs-11">
-        <h3><a class="results-title" target="_blank" href="https://www.hmdb.org/marker.asp?marker=35"><mark>Galivants</mark> <mark>Ferry</mark></a></h3>
+        <h3><a class="results-title" target="_blank" href="{{result['url']}}">{{result['title']}}</a></h3>
       </div>
 			<div class="col-xs-8 col-md-2 pull-left">
 							</div>
 			<div class="col-xs-12 col-md-10 pull-right">
 				<table>
-      				<tr>
-        <td style="vertical-align: top; padding-right: 2em;">
-          <strong>Digital Collection:</strong>
-		</td>
-		<td>
-		  <mark>Historical</mark> <mark>Marker</mark> <mark>Database</mark>		</td>
-</tr>
-      				<tr>
-        <td style="vertical-align: top; padding-right: 2em;">
-          <strong>Title:</strong>
-		</td>
-		<td>
-		  <mark>Galivants</mark> <mark>Ferry</mark>		</td>
-</tr>
-      				<tr>
-        <td style="vertical-align: top; padding-right: 2em;">
-          <strong>Type of Content:</strong>
-		</td>
-		<td>
-		  <mark>Text</mark>		</td>
-</tr>
-      				<tr>
-        <td style="vertical-align: top; padding-right: 2em;">
-          <strong>Description:</strong>
-		</td>
-		<td>
-		   to <mark>Conwayborough</mark>, the <mark>county</mark> <mark>seat</mark>, <mark>later</mark> <mark>renamed</mark> <mark>Conway</mark>. "<mark>Evans</mark> <mark>Store</mark>" <mark>appears</mark> <mark>here</mark> in <mark>Robert</mark> <mark>Mills</mark>'s <<mark>i>Atlas</mark> of <mark>S.C.</i></mark>		</td>
-</tr>
-      
-
-		</table>
-		</div>
+          {% for field in brief_display_fields %}
+            {% if field in result %}
+              <tr>
+              <td style="vertical-align: top; padding-right: 2em;">
+                <strong>
+                  {% if result[field]|length>1 %}
+                    {{solr_field_names[field]['field_title']}}s:
+                  {% else %}
+                    {{solr_field_names[field]['field_title']}}:
+                  {% endif %}
+                </strong>
+              </td>
+                <td>
+                {% for item in result[field] %}
+                  {{item|safe}}<br>
+                {% endfor %}
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+		    </table>
+		  </div>
+    </div>
   </div>
-</div>
+  {% endfor %}
+  <div class="panel panel-default">
+      <div class="panel-heading container-fluid panel-heading-results">
+        <div class="col-xs-11">
+          <h3><a class="results-title" target="_blank" href="https://www.hmdb.org/marker.asp?marker=35"><mark>Galivants</mark> <mark>Ferry</mark></a></h3>
+        </div>
+        <div class="col-xs-8 col-md-2 pull-left">
+                </div>
+        <div class="col-xs-12 col-md-10 pull-right">
+          <table>
+                <tr>
+          <td style="vertical-align: top; padding-right: 2em;">
+            <strong>Digital Collection:</strong>
+      </td>
+      <td>
+        <mark>Historical</mark> <mark>Marker</mark> <mark>Database</mark>		</td>
+  </tr>
+                <tr>
+          <td style="vertical-align: top; padding-right: 2em;">
+            <strong>Title:</strong>
+      </td>
+      <td>
+        <mark>Galivants</mark> <mark>Ferry</mark>		</td>
+  </tr>
+                <tr>
+          <td style="vertical-align: top; padding-right: 2em;">
+            <strong>Type of Content:</strong>
+      </td>
+      <td>
+        <mark>Text</mark>		</td>
+  </tr>
+                <tr>
+          <td style="vertical-align: top; padding-right: 2em;">
+            <strong>Description:</strong>
+      </td>
+      <td>
+         to <mark>Conwayborough</mark>, the <mark>county</mark> <mark>seat</mark>, <mark>later</mark> <mark>renamed</mark> <mark>Conway</mark>. "<mark>Evans</mark> <mark>Store</mark>" <mark>appears</mark> <mark>here</mark> in <mark>Robert</mark> <mark>Mills</mark>'s <mark>iAtlas</mark> of <mark>S.C.</mark>		</td>
+  </tr>
+        
+  
+      </table>
+      </div>
+    </div>
+  </div>
 </div><!-- #accordion -->
 </div> <!-- search-results-column -->

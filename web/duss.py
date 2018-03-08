@@ -82,17 +82,28 @@ def search():
                 else:
                     facets[f] = [facet]
             facet_counter += 2
-    pprint(facets)
+    #pprint(facets)
     ordered_facets = []
     for name,title in facet_fields.items():
         if name in facets:
             ordered_facets.append([facet_fields[name],facets[name]])
     pprint(ordered_facets)
-    response.set_data(r.content)
+    #response.set_data(r.content)
 
+    results = search_results['response']['docs']
+    new_results = []
+    for doc in results:
+        new_doc = {}
+        for key,item in doc.items():
+            if isinstance(item,str):
+                new_doc[key] = [item]
+            else:
+                new_doc[key] = [item]
+        new_results.append(new_doc)
+    pprint(brief_display_fields)
     with open('carousel.json') as data_file:    
         carousel = json.load(data_file)
-    return render_template("search.html",facets = ordered_facets,carousel=carousel)
+    return render_template("search.html",facets = ordered_facets,carousel=carousel,search_results=new_results,brief_display_fields=brief_display_fields,solr_field_names=solr_field_names)
 
 def build_facet_filter_query(current_query,query,field):
     current_query = copy.deepcopy(current_query)
