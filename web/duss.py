@@ -64,9 +64,9 @@ def search():
     r = requests.post('http://localhost:5000/search',json=unsafe_query)
     print(r.status_code)
     
-    print(r.text)
+    #print(r.text)
     search_results = json.loads(r.text)
-    pprint(search_results)
+    #pprint(search_results)
     facets = {}
     filter_queries = unsafe_query['fq'] if 'fq' in unsafe_query else {}
     for f,data in search_results['facets']['facet_fields'].items():
@@ -83,7 +83,8 @@ def search():
                     "expanded": True if f in filter_queries else False,
                     "title":title,
                     "count":num,
-                    "url": build_facet_filter_query(unsafe_query,title,f)
+                    "url": build_facet_filter_query(unsafe_query,title,f),
+                    "breadcrumb":build_facet_breadcrumb_query(unsafe_query,title,f)
                     #"name":f
                 }
                 if f in filter_queries and filter_queries[f] == title:
@@ -105,7 +106,7 @@ def search():
 
     results = search_results['response']['docs']
     highlighting = search_results['highlighting']
-    pprint(highlighting)
+    #pprint(highlighting)
     new_results = []
     for doc in results:
         if doc['url'] in highlighting:
@@ -126,7 +127,7 @@ def search():
             else:
                 new_doc[key] = item
         new_results.append(new_doc)
-    pprint(new_results)
+    #pprint(new_results)
 
     #build nav_string
     start = int(search_results['responseHeader']['params']['start'])
@@ -209,6 +210,28 @@ def build_facet_filter_query(current_query,query,field):
     fqs = "&fq="
     for q,f in current_query['fq'].items():
         fqs  = fqs + q + ":\"" + f.replace("\"","") + "\";"
+    url = url + fqs
+    return url
+
+def build_facet_breadcrumb_query(current_query,query,field):
+    current_query = copy.deepcopy(current_query)
+    #pprint(current_query)
+    if 'fq' in current_query:
+        fq = current_query['fq']
+        fq = {key:val for key,val in fq.items() if (key!=field and val!=query)}
+        #pprint (fq)
+        current_query['fq'] = fq
+    #else:
+    #    current_query['fq'] = {field:query}
+    url = "search?q="+quote_plus(current_query['q'])
+    url = url + "&f=" + quote_plus(current_query['f'])
+    url = url + "&start=" + quote_plus(current_query['start'])
+    url = url + "&rows=" + quote_plus(current_query['rows'])
+    fqs=''
+    if 'fq' in current_query:
+        fqs = "&fq="
+        for q,f in current_query['fq'].items():
+            fqs  = fqs + q + ":\"" + f.replace("\"","") + "\";"
     url = url + fqs
     return url
 
