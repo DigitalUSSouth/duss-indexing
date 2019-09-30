@@ -17,6 +17,13 @@ $projects = array(
 		// Content must include all HTML markup.
 		array(
 				"type" => "core",
+				"thumb" => "NASCA_Square.001.jpg",
+				"header" => "Native American South Carolina Archive",
+				"website" => "https://www.nativesouthcarolina.org",
+				"content" => "<p>Nasca blurb goes here</p>"
+		),
+		array(
+				"type" => "core",
 				"thumb" => "simms.png",
 				"header" => "Simms Initiatives",
 				"website" => "http://simms.library.sc.edu/index.php",
@@ -45,7 +52,7 @@ $projects = array(
 		),
 		array(
 				"type" => "affiliated",
-				"thumb" => "american-heritage.png",
+				"thumb" => "AHV_Square.001.jpg",
 				"header" => "American Heritage Vegetables",
 				"website" => "http://www.digitalussouth.org/vegetable",
 				"content" => "<p><em>The American Heritage Vegetables</em> project presents the variety of vegetables&mdash;excluding grains like rice, wheat, and corn&mdash;found in American fields, kitchens, markets, and tables before the 20th century. The project documents varieties of vegetables from artichokes to melons, and includes cultivation practices, period recipes, and other information of interest to agricultural historians, serious gardeners, and those simply interested in how our ancestors ate. The information presented here has been gleaned from the seminal 19th-century works of American gardening, period seed catalogues and cookbooks, and agricultural textbooks.</p>"
@@ -73,7 +80,7 @@ $projects = array(
 		),
 		array(
 				"type" => "affiliated",
-				"thumb" => "oldsouthernorchards.png",
+				"thumb" => "OSO_Square.001.jpg",
 				"header" => "Old Southern Orchards",
 				"website" => "http://www.digitalussouth.org/oldsouthernorchards/index.php",
 				"content" => "<p><em>Old Southern Orchards</em> serves as a companion to <em>American Heritage Vegetables</em>, and provides information
@@ -85,7 +92,7 @@ $projects = array(
 		),
 		array(
 				"type" => "core",
-				"thumb" => "ravenel.png",
+				"thumb" => "PnP_Square.001.jpg",
 				"header" => "Plants and Planters - Henry William Ravenel",
 				"website" => "https://plantsandplanter.org",
 				"content" => "<p><em>Plants and Planter</em> connects the life, travels, business pursuits, and scientific work of one of the great minds of the 19th century, Henry William Ravenel. A prolific traveler, collector and cataloger of botanical specimens, Ravenel had many species named for him, and was considered to have specific expertise in North American fungi. Besides his scientific work, Ravenel was a prolific diarist, and his diaries provide one of the most complete pictures of daily life in the mid-19th century South we have. <em>Plants and Planter</em> brings together Ravenel's personal diaries, correspondence, and over 6,200 botanical specimens, providing us with a detailed portrait of science, self, and society in the 19th-century South.</p>"
@@ -108,7 +115,7 @@ $projects = array(
 		),
 		array(
 				"type" => "core",
-				"thumb" => "bsm.png",
+				"thumb" => "BSM_Square.001.jpg",
 				"header" => "Black Soldiers Mattered",
 				"website" => "http://www.blacksoldiersmattered.com/",
 				"content" => "<p>April 6, 1917, changed the lives of 21,609 young African American men from North Carolina. The participation of these Black North Carolinians in World War I has been mostly ignored. Black Soldiers Mattered addresses that void with this interactive site. Explore the journey of Black North Carolinians (BNC)—as units and individual soldiers—from induction to demobilization.</p>"

@@ -32,7 +32,7 @@ $carousel = array(
 		"alt" => "South Carolina and the Civil War"
 	),
 	array(
-		"image" => "oldsouthernorchards2.png",
+		"image" => "OSO_Banner.001.jpg",
 		"alt" => "Old Southern Orchards"
 	),
 	// Southern Periodical Humor Repository may be added back at a later time
