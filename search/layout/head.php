@@ -20,7 +20,7 @@ $projects = array(
 				"thumb" => "NASCA_Square.001.jpg",
 				"header" => "Native American South Carolina Archive",
 				"website" => "https://www.nativesouthcarolina.org",
-				"content" => "<p>Nasca blurb goes here</p>"
+				"content" => "<p>Native South Carolinians have been, and continue to be, an essential part of our state’s history. However, the average South Carolinian would be hard-pressed to name more than one of the state-recognized tribes, and might think of the history of Native South Carolina largely ending with the colonial-era Yamasee War. NASCA looks to correct these misconceptions, helping to tell the story of Native South Carolina with complexity, nuance, and respect. In pursuing the goals, this project will take the form of an evolving website, providing access to significant primary source materials and other resources.</p><p>The Native American South Carolina Archive is a joint project of the Native American Studies Center at the University of South Carolina Lancaster, the University of South Carolina’s Institute for Southern Studies, and the University of South Carolina Libraries’ Digital Collections.</p>"
 		),
 		array(
 				"type" => "core",
