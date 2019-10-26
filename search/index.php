@@ -5,11 +5,21 @@
  * Test edit.
  */
 
+//check protocol
+if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
+    isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+    $protocol = 'https://';
+  }
+  else {
+    $protocol = 'http://';
+  }
+
+
 //redirect to www
-if ($_SERVER['HTTP_HOST']=="digitalussouth.org"){
+if ($_SERVER['HTTP_HOST']=="digitalussouth.org" || $protocol=='http://'){
 	$request = $_SERVER['REQUEST_URI'];
 	header("HTTP/1.1 302 Found"); 
-    header("Location: http://www.digitalussouth.org".$request);
+    header("Location: https://www.digitalussouth.org".$request);
 	die();
 }
 
